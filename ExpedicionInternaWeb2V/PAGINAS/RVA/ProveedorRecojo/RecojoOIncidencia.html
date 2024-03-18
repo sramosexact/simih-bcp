@@ -1,0 +1,59 @@
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .contenedor {
+    height: 87vh;
+    max-width: 600px;
+    min-width: 340px;
+  }
+
+  .container-agencias {
+    border-color: #809eff !important;
+    height: 90%;
+  }
+
+  .color-button {
+    background: #1d5381;
+  }
+
+  .text-decoration-none:hover {
+    text-decoration: none;
+  }
+</style>
+
+<p></p>
+<div class="container-fluid contenedor" style="font-family:'Flexo-Regular';">
+    <div class="section-header">
+        <i class="fa fa-shopping-bag glyphicon-th-list glyphicon-style-section-header "></i>
+        Recojo de Agencia
+    </div>
+    <p></p>
+    <div class="container-agencias border rounded bg-white p-3">
+        <div class="text-center font-weight-bold d-flex flex-column justify-content-center"
+             style="font-size: 1.1rem; height: 18%">
+            <p> Agencia: {{agencia.sAgencia}}</p>
+            <p>C&oacute;digo: {{agencia.sIdAgencia}}</p>
+        </div>
+        <div class="d-flex flex-column justify-content-around h-25">
+            <button class="btn button-samay-blue w-75 mx-auto"
+                    style="font-weight: 600"
+                    ng-click="empezarRegistroLlegada()">
+                {{tituloRegistrarOVerDetalles}}
+            </button>
+            <button class="btn button-samay-magenta w-75 mx-auto"
+                    style="font-weight: 600"
+                    ng-click="irRegistroODetallesIncidencia()">
+                {{tituloReportarOVerIncidencia}}
+            </button>
+            <button class="btn  button-samay-cian w-75 mx-auto"
+                    style="font-weight: 600"
+                    ng-click="irAtras()">
+                Atr&aacute;s
+            </button>
+        </div>
+    </div>
+</div>

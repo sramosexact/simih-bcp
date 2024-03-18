@@ -1,0 +1,542 @@
+<style>
+
+    .bandeja-resumen-grupo {
+        margin-right: 0px;
+        min-width: 130px;
+        width: auto;
+        float: left;
+        display: block;
+        padding-top: 40px;
+        position: relative;
+    }
+
+    .bandeja-resumen-titulo {
+        color: #002D74;
+        position: absolute;
+        top: 7px;
+        font-size: 1.3em;
+        font-family: Flexo-Bold;
+        font-style: italic;
+    }
+
+    .bandeja-resumen {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        font-family: 'Flexo-Regular';
+    }
+
+    .bandeja-resumen-indicador {
+        line-height: 56px;
+        height: 56px;
+        width: 100%;
+        font-size: 48px;
+        color: #FFF !important;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        margin-top: -28px;
+        font-family: 'Flexo-Black';
+    }
+
+    .bandeja-resumen-estado {
+        position: absolute;
+        bottom: 0;
+        left: 3px;
+        right: 0;
+        min-height: 29px;
+        margin: 0;
+        color: #FFF !important;
+        font-family: 'Flexo-Italic';
+        text-align: center;
+    }
+
+    .bandeja-resumen-entrada {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        float: left;
+        width: 120px;
+        height: 120px;
+        margin: 0 10px 10px 0;
+        padding: 0;
+        cursor: pointer;
+        background-color: #eee;
+        box-shadow: inset 0 0 1px #ffc;
+        background: linear-gradient(to bottom right, #00B2D5, #2EBF34 ) !important;
+        font-family: 'Flexo-Regular';
+        border-radius: 100px 50px / 050px 100px;
+    }
+
+    .bandeja-resumen-salida {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        float: left;
+        width: 120px;
+        height: 120px;
+        margin: 0 10px 10px 0;
+        padding: 0;
+        cursor: pointer;
+        background-color: #eee;
+        box-shadow: inset 0 0 1px #ffc;
+        background: linear-gradient(to bottom right, #00B2D5, #E00070) !important;
+        font-family: 'Flexo-Regular';
+        border-radius: 100px 50px / 050px 100px;
+    }
+
+    .subtitulo-cuerpo {
+        font-family: 'Flexo-Regular';
+        font-style: italic;
+        font-size: 1.5em;
+        border-style: none;
+    }
+
+    .icono {
+        color: #002D74;
+    }
+
+    .boton-busqueda {
+        font-family: 'Flexo-Regular';
+        color: #FFF;
+        background: linear-gradient(to bottom right, #FF4F00, #FF4F00 ) !important;
+    }
+
+
+
+
+
+
+
+
+
+
+    .tile-content.slide-up > .slide-over {
+        top: 100%;
+        z-index: 2;
+        height: 75%;
+        transition: all 0.6s ease;
+    }
+
+    .tile-content:first-child {
+        display: block;
+    }
+
+    .tile-content.slide-up > .slide, .tile-content.slide-down > .slide, .tile-content.slide-up-2 > .slide, .tile-content.slide-down-2 > .slide, .tile-content.slide-left > .slide, .tile-content.slide-right > .slide, .tile-content.slide-left-2 > .slide, .tile-content.slide-right-2 > .slide {
+        top: 0;
+        z-index: 1;
+        transition: all 0.3s ease;
+    }
+
+    .tile-content.slide-up > .slide, .tile-content.slide-down > .slide, .tile-content.slide-up-2 > .slide, .tile-content.slide-down-2 > .slide, .tile-content.slide-left > .slide, .tile-content.slide-right > .slide, .tile-content.slide-left-2 > .slide, .tile-content.slide-right-2 > .slide, .tile-content.slide-up > .slide-over, .tile-content.slide-down > .slide-over, .tile-content.slide-up-2 > .slide-over, .tile-content.slide-down-2 > .slide-over, .tile-content.slide-left > .slide-over, .tile-content.slide-right > .slide-over, .tile-content.slide-left-2 > .slide-over, .tile-content.slide-right-2 > .slide-over {
+        width: 100%;
+        height: inherit;
+        display: block;
+        position: absolute;
+        box-shadow: inset 0 0 1px #FFFFCC;
+    }
+
+    /*.clIndicadores {
+        background-color: rgb(255, 255, 255);
+        padding-left: 9px;
+        margin-top: 12px;
+         margin-bottom: 15px;
+    }*/
+
+
+
+
+
+    .tile-group:first-child {
+        margin-left: 0px;
+    }
+
+    rzslider span.rz-pointer {
+        top: -7px;
+        z-index: 2;
+        width: 17px;
+        height: 18px;
+        cursor: pointer;
+        background-color: #0db9f0;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        border-radius: 16px;
+    }
+
+        rzslider span.rz-pointer:after {
+            position: absolute;
+            top: 5px;
+            left: 4px;
+            width: 9px;
+            height: 9px;
+            background: #FFFFFF;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            content: '';
+        }
+
+
+
+    .panel-back {
+        font-family: 'Flexo-Regular';
+    }
+
+    .section-content-header {
+    }
+</style>
+
+<style type="text/css">
+    .listAutogenerado {
+        font-size: 18px;
+        color: #FFFFFF;
+        background-color: #002D74;
+        font-family: 'Flexo-Regular';
+    }
+
+    .list-group {
+        margin-bottom: 15px;
+        padding-left: 15px;
+    }
+
+    .list-group-item:first-child {
+        border-top-right-radius: 2px;
+        border-top-left-radius: 2px;
+    }
+
+    .listLink {
+        /*position: absolute;*/
+        bottom: 5px;
+        right: 12px;
+        color: #F90B6E;
+        text-decoration: underline;
+    }
+
+    a.list-group-item .list-group-item-heading {
+        color: #696969;
+        background-color: #EFEBEB;
+        margin-top: -10px;
+        padding-bottom: 6px;
+        margin-left: -15px;
+        margin-right: -15px;
+        padding-top: 6px;
+        padding-left: 14px;
+    }
+
+    .list-group-item-text {
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-top: -5px;
+        padding-bottom: 5px;
+        padding-top: 4px;
+        padding-right: 5px;
+    }
+
+    .list-group:hover {
+        /*outline: 2px #F3F3F3 solid;*/
+    }
+
+    .glyphicon-list-text {
+        position: relative;
+        top: 2px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        COLOR: #ECEAEA;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .colorIngreso {
+        background-color: #2EBF34;
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 3px;
+        padding-bottom: 5px;
+        padding-top: 8px;
+        margin-left: -14px;
+        padding-left: 11px;
+        padding-right: 6px;
+    }
+
+    .colorSalida {
+        background-color: #E00070;
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 3px;
+        padding-bottom: 5px;
+        padding-top: 8px;
+        margin-left: -14px;
+        padding-left: 11px;
+        padding-right: 6px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        margin-top: 14px;
+    }
+
+    .listCuerpo {
+        margin-left: 20px;
+    }
+
+    
+
+</style>
+
+<section class="section-container" ng-show="tieneMenu">
+
+    <div class="section-header" ng-hide="Usuario.IdTipoAcceso==46 || Usuario.IdTipoAcceso==47">
+        <span class="fa fa-home glyphicon-style-section-header "></span>
+        Inicio - Indicadores
+    </div>
+
+    <div class="section-content" ng-controller="contrInicio" ng-hide="Usuario.IdTipoAcceso==46 || Usuario.IdTipoAcceso==47">
+
+        <div ng-show="visibilidad">
+
+            <!-- panel-info -->
+            <div class="panel panel-padding">
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="subtitulo-cuerpo">
+                                Seleccione el rango de fecha
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class='input-group date'>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar icono"></span>
+                                    </span>
+                                    <input type="text" class="form-control" ng-model="selectedFechaInicial" data-max-date="{{selectedFechaFinal}}" placeholder="Fecha Inicial" modelDateFormat="iso" bs-datepicker>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class='input-group date'>
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar icono"></span>
+                                    </span>
+                                    <input type="text" class="form-control" ng-model="selectedFechaFinal" data-min-date="{{selectedFechaInicial}}" data-max-date="{{fechaActual}}" placeholder="Fecha Final" modelDateFormat="iso" bs-datepicker>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <button type="button" class="btn boton-busqueda" ng-click="verIndicadores()">
+                                    <span class="mostrarIndicadores">Mostrar Indicadores</span>
+                                    <span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="bandeja-resumen-grupo">
+
+                        <div class="bandeja-resumen-grupo">
+
+                            <span class="bandeja-resumen-titulo">
+                                BANDEJA DE ENTRADA
+                            </span>
+
+                            <div class="bandeja-resumen-entrada" ng-click="btn_i_creado()">
+                                <div class="bandeja-resumen bandeja-resumen-indicador">
+                                    <i>{{s_i_creadoTotal}}</i>
+                                </div>
+                                <div class="bandeja-resumen-estado">
+                                    <span class="name">Creado</span>
+                                </div>
+                            </div>
+
+                            <div class="bandeja-resumen-entrada" ng-click="btn_i_custodia()">
+                                <div class="bandeja-resumen bandeja-resumen-indicador">
+                                    <i>{{s_i_custodiaTotal}}</i>
+                                </div>
+                                <div class="bandeja-resumen-estado">
+                                    <span class="name">Custodia</span>
+                                </div>
+                            </div>
+                            <div class="bandeja-resumen-entrada" ng-click="btn_i_transito()">
+                                <div class="bandeja-resumen bandeja-resumen-indicador">
+                                    <i>{{s_i_transitoTotal}}</i>
+                                </div>
+                                <div class="bandeja-resumen-estado">
+                                    <span class="name">Ruta</span>
+                                </div>
+                            </div>
+                            <div class="bandeja-resumen-entrada" ng-click="btn_i_recibido()">
+                                <div class="bandeja-resumen bandeja-resumen-indicador">
+                                    <i>{{s_i_recibidoTotal}}</i>
+                                </div>
+                                <div class="bandeja-resumen-estado">
+                                    <span class="name">Recibido</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bandeja-resumen-grupo">
+
+                            <span class="bandeja-resumen-titulo">
+                                BANDEJA DE SALIDA
+                            </span>
+                            <div class="bandeja-resumen-salida" ng-click="btn_s_creado()">
+                                <div class="bandeja-resumen bandeja-resumen-indicador">
+                                    <i>{{s_s_creadoTotal}}</i>
+                                </div>
+                                <div class="bandeja-resumen-estado">
+                                    <span class="name">Creado</span>
+                                </div>
+                            </div>
+
+                            <div class="bandeja-resumen-salida" ng-click="btn_s_custodia()">
+                                <div class="bandeja-resumen bandeja-resumen-indicador">
+                                    <i>{{s_s_custodiaTotal}}</i>
+                                </div>
+                                <div class="bandeja-resumen-estado">
+                                    <span class="name">Custodia</span>
+                                </div>
+                            </div>
+                            <div class="bandeja-resumen-salida" ng-click="btn_s_transito()">
+                                <div class="bandeja-resumen bandeja-resumen-indicador">
+                                    <i>{{s_s_transitoTotal}}</i>
+                                </div>
+                                <div class="bandeja-resumen-estado">
+                                    <span class="name">Ruta</span>
+                                </div>
+                            </div>
+                            <div class="bandeja-resumen-salida" ng-click="btn_s_recibido()">
+                                <div class="bandeja-resumen bandeja-resumen-indicador">
+                                    <i>{{s_s_recibidoTotal}}</i>
+                                </div>
+                                <div class="bandeja-resumen-estado">
+                                    <span class="name">Recibido</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Date range example -->
+
+
+
+        </div>
+
+        <div ng-hide="visibilidad" style=" overflow-y: scroll; height: calc(100vh - 100px);">
+
+            <div class="panel panel-padding">
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="subtitulo-cuerpo">
+                                <!--<span class="glyphicon glyphicon-chevron-left glyphicon glyphicon-color-samay-orange" ng-click="btnAtras()">
+                                </span>-->
+                                <i class="fa fa-chevron-circle-left glyphicon-color-samay-orange" aria-hidden="true" ng-click="btnAtras()" style="cursor:pointer;"></i>
+                                {{tituloE}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Buscar por:</label>
+                                <input type="text" class="form-control"
+                                       ng-model="v_buscar"
+                                       placeholder="Ingrese los datos aqui">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="list-group col-lg-6" ng-repeat="o in itemsMostrar | filter:v_buscar | orderBy:'nitem'">
+                            <a href="" class="list-group-item">
+                                <h4 class="list-group-item-heading">
+                                    <span ng-class="{colorIngreso: o.I=='I', colorSalida: o.I =='S'}">{{o.nitem}}</span>
+                                    {{o.Persona}}
+                                </h4>
+                                <h4 class="list-group-item-heading">
+                                    <span> &nbsp;&nbsp;&nbsp; </span>
+                                    {{o.Persona2}}
+                                </h4>
+                                <div class="list-group-item-text container-fluid" style="background-color: #ecefe8;">
+                                    <div class="col-xs-4" style="margin-right: -5px; font-size:15px;">{{o.sTipoElemento}}</div>
+                                    <div class="listAutogenerado col-xs-8" style="text-align:center; margin-right: -5px;">{{o.Autogenerado}}</div>
+                                </div>
+                                <p class="list-group-item-text" style="margin-top:5px; margin-bottom:-5px; padding-left: 27px;">
+                                    <span class="glyphicon-list-text glyphicon-play" aria-hidden="true"></span>
+                                    El {{o.fecha}} a las {{o.hora}}
+                                </p>
+
+                                <span class="listLink" style="vertical-align: middle; margin-bottom: 6px;" ng-click="sTracking(o.ID,o.Autogenerado)">
+                                    Ver mas
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <script type="text/ng-template" id="modalTracking.html">
+
+            <div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-seguimiento-header">
+                            <span class="glyphicon glyphicon-random glyphicon-style" aria-hidden="true"></span>
+                            Seguimiento de la correspondencia
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-section-title">
+                                Correspondencia : {{Autogenerado}}
+                            </div>
+                            <div class="modal-section-content">
+                                <div ng-repeat="x in dataSeguimiento" class="modal-item-seguimiento">
+                                    <div class="item-seguimiento-body">
+                                        <span class="glyphicon glyphicon-th glyphicon-color-samay-cian"></span>
+                                        {{x.Descripcion}}
+                                        <!--<span class="glyphicon glyphicon-flag glyphicon-color-samay-green"></span>-->
+                                    </div>
+                                    <span class="item-seguimiento-footer">                                        
+                                        {{x.fechaTrack}}
+                                    </span>
+                                    <span class="item-seguimiento-footer">
+                                        {{x.Observacion}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer-tracking modal-seguimiento-footer">
+                            <button class="btn button-samay-green" ng-click="$hide()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+    </div>
+</section>

@@ -1,0 +1,264 @@
+<style>
+
+
+    /* Ejemplo de estilos CSS de ui-grid (pueden variar según la versión) */
+    .ui-grid-row {
+        position: relative;
+        display: block;
+        height: 30px; /* Ajusta según sea necesario */
+    }
+
+        .ui-grid-row .ui-grid-selection-row-header-buttons {
+            position: absolute;
+            top: 0;
+        }
+
+    .grid {
+        width: 100%;
+        border-color: #809eff !important;
+        border-radius: 4px;
+        border: solid;
+        border-width: 1px;
+        padding: 0px;
+    }
+
+    .alinear-tabla {
+        margin-top: 10px;
+        padding: 0px;
+        margin-right: 0px;
+    }
+
+    .contenedor-principal {
+        height: calc(100vh - 70px) !important;
+        width: 100%;
+    }
+
+    .container-controls {
+        margin-bottom: 20px !important;
+        margin-top: 20px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        padding-left: 20px;
+        background-color: #FFF !important;
+    }
+
+    .container-body {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: calc(100vh - 70px);
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background-color: #FFF;
+        padding-left: 20px;
+        margin: 0px;
+    }
+
+    .tabla-asignados {
+        margin-top: 20px;
+    }
+
+    .grid-bolsas {
+        height: 100%;
+    }
+
+    .btn-style {
+        margin-top: 5px;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+    .container-controls-2 {
+        margin-left: -15px !important;
+        padding-left: 0px;
+    }
+
+    .subtitulo-cuerpo {
+        font-family: 'Flexo-Regular';
+        font-style: italic;
+        font-size: 1.3em;
+        border-style: none;
+    }
+</style>
+
+<div class="section-container" style="font-family:'Flexo-Regular';">
+
+    <div class="section-header">
+        <span class="fa fa-download glyphicon-style-section-header "></span>
+        Documentos por confirmar
+    </div>
+
+    <div class="row container-controls">
+        <div class="col-md-10 col-xs-10">
+            <div class="subtitulo-cuerpo"><i class="fa fa-check glyphicon-style-section-header" aria-hidden="true"></i> Seleccione los elementos que desea confirmar</div>
+        </div>
+        <div class="col-md-2 col-xs-2 text-right">
+            <button class="btn btn-primary button-samay-orange" ng-click="setConfirmar()">
+                <i class="fa fa-check-circle-o" aria-hidden="true"></i> Confirmar 
+            </button>
+        </div>
+    </div>
+
+
+    <div class="container-body">
+
+        <div class="row grid-bolsas" ng-show="panel">
+            <div class="col-xs-12 col-md-12 alinear-tabla">
+                <div ui-grid="datagrid" ui-grid-pagination class="grid grid-bolsas"
+                     ui-grid-move-columns
+                     ui-grid-resize-columns
+                     ui-grid-selection
+                     ui-grid-cellnav
+                     ui-grid-edit
+                     ui-grid-expandable>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div ng-hide="panel">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Tracking de los documentos seleccionados </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+
+        <div class="col-sm-12">
+
+
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div class="list-group" ng-repeat="item in myData">
+
+                        <a href="" class="group-title">Autogenerado : {{item.Autogenerado}} </a>
+                        <div ng-repeat="x in item.Items">
+                            <div class="group-content" style="display: block;">
+
+                                <a class="list active" href="#">
+                                    <div class="list-content">
+                                        <span class="list-title">
+                                            <span class="place-right glyphicon glyphicon-flag fg-red smaller"></span>
+                                            DE :  {{x.De}}
+                                        </span>
+                                        <span class="list-subtitle">
+                                            <span class="place-right">{{x.Hora}}</span>
+                                            Creado por {{x.Creado}} el {{x.Fecha}}
+                                        </span>
+                                        <span class="list-remark">
+                                            {{x.Observacion}}
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <a class="list">
+                            <div class="list-content">
+                                <span class="list-title" ng-click="isCollapsed = !isCollapsed">
+                                    <div class="mostrar place-right">Mostrar Contenido del : {{item.Autogenerado}} </div>
+                                </span>
+
+                                <div collapse="isCollapsed">
+                                    <div class="well well-lg">
+                                        <div class="panel panel-default">
+                                            <!-- Default panel contents -->
+                                            <div class="panel-heading">Contenido</div>
+                                            <div class="panel-body">
+                                                <p></p>
+                                            </div>
+
+                                            <!-- Table -->
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Empaque</th>
+                                                        <th>Tipo de Documento</th>
+                                                        <th>Moneda</th>
+                                                        <th>Cantidad o Monto</th>
+                                                        <th>Observación</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr ng-repeat="r in item.Contenido">
+                                                        <th scope="row">1</th>
+                                                        <td>{{r.Empaque}}</td>
+                                                        <td>{{r.TipoDoc}}</td>
+                                                        <td>{{r.Moneda}}</td>
+                                                        <td>{{r.Cantidad}}</td>
+                                                        <td>{{r.Observacion}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-lg  btn-success btn-block" ng-click="setRegresar()">
+                            <span class="glyphicon-boton glyphicon-hand-left" aria-hidden="true"></span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script type="text/ng-template" id="modalTracking.html">
+
+    <div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-seguimiento-header">
+                    <span class="glyphicon glyphicon-random glyphicon-style" aria-hidden="true"></span>
+                    Seguimiento de la correspondencia
+                </div>
+                <div class="modal-body">
+                    <div class="modal-section-title">
+                        Correspondencia : {{Autogenerado}}
+                    </div>
+                    <div class="modal-section-content">
+                        <div ng-repeat="x in dataSeguimiento" class="modal-item-seguimiento">
+                            <div class="item-seguimiento-body">
+                                <span class="glyphicon glyphicon-th glyphicon-color-samay-cian"></span>
+                                {{x.Descripcion}}
+                                <!--<span class="glyphicon glyphicon-flag glyphicon-color-samay-green"></span>-->
+                            </div>
+                            <span class="item-seguimiento-footer">
+                                {{x.fechaTrack}}
+                            </span>
+                            <span class="item-seguimiento-footer">
+                                {{x.Observacion}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer-tracking modal-seguimiento-footer">
+                    <button class="btn button-samay-green" ng-click="$hide()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+
+

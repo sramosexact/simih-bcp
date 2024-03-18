@@ -1,0 +1,392 @@
+﻿<style type="text/css">
+    .titulo {
+        text-align: center;
+        height: 100px;
+    }
+
+        .titulo h2 {
+            font-size: 40px;
+            font-family: sans-serif;
+            color: black;
+            text-shadow: 1px 1px #343437;
+        }
+
+    .entrada {
+        margin-top: 5px;
+    }
+
+    .lblFecha {
+        margin-right: 30px;
+    }
+
+    .lblCodAgencia {
+        margin-right: 30px;
+    }
+
+    .entradas {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #809EFF;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: #FFFFFF;
+    }
+
+    #idFecha {
+        margin-right: 15px;
+    }
+
+    .iniciar {
+        background-color: rgba(18, 169, 5, 0.8);
+        border-color: rgba(18, 169, 5, 0.8);
+        color: white;
+        font-weight: bold;
+    }
+
+        .iniciar:focus {
+            background-color: rgba(18, 169, 5, 1);
+            border-color: rgba(18, 169, 5, 1);
+            color: white;
+            font-weight: bold;
+        }
+
+        .iniciar:hover {
+            background-color: rgba(18, 169, 5, 1);
+            border-color: rgba(18, 169, 5, 1);
+            color: white;
+            font-weight: bold;
+        }
+
+    .terminar {
+        background-color: rgba(233, 5, 5, 0.5);
+        border-color: rgba(233, 5, 5, 0.5);
+        color: white;
+        font-weight: bold;
+    }
+
+        .terminar:focus {
+            background-color: rgba(233, 5, 5, 0.7);
+            border-color: rgba(233, 5, 5, 0.7);
+            color: white;
+            font-weight: bold;
+        }
+
+        .terminar:hover {
+            background-color: rgba(233, 5, 5, 0.7);
+            border-color: rgba(233, 5, 5, 0.7);
+            color: white;
+            font-weight: bold;
+        }
+
+    .verde {
+        background-color: rgba(18, 169, 5,0.5);
+    }
+
+    .rojo {
+        background-color: rgba(255, 100, 100, 0.5);
+    }
+
+    .amarillo {
+        background-color: yellow;
+    }
+
+    .azul {
+        background-color: rgba(0, 124, 233, 0.4);
+    }
+
+    .blanco {
+        background-color: #ffffff;
+    }
+
+    .indicador-rojo {
+        font-size: 23px;
+        color: #EE5151;
+        text-align: center;
+    }
+
+    .indicador-ambar {
+        font-size: 23px;
+        color: #FFA500;
+        text-align: center;
+    }
+
+    .indicador-verde {
+        font-size: 23px;
+        color: #5cb85c;
+        text-align: center;
+    }
+
+    .indicador-blanco {
+        font-size: 23px;
+        color: #ADD8E6;
+        text-align: center;
+    }
+
+    thead {
+        /*background-color: rgba(92,122,126,0.3);*/
+        background-color: rgb(0,72,133);
+        color: #FFF;
+    }
+
+    .CajaComponentes {
+        width: auto;
+        position: relative;
+    }
+
+    .cajaExportar {
+        width: auto;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: -35px;
+    }
+
+    .cajaActualizar {
+        width: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-left: -100px;
+    }
+
+    .actualizar {
+        background-color: #D9C17F;
+        color: #fff;
+        box-shadow: inset 0 0 0 1px #C7B175;
+    }
+
+        .actualizar:hover {
+            background-color: #C7B175;
+            color: #fff;
+        }
+
+        .actualizar:focus {
+            background-color: #C7B175;
+            color: #fff;
+        }
+
+   
+
+    .radio {
+        padding: 5px 5px 5px 5px;
+    }
+
+        .radio:hover {
+            background-color: rgb(120, 243, 183);
+            border-radius: 5px;
+        }
+
+    .ui-grid-row .ui-grid-cell {
+        background-color: inherit !important;
+    }
+
+    .header-grid-color {
+        font-size: 0.8em;
+        /*color: #030303;*/
+        /*background: linear-gradient(to bottom, rgba(180, 215, 235, 1), white);*/
+        /*background-color: rgb(17,97,164);
+        color: rgb(180,215,235);*/
+    }
+
+    .row-style {
+        font-size: 0.8em;
+    }
+
+    .row-button-style {
+        text-align: center;
+    }
+
+    .button-grid-style {
+        padding: 2px 12px;
+    }
+
+    .grid-border {
+        border-color: #809EFF;
+    }
+
+    .indicador-align {
+        font-size: 23px;
+        text-align: center;
+    }
+
+    .grid {
+        width: 100%;
+        border-color: #809EFF !important;
+        border-radius: 4px;
+        border: solid;
+        border-width: 1px;
+        padding: 0px;
+    }
+
+    .alinear-tabla {
+        margin-top: 10px;
+        padding: 0px;
+        margin-right: 0px;
+    }
+
+    .titulo-tabla {
+        display: inline-block;
+    }
+
+    .button-v-align {
+        display: inline-block;
+        float: right;
+        margin-top: 0px;
+    }
+
+    .espacio-controles {
+        margin-right: 5px;
+    }
+</style>
+<p></p>
+<div class="row container-fluid">
+
+    <div class="entradas col-md-12 col-xs-12">
+
+        <div class="CajaComponentes">
+            <h2>Auditoría de Registros</h2>
+            <hr />
+        </div>
+
+        <div class="CajaComponentes">
+            <div class="form-inline ">
+                <div id="iniciarRegistro" class="form-inline">
+                    <label class="form-inline label-date-style espacio-controles" for="fecha">Desde</label>
+                    <input type="text" class="form-control espacio-controles" id="datepicker" placeholder="Ingrese Fecha" readonly style="background-color: #ffffff; margin-top:4px;">
+                    <label class="form-inline label-date-style espacio-controles" for="fecha">Hasta</label>
+                    <input type="text" class="form-control datepicker-control espacio-controles" id="datepicker2" placeholder="Ingrese Fecha" readonly style="background-color: #ffffff; margin-top:4px;">
+                    <label class="form-inline label-date-style espacio-controles" for="fecha">Reporte</label>
+                    <select class="form-control espacio-controles"
+                            ng-options="item as item.Descripcion for item in ListaReporteAuditoria track by item.Id"
+                            ng-model="reporteSeleccionado">
+                    </select>
+                    <button ng-click="ConsultarAuditoria()" class="btn btn-primary" style="margin-top: 4px;">Buscar</button>
+                </div>
+                <div class=""><hr></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla" ng-if="reporteSeleccionado.Id===1||reporteSeleccionado.Id===2">
+        <h3 class="form-inline titulo-tabla">Registros</h3>
+        <button name="name" class="btn btn-success button-v-align" ng-click="Exportar(1)"><i class="fa fa-file-excel-o"></i> Exportar</button>        
+        <div class="grid" ui-grid="gridAgenciaTraslado"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla" ng-if="reporteSeleccionado.Id===1||reporteSeleccionado.Id===2">
+        <h3 class="form-inline titulo-tabla">Campos asociados</h3>
+        <button name="name" class="btn btn-success button-v-align" ng-click="Exportar(2)"><i class="fa fa-file-excel-o"></i> Exportar</button>
+        <div class="grid" ui-grid="gridTrasladoCampo"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla" ng-if="reporteSeleccionado.Id===3">
+        <h3 class="form-inline titulo-tabla">Agencia</h3>
+        <button name="name" class="btn btn-success button-v-align" ng-click="Exportar(3)"><i class="fa fa-file-excel-o" ></i> Exportar</button>
+        <div class="grid" ui-grid="gridAgencia"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla" ng-if="reporteSeleccionado.Id===3">
+        <h3 class="form-inline titulo-tabla">Agencia horario</h3>
+        <button name="name" class="btn btn-success button-v-align" ng-click="Exportar(4)"><i class="fa fa-file-excel-o" ></i> Exportar</button>
+        <div class="grid" ui-grid="gridAgenciaHorario"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla" ng-if="reporteSeleccionado.Id===3">
+        <h3 class="form-inline titulo-tabla">Frecuencia traslado</h3>
+        <button name="name" class="btn btn-success button-v-align" ng-click="Exportar(5)"><i class="fa fa-file-excel-o"></i> Exportar</button>
+        <div class="grid" ui-grid="gridFrecuencia"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla" ng-if="reporteSeleccionado.Id===4">
+        <h3 class="form-inline titulo-tabla">Correo</h3>
+        <button name="name" class="btn btn-success button-v-align" ng-click="Exportar(6)"><i class="fa fa-file-excel-o"></i> Exportar</button>
+        <div class="grid" ui-grid="gridCorreo"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla" ng-if="reporteSeleccionado.Id===4">
+        <h3 class="form-inline titulo-tabla">Correo reporte</h3>
+        <button name="name" class="btn btn-success button-v-align" ng-click="Exportar(7)"><i class="fa fa-file-excel-o"></i> Exportar</button>
+        <div class="grid" ui-grid="gridCorreoReporte"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla" ng-if="reporteSeleccionado.Id===5">
+        <h3 class="form-inline titulo-tabla">Feriado</h3>
+        <button name="name" class="btn btn-success button-v-align" ng-click="Exportar(8)"><i class="fa fa-file-excel-o"></i> Exportar</button>
+        <div class="grid" ui-grid="gridFeriado"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla" ng-if="reporteSeleccionado.Id===6">
+        <h3 class="form-inline titulo-tabla">Rangos recepción</h3>
+        <button name="name" class="btn btn-success button-v-align" ng-click="Exportar(9)"><i class="fa fa-file-excel-o"></i> Exportar</button>
+        <div class="grid" ui-grid="gridHorario"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla" ng-if="reporteSeleccionado.Id===7">
+        <h3 class="form-inline titulo-tabla">Usuario</h3>
+        <button name="name" class="btn btn-success button-v-align" ng-click="Exportar(10)"><i class="fa fa-file-excel-o"></i> Exportar</button>
+        <div class="grid" ui-grid="gridUsuario"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+
+
+</div>

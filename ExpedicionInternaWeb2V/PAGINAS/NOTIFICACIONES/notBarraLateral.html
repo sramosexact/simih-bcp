@@ -1,0 +1,243 @@
+﻿
+
+<!--<style type="text/css" media="screen">
+    .avisoNormal {
+        display: inline-block;
+        min-width: 10px;
+        padding: 4px 7px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 1;
+        vertical-align: baseline;
+        white-space: nowrap;
+        text-align: center;
+        background-color: #FAFAFA;
+        border-radius: 0px;
+        color: #A69E9E;
+    }
+
+    .avisoNotifi {
+        display: inline-block;
+        min-width: 10px;
+        padding: 4px 7px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #fff;
+        line-height: 1;
+        vertical-align: baseline;
+        white-space: nowrap;
+        text-align: center;
+        background-color: rgba(255, 174, 34, 0.85);
+        border-radius: 0px;
+        color: #FFFFFF;
+    }
+
+    .close {
+        float: right;
+        font-size: 21px;
+        font-weight: bold;
+        line-height: 1;
+        color: #FFF;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .4;
+        margin-left: 2px;
+        margin-top: -2px;
+        filter: alpha(opacity=20);
+    }
+
+    .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+        color: #fff;
+        background-color: #3B7DB3;
+        border-color: #3B7DB3;
+    }
+
+    .sidebar-module-inset {
+        padding: 15px;
+        background-color: rgb(69, 90, 100);
+        border-radius: 4px;
+        color: #FFFFFF;
+        position: relative;
+        font-size: 14px;
+        top: -4px;
+    }
+</style>
+
+
+<div ng-controller="ControladorNotificacionesCtrl">    
+    <div ng-show="mostrar">
+        <div class="col-xs-2 sidebar">
+            <style media="screen">
+                .nav-sidebar2 {
+                    margin-right: -21px;
+                    margin-bottom: 5px;
+                    margin-left: -20px;
+                    background-color: rgba(255, 174, 34, 0.85);
+                    margin-top: -20px;
+                    padding-bottom: 12px;
+                    padding-top: 13px;
+                    padding-left: 10px;
+                }
+
+                .nav-sidebar2-hijo {
+                    margin-right: -21px;
+                    margin-bottom: 5px;
+                    margin-left: -21px;
+                    background-color: rgb(85, 126, 142);
+                    margin-top: -7px;
+                    padding-bottom: 0px;
+                    padding-top: 0px;
+                    padding-left: 31px;
+                    border-top: 1px solid #F9F9F9;
+                }
+
+                .aC {
+                    color: #FFFFFF;
+                    text-decoration: none;
+                    font-size: 16px;
+                    margin-right: 6px;
+                    cursor: pointer;
+                }
+
+                .glyphicon-lateral-JOS {
+                    position: relative;
+                    top: -1px;
+                    display: inline-block;
+                    font-family: 'Glyphicons Halflings';
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    COLOR: #FCFFFC;
+                    -moz-osx-font-smoothing: grayscale;
+                    left: -1px;
+                    font-size: 13px;
+                }
+
+                a.aC {
+                    top: -3px;
+                    right: 4px;
+                    color: #F4FCFF;
+                    text-decoration: blink;
+                }
+
+                .avisoNotifi2 {
+                    display: inline-block;
+                    min-width: 10px;
+                    padding: 4px 7px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #fff;
+                    line-height: 1;
+                    vertical-align: baseline;
+                    white-space: nowrap;
+                    text-align: center;
+                    background-color: #FFF;
+                    border-radius: 0px;
+                    color: #E81C71;
+                    margin-left: 12px;
+                }
+
+                .avisoNotifi2-hijo {
+                    display: inline-block;
+                    min-width: 10px;
+                    padding: 2px 4px;
+                    font-size: 16px;
+                    /* font-weight: bold; */
+                    color: #fff;
+                    line-height: 1;
+                    vertical-align: baseline;
+                    white-space: nowrap;
+                    text-align: center;
+                    background-color: #FFF;
+                    border-radius: 0px;
+                    color: #37525C;
+                    margin-left: 0;
+                    margin-right: 5px;
+                }
+            </style>
+            <div class="nav nav-sidebar2" ng-show="JOS">
+                <a class="aC" href="#/Valijas">
+                    <div ng-click="getPuntoE()" class="{{iconClase}}"></div>
+                    <span class="descripcionNotificacion">Entregas por cerrar JOS</span>
+                    <span class=" avisoNotifi2 ng-binding avisoNotifi">{{totalNotificiones}}</span>
+                </a>
+            </div>
+            <div ng-repeat="pE in getPuntosEntrega" class="nav nav-sidebar2-hijo" ng-show="JOS">
+                <a class="aC" href="#/Valijas">
+                    <div class="media">
+                        <div class="media-left">
+                            <div class=" glyphicon-lateral-JOS glyphicon-flag"></div>
+                        </div>
+                        <div class="media-body">
+                            <span class="descripcionNotificacion">{{pE.descripcion}}</span>
+
+                        </div>
+                        <div class="media-right">
+                            <span class="avisoNotifi2-hijo ng-binding avisoNotifi">{{pE.CANTIDAD}}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <ul class="nav nav-sidebar">
+                <li ng-repeat="r in recordar" title="Tooltip on right"><a href="#"><div class="glyphicon-lateral-recordar glyphicon-user"></div>Recordarme Encendido</a></li>
+
+                <li ng-repeat="r in indicadoresData | filter: { Valor3: 'CONF_BANDEJA_NOTIFICACIONES'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}" ng-click="limpiarIndicadoresNotificaciones()">
+                        <div class="{{r.Estilo}}" title="{{r.Descripcion2}}"></div>
+                        <span class="descripcionNotificacion">{{r.Descripcion2}}</span>
+                        <span ng-repeat="n in iNotificaciones | filter: {tipo: r.Descripcion2}">
+                            <span ng-class="{avisoNotifi: n.val > 0 , avisoNormal : n.val == 0 }"> {{n.val}}</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+
+
+            <div class="relative">
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        ng-repeat="indicador in in dicadoresData  | filter: { Valor3: 'CONF_BANDEJA_INDICADOR' }  ">
+                        <span class="badgeS">{{indicador.Valor2 }}</span>
+                        <span class="badge">{{indicador.Valor1   }}</span>
+
+                        {{indicador.Descripcion2}}
+                    </li>
+                </ul>
+                <div ng-show="ver" class="confi"><a href="#/configuracion" class="alert-link">Configuración</a></div>
+            </div>
+
+            <div id="nuevoal"></div>
+
+
+            <div id="alertss"></div>
+
+            <div ng-repeat="noti in notiAvisoJosBandeja">
+                <div class="alert alert-success" role="alert">
+                    <strong>FUE ASIGNADO PARA REGISTRAR LA SALIDA DE LA BANDEJA!</strong> Por favor
+                    <a href="#/registroBandeja" class="alert-link">hacer click aqui</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div ng-hide="mostrar">
+        <div class="col-sm-3 col-md-2 sidebarLogin">
+            <div class="sidebar-module sidebar-module-inset">
+                <h4>Expedición Interna</h4>
+                <p>
+                    ggggggggggggggggSIMIH es un sistema de seguimiento de documentos el cual te permitirá realizar envíos y confirmaciones de manera instantánea y consultar en lí­nea el estado de tus documentos.
+                    Su funcionalidad radica en el seguimiento de cada envío a través de la asignación de un código único llamado AUTOGENERADO, el cual permitirá su trazabilidad. El sistema puede ser utilizado a través del módulo Web o instalado en el servidor del cliente.
+                </p>
+            </div>
+
+            <div class="sidebar-module">
+
+                <ol class="list-unstyled"></ol>
+            </div>
+        </div>
+    </div>
+
+</div>-->

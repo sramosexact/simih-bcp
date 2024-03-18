@@ -1,0 +1,19 @@
+﻿<div>
+    <div class="modal-header">
+        <h3 class="modal-title">Recepción de Valijas</h3>
+    </div>
+    <form data-toggle="validator" role="form" style="padding : 2px 10px;">
+        <div class="form-group">            
+            <label for="tipoTraslado">Elija el tipo de traslado a recepcionar: </label>
+            <select id="tipoTraslado" ng-model="$root.tipoTrasladoElegido" class="form-control">
+                <option ng-show="false" value="" selected="selected">--Tipo de Traslado--</option>
+                <option value="1">Normal</option>
+                <option value="2">Reprogramación</option>
+            </select>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" ng-click="ok()">Recepcionar</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+    </div>
+</div>

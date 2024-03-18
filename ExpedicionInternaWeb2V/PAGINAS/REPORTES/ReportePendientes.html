@@ -1,0 +1,281 @@
+<h1 class="page-header2" style="margin-top: -43px;"><span class="glyphicon-pag glyphicon-th-list"></span>Reporte de Eficiencia de Procesados</h1>
+<style type="text/css">
+
+    .text-danger {
+        color: #eca6a6;
+    }
+
+    .text-warning {
+        color: #eeefaa;
+    }
+
+    .ui-grid {
+        border: 1px solid #FFFFFF;
+        border-top: 0px;
+        /* box-sizing: content-box; */
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+        height: 290px;
+    }
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        color: #555;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+        cursor: default;
+        border-top: 2px solid rgb(228, 9, 9);
+    }
+
+    .nav-tabs > li > a {
+        margin-right: 2px;
+        line-height: 1.42857143;
+        border: 1px solid transparent;
+        border-radius: 0px 0px 0 0;
+    }
+
+    .ui-grid-header {
+        box-sizing: content-box;
+    }
+
+    .ui-grid-header-cell-wrapper {
+        position: relative;
+        display: table;
+        box-sizing: border-box;
+        height: 100%;
+        background-color: white;
+        color: rgb(58, 62, 62);
+    }
+
+    .ui-grid-pager-control .first-triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 8.7px 5px 0;
+        border-color: transparent #00B7F9 transparent transparent;
+        margin-left: 2px;
+    }
+
+    .ui-grid-pager-control .last-triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 8.7px;
+        border-color: transparent transparent transparent #00B7F9;
+        margin-left: -1px;
+    }
+
+    .ui-grid-pager-control button {
+        height: 25px;
+        min-width: 26px;
+        background-color: white;
+        border: 0;
+    }
+
+    .ui-grid-row:nth-child(even) .ui-grid-cell {
+        background-color: #FFFFFF;
+    }
+
+    .ui-grid-header-cell:last-child .ui-grid-column-resizer.right {
+        /* border-right: 1px solid #d4d4d4; */
+    }
+
+    .glyphicon-boton {
+        position: relative;
+        top: 4px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        color: #FFFFFF;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .tabs {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        /* background-color: rgb(246, 246, 246); */
+        margin-bottom: -1px;
+    }
+
+        .tabs li {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+            background: #FAFAFA;
+            color: #999;
+            margin: 0px -1px;
+            font-size: 15px;
+        }
+
+            .tabs li:hover {
+                background: #fff;
+                color: #000;
+            }
+
+            .tabs li.active {
+                color: #000;
+                background: #FFFFFF;
+                cursor: pointer;
+                border-top: 2px solid rgb(189, 42, 118);
+                border-radius: 1px;
+            }
+
+            .tabs li.active-salida {
+                color: #000;
+                background: #FFFFFF;
+                cursor: pointer;
+                border-top: 2px solid rgb(96, 169, 23);
+                border-radius: 1px;
+            }
+
+            .tabs li:first-child {
+                margin-left: 0px;
+            }
+
+    .tabs-data {
+        background: #FFFFFF;
+        padding: 15px;
+        border-top: 1px solid rgb(238, 238, 238);
+    }
+
+        .tabs-data h1 {
+            font-size: 1.6em;
+        }
+
+    .glyphicon-tab {
+        position: relative;
+        top: 2px;
+        left: -1px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        COLOR: #00b7f9;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .btn-block2 {
+        display: block;
+        width: 16%;
+    }
+
+    .gridhistorico {
+        width: 99%;
+        height: 450px
+    }
+</style>
+<div class="campoEnvio">
+    <h3 style="margin-left: 20px;">Indicar el rango de Fecha</h3>
+    <div class="row">
+
+        <!--**************************************************************-->
+        <form name="datepickerForm" class="form-inline" role="form" style="margin-left: 20px;">
+            <div class="form-group">
+                <div class="form-group col-xs-6 col-xs-5">
+                    <input type="text" class="form-control" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="Desde" bs-datepicker>
+                </div>
+                <div class="form-group col-xs-6 col-xs-5">
+                    <input type="text" class="form-control" ng-model="untilDate" data-min-date="{{fromDate}}" placeholder="Hasta" bs-datepicker>
+                </div>
+                <div class="col-xs-6 col-sm-2">
+                    <input type="button" class="btn btn-success" value="Buscar" ng-click="eventos.buscarReportePendientes(fromDate, untilDate)" />
+                </div>
+            </div>
+        </form>
+        <!--**************************************************************-->
+
+    </div>
+    <div class="row" style="margin-top: 50px;">
+        <br />
+        <div class="col-sm-9 col-sm-offset-1" ng-repeat="value in presentar">
+            <h4>Total Registros: {{ data.IndicadorCreadoVerde + data.IndicadorCustodiaPisoVerde + data.IndicadorCustodiaRutaVerde + data.IndicadorRutaSucursalesVerde + data.IndicadorRutaAgenciaVerde + data.IndicadorRutaPisosVerde + data.IndicadorCreadoAmarillo + data.IndicadorCustodiaRutaAmarillo + data.IndicadorRutaSucursalesAmarillo + data.IndicadorRutaAgenciaAmarillo + data.IndicadorCustodiaPisoAmarillo + data.IndicadorRutaPisosAmarillo + data.IndicadorCreadoRojo + data.IndicadorCustodiaRutaRojo + data.IndicadorRutaSucursalesRojo + data.IndicadorRutaAgenciaRojo + data.IndicadorCustodiaPisoRojo + data.IndicadorRutaPisosRojo}} | A tiempo: {{ (data.IndicadorCreadoVerde + data.IndicadorCustodiaPisoVerde + data.IndicadorCustodiaRutaVerde + data.IndicadorRutaSucursalesVerde + data.IndicadorRutaAgenciaVerde + data.IndicadorRutaPisosVerde) }} | Eficiencia: {{ (data.IndicadorCreadoVerde + data.IndicadorCustodiaPisoVerde + data.IndicadorCustodiaRutaVerde + data.IndicadorRutaSucursalesVerde + data.IndicadorRutaAgenciaVerde + data.IndicadorRutaPisosVerde) / (data.IndicadorCreadoVerde + data.IndicadorCustodiaPisoVerde + data.IndicadorCustodiaRutaVerde + data.IndicadorRutaSucursalesVerde + data.IndicadorRutaAgenciaVerde + data.IndicadorRutaPisosVerde + data.IndicadorCreadoAmarillo + data.IndicadorCustodiaRutaAmarillo + data.IndicadorRutaSucursalesAmarillo + data.IndicadorRutaAgenciaAmarillo + data.IndicadorCustodiaPisoAmarillo + data.IndicadorRutaPisosAmarillo + data.IndicadorCreadoRojo + data.IndicadorCustodiaRutaRojo + data.IndicadorRutaSucursalesRojo + data.IndicadorRutaAgenciaRojo + data.IndicadorCustodiaPisoRojo + data.IndicadorRutaPisosRojo) * 100 | number: 2}} %</h4>
+        </div>
+        <div class="col-sm-2" ng-repeat="value in presentar">
+            <button class="btn btn-info" ng-click="eventos.mostrarOcultarDetalle(fromDate, untilDate)">{{configuracion.nombreBotonMostrarOcultarDetalle}}</button>
+        </div>
+
+        <div class="col-md-10 col-md-offset-1" ng-repeat="value in presentar">
+            <canvas id="pendientesChart" style="display: block; width: 770px; padding-left: 20px;"></canvas>
+        </div>
+    </div>
+    <div class="row" ng-show="configuracion.nombreBotonMostrarOcultarDetalle !== 'Mostrar Detalle'" style="margin-top: 2rem;">
+        <div class="col-sm-12" style="padding-bottom: 40px;">
+            <button class="btn btn-warning" style="position: absolute; right: 20px;" ng-click="eventos.exportar(datagrid.data)">
+                Exportar
+            </button>
+        </div>
+        <div class="col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div ui-grid="datagrid" class="grid"
+                         ui-grid-resize-columns>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/ng-template" id="modalTracking.html">
+
+    <div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header-tracking">
+                      <h3 class="modal-title"><span class="glyphicon-track-icon glyphicon-pushpin" aria-hidden="true"></span>Seguimiento de la correspondencia </h3>
+                  </div>
+                  <div class="modal-body">              
+                    <div class="row">          
+                        <div class="col-lg-12">
+                            <div class="panel panel-info">
+                                <div class="panel-body">                             
+                                    <div class="list-group" >                                
+                                        <div href="" class="group-title"><h5>Correspondencia : {{Autogenerado}}</h5> </div>
+                                            <div ng-repeat="x in dataSeguimiento">
+                                                <div class="group-content" style="display: block;">
+                                                    <div href="" class="list active">
+                                                        <div class="list-content">
+                                                            <div>
+                                                                <span class="place-right glyphicon glyphicon-flag fg-red smaller" style="padding-left: 10px"></span>
+                                                              <span class="glyphicon-track glyphicon-th" aria-hidden="true"></span>        {{x.Descripcion}}
+                                                            </div>    
+                                                            <span class="list-subtitle"><span class="place-right"></span>
+                                                                      {{x.fechaTrack}}    
+                                                            </span>
+                                                            <span class="list-remark" >
+                                                                {{x.Observacion}}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                          
+                                        </div>   
+                                       
+                                    </div>
+                                </div>                 
+                            </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer-tracking">
+                          <button class="btn btn-warning" ng-click="$hide()">Cerrar</button>
+                      </div>
+                    </div>
+                </div>
+    </div>
+</script>
+

@@ -1,0 +1,1197 @@
+﻿
+<!DOCTYPE html>
+<html ng-app="simihApp" ng-controller="pagController">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="../img/logo-header_icono.png">
+    <!--Nuevo-->
+    <!--<script src="../Librerias/0-lib/jquery/jquery-3.6.1.min.js"></script>-->
+    <script src="Scripts/jquery-3.7.1.min.js"></script>
+    <script src="Scripts/jquery-ui-1.13.2.min.js"></script>
+    <!--<script src="Librerias/0-lib/jquery/jquery-ui.min.js"></script>-->
+    <link href="CSS/jquery-ui.min.css" rel="stylesheet" />
+    <!--<script src="Scripts/jquery.timepicker.min.js"></script>
+    <link href="Content/jquery.timepicker.min.css" rel="stylesheet" />-->
+    <script src="Librerias/0-lib/jquery/jquery.timepicker.min.js"></script>
+    <link href="CSS/jquery.timepicker.css" rel="stylesheet" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="../CSS/bootstrap4.min.css" rel="stylesheet" />
+    <link href="../CSS/fontawesome.4.7.0.min.css" rel="stylesheet" />
+    <script src="../Librerias/bootstrap.min.js"></script>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-touch.min.js"></script>
+    <script src="Scripts/angular-animate.min.js"></script>
+    <!--<script src="../Librerias/Angular/angular/angular.min.js"></script>-->
+    <!--<script src="../Librerias/Angular/angular-route/angular-route.min.js"></script>-->
+    <!--<script src="../Librerias/Angular/angular-touch.min.js"></script>-->
+    <!--<script src="../Librerias/Angular/angular-animate/angular-animate.min.js"></script>-->
+    <script src="../Librerias/Angular/angular-local-storage.min.js"></script>
+    <script src="../Librerias/Angular/angular/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+    <!--<script src="../Librerias/ng-grid/ng-grid.debug.js"></script>-->
+    <script src="../Librerias/angular-strap.js" data-semver="v2.2.4"></script>
+    <script src="../Librerias/angular-strap.tpl.js" data-semver="v2.2.4"></script>
+    <script src="../Librerias/angular-strap.docs.tpl.js" data-semver="v2.2.4"></script>
+    <script src="../Librerias/sheetjs/xlsx.full.min.js"></script>
+    <script src="../Librerias/loading-bar.js"></script>
+    <link href="../CSS/loading-bar.css" rel="stylesheet" />
+
+    <script src="Librerias/ui-grid/ui-grid.min.js"></script>
+    <script src="Librerias/ui-grid/ui-grid.pinning.min.js"></script>
+
+    <link href="CSS/ui-grid/ui-grid.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../Librerias/libs.min.css">
+    <link rel="stylesheet" href="../Librerias/docs.min.css">
+    <link href="../Librerias/css/animate.css" rel="stylesheet" />
+    <script src="../Librerias/ng-table.min.js"></script>
+
+    <!-- Custom styles for this template -->
+
+    <link rel="stylesheet" href="../Librerias/sweet-alert/sweetalert2.min.css">
+    <script src="../Librerias/sweet-alert/sweetalert2.min.js"></script>
+
+    <script src="../Librerias/swangular.js"></script>
+
+    <!--Chart.js-->
+    <script src="../Librerias/chart.min.js"></script>
+
+    <!-- FileSaver -->
+    <script src="../Librerias/FileSaver.min.js"></script>
+
+    <!-- Bootstrap-filestyle-->
+    <script src="../Librerias/js/bootstrap-filestyle.min.js"></script>
+
+    <link href="fonts/flexo/flexo-regular/style.css" rel="stylesheet" />
+    <link href="fonts/flexo/flexo-bold/style.css" rel="stylesheet" />
+    <link href="fonts/flexo/flexo-thin/style.css" rel="stylesheet" />
+    <link href="fonts/flexo/flexo-italic/style.css" rel="stylesheet" />
+    <link href="fonts/flexo/flexo-black/style.css" rel="stylesheet" />
+
+    <link href="../fonts/FUENTE/PasionSans/pasionSans.css" rel="stylesheet" type='text/css' />
+    <link href="../CSS/estilo.min/estilo.min.css" rel="stylesheet" />
+    <link href="../CSS/estilo.min/estiloNuevo.css" rel="stylesheet" />
+
+    <link href="../CSS/miestilo.css" rel="stylesheet" />
+
+    <script src="Librerias/js/tslib.js"></script>
+    <!--<script src="Librerias/js/msal.min.js"></script>-->
+    <script src="Librerias/js/msal-angular.min.js"></script>
+    <script src="Librerias/js/msal.js"></script>
+
+    <script src="../JS/appconfig.js"></script>
+    <script src="../JS/app.js"></script>
+    <script src="../JS/Controladores/Pagina.js"></script>
+    <script src="../JS/config.js"></script>
+    <script src="../JS/Controladores/Login.js"></script>
+
+    <script src="../JS/Recursos/requester.js"></script>
+    <script src="../JS/constant/tipoNotificacion.js"></script>
+    <script src="../JS/Servicios/exportarService.js"></script>
+    <script src="../JS/Servicios/utilsService.js"></script>
+    <script src="../JS/Servicios/importarService.js"></script>
+    <script src="../JS/Servicios/notificacionService.js"></script>
+
+
+
+
+    <script src="../JS/Controladores/Jos.js"></script>
+    <script src="../JS/Controladores/Inicio.js"></script>
+    <script src="../JS/Controladores/Correspondencia.js"></script>
+    <script src="../JS/Controladores/Activo.js"></script>
+    <script src="../JS/Controladores/HistoricoCorreos.js"></script>
+    <script src="../JS/Controladores/ConfirmarEnvio.js"></script>
+    <script src="../JS/Controladores/notificacion.js"></script>
+    <script src="../JS/Controladores/Reportes/BCP/ReportePorAutogenerado.js"></script>
+    <script src="../JS/Controladores/Reportes/BCP/ReportePorMatricula.js"></script>
+    <script src="../JS/Controladores/Reportes/BCP/ReportePorEstado.js"></script>
+    <script src="../JS/Controladores/Reportes/BCP/ReporteDocumentosEntreExpediciones.js"></script>
+    <script src="../JS/Controladores/Reportes/BCP/ReporteDocumentosHaciaAgencias.js"></script>
+
+
+    <!-- RVA -->
+    <script src="../JS/Servicios/servicios.js"></script>
+
+    <script src="../JS/Controladores/RVA/Mantenimiento/Agencia/ListadoAgenciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Mantenimiento/Agencia/MantenimientoAgenciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Mantenimiento/Correo/ListadoCorreoCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Mantenimiento/Correo/MantenimientoCorreoCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Mantenimiento/Feriado/ListadoFeriadoCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Mantenimiento/Feriado/MantenimientoFeriadoCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Mantenimiento/RangoRecepcionValijas/ListadoRangoRecepcionCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Mantenimiento/RangoRecepcionValijas/MantenimientoRangoRecepcionCtrl.js"></script>
+
+    <script src="../JS/Controladores/RVA/ModalController/GenerarLoteBolsasCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/ModalController/MarcarHoraProveedorCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/ModalController/ModificarRecepcionLimaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/ModalController/ModificarRecepcionProvinciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/ModalController/ModificarRegistroEnvioLimaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/ModalController/MostrarPDFCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/ModalController/RegistrarReprogramacionCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/ModalController/SeleccionarMotivoCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/ModalController/SeleccionarProveedorCtrl.js"></script>
+
+    <script src="../JS/Controladores/RVA/P-Envio/recepcionagencia/RecepcionAgenciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/P-Envio/recepcionagencia/RecepcionAgenciaDetalleCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/P-Envio/RegistroUtd/EnviarValijaCtrl.js"></script>
+
+    <script src="../JS/Controladores/RVA/P-Recojo/RecepcionUtd/RecepcionarLimaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/P-Recojo/RecepcionUtd/RecepcionarProvinciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/P-Recojo/RegistroAgencia/EnvioUTDCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/P-Recojo/RegistroAgencia/ListaEnvioUTDCtrl.js"></script>
+
+    <script src="../JS/Controladores/RVA/Prov-Entrega/DetallesEntregaAgenciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Prov-Entrega/DetallesEntregaUTDCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Prov-Entrega/EntregaOIncidenciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Prov-Entrega/ListaEntregaAgenciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Prov-Entrega/ListaEntregaUTDCtrl.js"></script>
+
+    <script src="JS/Controladores/RVA/Prov-Incidencia/IncidenciaParaAgenciaCtrl.js"></script>
+
+    <script src="../JS/Controladores/RVA/Prov-Recojo/DetallesRecojoAgenciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Prov-Recojo/DetallesRecojoUTDCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Prov-Recojo/ListaRecojoAgenciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Prov-Recojo/ListaRecojoUTDCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Prov-Recojo/RecojoOIncidenciaCtrl.js"></script>
+
+    <script src="../JS/Controladores/RVA/RecepcionBolsas/RecepcionarBolsasCtrl.js"></script>
+
+    <script src="../JS/Controladores/RVA/Reporte/ReporteAgenciaProvinciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Reporte/ReporteEntregaAgenciaLimaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Reporte/ReporteEntregaRecojoLimaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Reporte/ReporteEnvioAgenciaLimaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Reporte/ReporteIncidenciaLimaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Reporte/ReporteRecepcionAgenciaProvinciaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Reporte/ReporteRecepcionBolsasCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Reporte/ReporteRecepcionLimaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Reporte/ReporteRecojoLimaCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/Reporte/ReporteProveedorTrasladoAgenciaAUTDCtrl.js"></script>
+    <script src="../JS/Controladores/RVA/ModalController/RegistrarEnvioAgenciaAUTDCtrl.js"></script>
+
+
+    <style>
+
+        html, body {
+            height: 100vh;
+            background-color: #CCC;
+            margin: 0;
+            font-family: 'Flexo-Regular';
+        }
+
+        .grid-separacion {
+            margin-left: 10px;
+            margin-top: 50px;
+        }
+
+        .ui-grid {
+            border: 1px solid #FFFFFF;
+            border-top: 0px;
+            /* box-sizing: content-box; */
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        .ui-grid-header {
+            box-sizing: content-box;
+        }
+
+        .ui-grid-header-cell-wrapper {
+            position: relative;
+            display: table;
+            box-sizing: border-box;
+            height: 100%;
+            background-color: white;
+            color: rgb(58, 62, 62);
+        }
+
+        .ui-grid-pager-control .first-triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 8.7px 5px 0;
+            border-color: transparent #00B7F9 transparent transparent;
+            margin-left: 2px;
+        }
+
+        .ui-grid-pager-control .last-triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 5px 0 5px 8.7px;
+            border-color: transparent transparent transparent #00B7F9;
+            margin-left: -1px;
+        }
+
+        .ui-grid-pager-control button {
+            height: 25px;
+            min-width: 26px;
+            background-color: white;
+            border: 0;
+        }
+
+        .ui-grid-row:nth-child(even) .ui-grid-cell {
+            background-color: #FFFFFF;
+        }
+
+        .ui-grid-header-cell:last-child .ui-grid-column-resizer.right {
+            border-right: 1px solid #d4d4d4;
+        }
+
+        .ui-grid-row-header-cell {
+            background-color: #fff !important;
+            border-bottom: solid 1px #fff;
+            color: #116d8e;
+            /*margin-right: 10px;*/
+        }
+
+        .ui-grid-pager-max-pages-number {
+            top: 0px !important
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-bottom-color: transparent;
+            cursor: default;
+            border-top: 2px solid rgb(228, 9, 9);
+        }
+
+        .nav-tabs > li > a {
+            margin-right: 2px;
+            line-height: 1.42857143;
+            border: 1px solid transparent;
+            border-radius: 0px 0px 0 0;
+        }
+
+
+
+        .textoClaro {
+            font-size: 0.7em;
+            color: #0d8bb8;
+        }
+
+        .sub_div {
+            position: absolute;
+            bottom: 0px;
+            border-top-style: solid;
+            border-top-width: 0.5px;
+            color: #333;
+        }
+
+        .textoUbicacion {
+            font-size: 0.8em;
+            color: #37525C;
+        }
+
+        /***********************************/
+        /********** COLORES SAMAY **********/
+        /***********************************/
+
+
+        /*** Navbar ***/
+
+        .navbar-menu {
+            /*background: linear-gradient(to bottom right, #002D74, #00B2D5) !important;*/
+            background-color: #002D74;
+        }
+
+        .navbar-menu-title {
+            display: -webkit-inline-box;
+            display: -moz-inline-box;
+            margin-left: 6px;
+            color: #f5f5dc;
+            font-family: 'Flexo-Regular';
+            font-size: 17px;
+        }
+
+        .navbar-menu-item {
+            font-family: 'Flexo-Regular';
+            font-size: 17px;
+        }
+
+        /*** /Navbar ***/
+
+        /*** Sidebar ***/
+
+
+        .sidebar-login {
+            position: fixed;
+            top: 31px;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            display: block;
+            padding: 28px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /*background: linear-gradient(to bottom right, #002D74, #00B2D5) !important;*/
+            background-color: #002D74;
+            border-right: 0 solid #eee;
+            border-right: 3px solid #C5701B;
+        }
+
+        .sidebar-login-info {
+            font-family: 'Flexo-Regular';
+            color: #FFF;
+        }
+
+        .sidebar-login-info-title {
+            font-family: 'Flexo-Regular';
+            font-size: 1.5em;
+            color: #FFB81C;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-login-info-body {
+            font-size: 1em;
+        }
+
+
+        /*** /Sidebar ***/
+
+        .modules-title {
+            font-family: 'Flexo-Regular';
+        }
+
+        .btn-primary {
+            background-color: #FF4F00 !important;
+        }
+
+        .fondoCentralModal {
+            background-color: #37525c !important;
+            color: antiquewhite;
+        }
+
+        /*** Ghyphicon ***/
+
+        .glyphicon-style {
+            font-size: 16px;
+            color: #00B2D5;
+            padding: 0px 10px;
+        }
+
+        .glyphicon-color-samay-blue {
+            color: #002D74;
+        }
+
+        .glyphicon-color-samay-orange {
+            color: #FF4F00;
+        }
+
+        .glyphicon-color-samay-yellow {
+            color: #FFB81C;
+        }
+
+        .glyphicon-color-samay-cian {
+            color: #00B2D5;
+        }
+
+        .glyphicon-color-samay-magenta {
+            color: #E00070;
+        }
+
+        .glyphicon-color-samay-green {
+            color: #2EBF34;
+        }
+
+        /*        .glyphicon-samay-gradient-cian-green {
+            background: linear-gradient(to bottom right, #00B2D5, #FFF);
+        }*/
+
+        .glyphicon-style-section-header {
+            font-size: 24px;
+            color: #00B2D5;
+            padding: 0px 10px;
+        }
+
+        .glyphicon-style-logo {
+            margin-right: 130px;
+        }
+
+        .glyphicon-style-bandeja {
+            margin-top: 10px;
+        }
+
+        .glyphicon-style-title-group {
+            font-size: 16px;
+            color: #002D74;
+            padding: 0px 10px;
+        }
+        /*** /Ghyphicon ***/
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /** section body*/
+        .section-body {
+            width: 100%;
+            height: calc(100vh - 70px);
+            display: flex;
+            flex-direction: column;
+            /*border-right-style: solid;*/
+            /*border-style: solid;*/
+        }
+
+        /* SIDEBAR*/
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: calc(100% - 70px);
+            width: 0px;
+            background-color: #FFF;
+            border-right-style: solid;
+            border-right-width: thin;
+            margin-top: 70px;
+            /*border-right-style: solid;
+            border-right-width: 0.5px;*/
+        }
+
+            .sidebar.open-sidebar {
+                width: 250px;
+                border-right-style: outset;
+            }
+
+            .sidebar .close .text {
+                opacity: 0;
+                border-right-style: none;
+            }
+
+            .sidebar li {
+                height: 50px;
+                background: #FFF;
+                margin-top: 10px;
+                list-style: none;
+                display: flex;
+                align-items: center;
+            }
+
+        .sidebar-footer {
+            position: absolute;
+            bottom: 150px;
+            border-top-style: solid;
+            border-top-width: 0.5px;
+        }
+
+        .sidebar .text {
+            font-size: 16px;
+            font-weight: 500;
+            font-family: 'Flexo-Regular';
+        }
+
+        .sidebar .image {
+            min-width: 60px;
+        }
+
+        .sidebar .image-text img {
+            width: 40px;
+            border-radius: 6px;
+        }
+
+        .sidebar header .image-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar footer .image-text {
+            display: flex;
+            align-items: center;
+        }
+
+        header .image-text .header-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-group {
+            /*Agregado para reportes*/
+            border-top-style: ridge;
+            padding-top: 20px;
+        }
+
+            .title-group .title {
+                font-family: 'Flexo-Bold';
+            }
+
+        footer .image-text .footer-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 70px;
+            width: 100%;
+            background-color: #002D74;
+            z-index: 1001;
+        }
+
+            nav .nav-bar {
+                position: relative;
+                height: 100%;
+                /*max-width: 1000px;*/
+                width: 100%;
+                background-color: #002D74;
+                margin: 0 auto;
+                padding: 0 30px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+                nav .nav-bar .logo-simih a {
+                    font-size: 25px;
+                    font-weight: 500;
+                    font-family: 'Flexo-Regular';
+                    color: #FFF;
+                    text-decoration: none;
+                    background-color: #002D74;
+                }
+
+        .nav-bar .nav-links {
+            display: flex;
+            align-items: start;
+        }
+
+
+
+        .nav-links-ii {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-bar .nav-links li {
+            margin: 0 5px;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            position: relative;
+            font-size: 17px;
+            font-weight: 500;
+            color: #FFF;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+            .nav-links li a::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translate(50%);
+                height: 6px;
+                width: 6px;
+                border-radius: 50%;
+                background-color: #FFF;
+            }
+
+        .close-session {
+            visibility: hidden;
+        }
+
+            .close-session li a {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .close-session.visible {
+                visibility: visible;
+            }
+
+        .nav-bar .close-session {
+            /*border-style: none solid;*/
+            border-color: #00B2D5;
+            border-radius: 5px;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: calc(100% - 70px);
+            width: 0px;
+            background-color: #FFF;
+            border-right-style: solid;
+            border-right-width: thin;
+            margin-top: 70px;
+        }
+
+        .home {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: calc(100% - 70px);
+            width: 100%;
+            background-color: #FFF;
+            transition: var(--tran-05);
+            z-index: 1000;
+            margin-top: 70px;
+            /*display: flex;
+            flex-direction: column;*/
+        }
+
+            .home.open-home {
+                left: 250px;
+                width: calc(100% - 250px);
+            }
+
+        .sidebar.close ~ .home {
+            left: 88px;
+            width: calc(100% - 88px);
+        }
+
+
+
+        .section-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #FFF;
+        }
+
+        .section-header {
+            font-family: 'Flexo-Regular';
+            font-size: 24px;
+            background-color: #FFF;
+            padding: 10px 0px;
+            border-bottom-style: solid;
+            /*border-bottom-color: #002D74;*/
+            border-bottom-width: 0.5px;
+        }
+
+        .section-content {
+            width: 100%;
+            flex-grow: 1;
+            background-color: #FFF;
+        }
+
+
+        .modal-section {
+            display: inline;
+            float: right;
+            padding-bottom: 5px;
+            margin-left: -5px;
+        }
+
+        .modal-content-bandeja {
+            position: relative;
+            background-color: #fff;
+            border: 1px solid #999;
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 6px;
+            -webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+            box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+            background-clip: padding-box;
+            outline: 0;
+            width: 80%;
+            padding: 0px 11px;
+            left: 11%;
+        }
+
+        .panel.panel-padding {
+            padding: 0 30px;
+        }
+
+        .button-samay-blue {
+            background-color: #002D74;
+            font-family: 'Flexo-Regular';
+            color: #FFF;
+        }
+
+        .button-samay-yellow {
+            background-color: #FFB81C;
+            font-family: 'Flexo-Regular';
+            color: #002D74;
+        }
+
+        .button-samay-cian {
+            background-color: #00B2D5;
+            font-family: 'Flexo-Regular';
+            color: #FFF;
+        }
+
+        .button-samay-green {
+            background-color: #2EBF34 !important;
+            font-family: 'Flexo-Regular';
+            color: #FFF;
+        }
+
+        .button-samay-orange {
+            background-color: #FF4F00;
+            font-family: 'Flexo-Regular';
+            color: #FFF;
+        }
+
+        .button-samay-magenta {
+            background-color: #E00070;
+            font-family: 'Flexo-Regular';
+            color: #FFF;
+        }
+
+        .modal-seguimiento-header {
+            font-family: 'Flexo-Italic';
+            font-size: 1.8em;
+            background-color: #002D74;
+            color: #FFF;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .modal-section-title {
+            font-family: 'Flexo-Bold';
+            font-size: 1.6em;
+            color: #002D74;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .modal-seguimiento-footer {
+            text-align: right;
+            padding: 10px;
+        }
+
+        .modal-item-seguimiento {
+            padding: 10px;
+            margin: 10px;
+            /*border: solid 1px #696969;*/
+        }
+
+        .item-seguimiento-body {
+            font-family: 'Flexo-Regular';
+            font-size: 1.1em;
+        }
+
+        .item-seguimiento-footer {
+            font-family: 'Flexo-Italic';
+            font-size: 0.8em;
+            padding-left: 22px;
+        }
+
+        .link {
+            color: #3414ff;
+            font-family: inherit;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: underline
+        }
+
+        .colorIngreso {
+            color: #2EBF34 !important;
+        }
+
+        .colorSalida {
+            color: #E00070 !important;
+        }
+
+        .button-aling-right {
+            text-align: right;
+        }
+
+        .modal-dialog {
+            pointer-events: auto !important;
+        }
+
+        .container-global {
+            position: relative;
+            top: 0;
+            left: 0;
+            height: calc(100% - 200px);
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background-color: #FFF;
+            border-right-style: solid;
+            border-right-width: thin;
+        }
+
+        .container-fluid {
+            background-color: #FFF;
+        }
+
+        .texto-global-regular {
+            font-family: 'Flexo-Regular';
+        }
+
+        .texto-global-cursiva {
+            font-family: 'Flexo-Italic';
+        }
+
+        .texto-global-negrita {
+            font-family: 'Flexo-Bold';
+        }
+
+
+
+        @media (max-width: 768px) {
+            /* Estilos para pantallas más pequeñas, como teléfonos móviles */
+
+            /*        .close-session {
+                width: 100%;
+            }*/
+
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: calc(100% - 70px);
+                width: 0px;
+                background-color: #FFF;
+                border-right-style: solid;
+                border-right-width: thin;
+                margin-top: 70px;
+            }
+
+            .home.open-home {
+                left: 0px;
+                width: 100%;
+                background-color: #FFF;
+            }
+
+            .glyphicon-style {
+                margin-right: initial;
+                padding: 0px;
+            }
+
+            .movil {
+                display: none;
+            }
+
+            /*nav .nav-bar .logo-simih a {
+                font-size: 30px;
+                font-weight: 500;
+                font-family: 'Flexo-Regular';
+                color: #FFF;
+                text-decoration: none;
+                background-color: #00B2D5;
+            }*/
+
+            .nav-links li a::before {
+                display: none;
+            }
+
+            dl, ol, ul {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+
+            .modal-dialog {
+                position: relative;
+                width: auto;
+                left: auto;
+            }
+
+            /*.logo-simih {
+                height: 50px;
+                width: 50px;
+                text-align: center;*/
+            /* display: contents; */
+            /*margin-left: 10px;*/
+            /*margin-top: 15px;*/
+            /*padding-left: 0px;
+                border-radius: 100%;
+                background-color: #00B2D5;
+            }*/
+
+            nav .nav-bar {
+                padding: 0 0px;
+            }
+
+            /*.logo-movil {
+                font-size: 0.75em;
+                color: #002D74;
+                background-color: #00B2D5;
+            }*/
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            /* Estilos para pantallas medianas, como tablets */
+        }
+
+        @media (min-width: 1025px) {
+            /* Estilos para pantallas grandes, como computadoras de escritorio */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ******** navbar-menu ********** -->
+    <script>
+        $(document).ready(function () {
+            // Ocultar el navbar cuando se selecciona una opción
+            $('#navbarNav .navbar-nav a').click(function () {
+                $('#navbarNav').collapse('hide');
+            });
+
+            // Ocultar el navbar cuando se hace clic fuera de él
+            $(document).click(function (event) {
+                var clickOver = $(event.target);
+                var _opened = $('#navbarNav').hasClass('show');
+                if (_opened === true && !clickOver.closest('.navbar-toggler').length && !clickOver.closest('#navbarNav').length) {
+                    $('#navbarNav').collapse('hide');
+                }
+            });
+        });
+    </script>
+    <nav>
+        <div class="nav-bar  navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" style="color:#FFF;"></i> <span style="color:#FFF;">{{tituloApp}}</span>
+            </button>
+            <span class="collapse navbar-collapse glyphicon-style glyphicon-style-logo logo-simih" ><a href=""> <i class="fa fa-paper-plane glyphicon-style logo-movil" style="color:#FFF;"></i><span class="movil" style="color:#FFF;">{{tituloApp}}</span></a></span>
+
+            <div class="collapse navbar-collapse menu">
+                <ul class="nav-links">
+                    <li ng-repeat="M in MenuPrincipal | filter: {IdPadre : -1} : true  | orderBy: 'Pos'">
+                        <a ng-hide="M.Id == mostrarJOSv" href="{{M.Href}}">{{M.Nombre}}</a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="close-session" ng-class="[closeSessionVisible]" ng-click="open('sm')">
+                <ul class="nav-links">
+                    <span class="glyphicon-style glyphicon-style-bandeja"><i class="fa fa-user-circle "></i></span>
+                    <li>
+                        <a href="">  {{ bandejaActual }}</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="section-body">
+        <!-- ******** sidebar ********** ng-controller="ControladorNotificacionesCtrl" -->
+        <nav class="sidebar collapse navbar-collapse" ng-class="[openSidebar]" ng-controller="ControladorNotificacionesCtrl" id="navbarNav">
+
+            <!--<div class="">
+    <div class="">-->
+            <div class="text header-text title-group" ng-show="accesoAcciones">
+                <i class="fa fa-bolt glyphicon-style-title-group"></i>
+                <span class="title">Acciones</span>
+            </div>
+            <ul class="menu-links" ng-repeat="r in indicadoresData | filter: { Valor3: 'CONF_BANDEJA_NOTIFICACIONES'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                <li class="nav-link">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="fa fa-download glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text header-text title-group" ng-show="accesoRVAUsuarioLima">
+                <i class="fa fa-shopping-bag glyphicon-style-title-group"></i>
+                <span class="title">RVA</span>
+            </div>
+            <ul class="menu-links">
+                <li class="nav-link" ng-repeat="r in indicadoresData | filter: { Valor3: 'RVA_USUARIO_LIMA'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="{{r.Estilo}} glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text header-text title-group" ng-show="accesoRVAUTDLima">
+                <i class="fa fa-shopping-bag glyphicon-style-title-group"></i>
+                <span class="title">RVA - Acciones</span>
+            </div>
+            <ul class="menu-links">
+                <li class="nav-link" ng-repeat="r in indicadoresData | filter: { Valor3: 'RVA_UTD_LIMA'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="{{r.Estilo}} glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+
+
+            <div class="text header-text title-group" ng-show="accesoConsulta">
+                <i class="fa fa-search glyphicon-style-title-group"></i>
+                <span class="title">Consultas</span>
+            </div>
+            <ul class="menu-links">
+                <li class="nav-link" ng-repeat="r in indicadoresData | filter: { Valor3: 'CONSULTAS'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="{{r.Estilo}} glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+            <div class="text header-text title-group" ng-show="accesoReporte">
+                <i class="fa fa-bar-chart glyphicon-style-title-group"></i>
+                <span class="title">Autogenerados - Reportes</span>
+            </div>
+            <ul class="menu-links">
+                <li class="nav-link" ng-repeat="r in indicadoresData | filter: { Valor3: 'REPORTES'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="{{r.Estilo}} glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text header-text title-group" ng-show="accesoRVAUTDReporteLima">
+                <i class="fa fa-shopping-bag glyphicon-style-title-group"></i>
+                <span class="title">RVA - Reportes</span>
+            </div>
+            <ul class="menu-links">
+                <li class="nav-link" ng-repeat="r in indicadoresData | filter: { Valor3: 'RVA_UTD_REPORTE_LIMA'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="{{r.Estilo}} glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text header-text title-group" ng-show="accesoRVAProveedorRecojo">
+                <i class="fa fa-shopping-bag glyphicon-style-title-group"></i>
+                <span class="title">Recojo</span>
+            </div>
+            <ul class="menu-links">
+                <li class="nav-link" ng-repeat="r in indicadoresData | filter: { Valor3: 'RVA_PROV-RECOJO'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="{{r.Estilo}} glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text header-text title-group" ng-show="accesoRVAProveedorEntrega">
+                <i class="fa fa-shopping-bag glyphicon-style-title-group"></i>
+                <span class="title">Entrega</span>
+            </div>
+            <ul class="menu-links">
+                <li class="nav-link" ng-repeat="r in indicadoresData | filter: { Valor3: 'RVA_PROV-ENTREGA'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="{{r.Estilo}} glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text header-text title-group" ng-show="accesoRVAProveedorGestor">
+                <i class="fa fa-shopping-bag glyphicon-style-title-group"></i>
+                <span class="title">Traslado de</span>
+            </div>
+            <ul class="menu-links">
+                <li class="nav-link" ng-repeat="r in indicadoresData | filter: { Valor3: 'RVA_PROVEEDOR_GESTOR'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="{{r.Estilo}} glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text header-text title-group" ng-show="accesoRVAProveedorGestorReporte">
+                <i class="fa fa-shopping-bag glyphicon-style-title-group"></i>
+                <span class="title">Reportes</span>
+            </div>
+            <ul class="menu-links">
+                <li class="nav-link" ng-repeat="r in indicadoresData | filter: { Valor3: 'RVA_PROVEEDOR_REPORTE_GESTOR'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="{{r.Estilo}} glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+
+            <div class="text header-text title-group" ng-show="accesoRVAGDIAReporte">
+                <i class="fa fa-shopping-bag glyphicon-style-title-group"></i>
+                <span class="title">Reportes</span>
+            </div>
+            <ul class="menu-links">
+                <li class="nav-link" ng-repeat="r in indicadoresData | filter: { Valor3: 'GDIA_RVA_REPORTE'  ,Valor2:'1'} | orderBy: -Descripcion2">
+                    <a href="{{r.sDescripcion}}">
+                        <i class="bi-alarm"></i>
+                        <i class="{{r.Estilo}} glyphicon-style"></i>
+                        <span class="text nav-text">{{r.Descripcion2}}</span>
+
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- ****** content ****** -->
+        <section class="home" ng-class="[openHome]" ng-view>
+        </section>
+    </section>
+
+    <div class="modal-section">
+        <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content-bandeja">
+                        <div class="modal-header">
+                            <h3 class="modal-title"><span class="glyphicon glyphicon-send glyphicon-style glyphicon-style-logo logo-simih"><a href="#"> SIMIH</a></span></h3>
+                        </div>
+                        <div class="modal-title-body">
+
+                            <h4>¿Desea cerrar su sesión?</h4>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-warning button-samay-cian" ng-click="cancel()">Cancelar</button>
+                            <button class="btn btn-danger button-samay-orange" ng-click="cerrarSession()">Cerrar sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+    </div>
+
+</body>
+</html>

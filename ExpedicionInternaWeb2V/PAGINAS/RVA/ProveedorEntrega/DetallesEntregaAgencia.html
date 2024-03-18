@@ -1,0 +1,85 @@
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .contenedor {
+    height: 87vh;
+    max-width: 600px;
+    min-width: 340px;
+  }
+
+  .container-agencias {
+    border-color: #809eff !important;
+    height: 90%;
+  }
+
+  /*  .form-control:focus {
+    box-shadow: none;
+  }*/
+</style>
+
+<p></p>
+<div class="container-fluid contenedor">
+  <h3>Entrega A Agencia</h3>
+  <hr class="mt-0" style="border-width: 2px" />
+  <div class="container-agencias border rounded p-3">
+    <div class="mx-auto rounded text-center font-weight-bold d-flex flex-column justify-content-center text-white mb-3"
+         style="height: 18%; background: #1d5381; width: 85%">
+      <p>Agencia: {{agencia.sAgencia}}</p>
+      <p class="m-0">C&oacute;digo de agencia: {{agencia.sIdAgencia}}</p>
+    </div>
+
+    <div class="d-flex flex-column p-2" style="height: 87%">
+      <p class="m-0">&#9679; Informaci&oacute;n registrada por UTD</p>
+      <campos-dinamicos campos="camposDinamicos"
+                        modelo="agencia"
+                        ya-registrado=true
+                        hubo-recojo=true>
+      </campos-dinamicos>
+      <div class="form-group group-style mb-4">
+        <div class="row row-style">
+          <div class="col-lg-6">
+            <label class="form-control form-inline label-style">
+              Observaci&oacute;n :
+            </label>
+          </div>
+          <div class="col-lg-6">
+            <input type="text"
+                   class="form-control form-inline"
+                   ng-model="agencia.sObservacion"
+                   ng-disabled="true" />
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-4">
+        <label class="mb-3" for="txtAreaObservacion">
+          &#9679; Observaci&oacute;n proveedor
+        </label>
+        <textarea class="form-control rounded-0 border-left-0 border-right-0"
+                  style="border: 2px solid #1d5381; resize: none"
+                  id="txtAreaObservacion"
+                  rows="2"
+                  ng-model="sObservacionProveedor"
+                  ng-disabled="true"></textarea>
+      </div>
+      <div class="d-flex justify-content-around w-75 mx-auto mt-3">
+        <button class="btn text-white"
+                style="background: #1d5381; font-weight: 600"
+                type="button"
+                ng-click="modalRegistrarEntrega()"
+                ng-disabled="agencia.dFechaEntrega !== null">
+          Entregar
+        </button>
+        <button class="btn bg-white"
+                style="border-color: #1d5381; font-weight: 600"
+                type="button"
+                ng-click="irAtras()">
+          Atras
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

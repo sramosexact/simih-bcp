@@ -1,0 +1,303 @@
+﻿<style>
+    #seg {
+        width: 100%;
+    }
+
+    .space {
+        margin-bottom: 25px;
+    }
+
+    .cabeceraResumen {
+        background-color: #F2F6F7;
+        font-family: sans-serif;
+    }
+
+    .datosResumen {
+        font-size: 20px;
+        font-weight: bold;
+        border: 1px solid black;
+        background-color: white;
+    }
+
+        .datosResumen span {
+            vertical-align: middle;
+            text-align: center;
+        }
+
+    @media (max-width: 1200px) {
+        .tablaResponsive {
+            overflow-x: scroll;
+            width: 100%;
+        }
+    }
+
+    .colorCabecera {
+        background-color: rgba(43, 142, 68, 0.93);
+        color: #fff;
+        font-family: sans-serif;
+        font-size: 13px;
+    }
+
+    tr {
+        cursor: pointer;
+    }
+
+    .rayaAzul {
+        margin: 0px 0px;
+        border: 0.5px solid #39719E;
+    }
+
+    .coloreandoPanelHeader {
+        border-color: black;
+    }
+
+        @media (max-width: 1300px) {
+        .tablaResponsive {
+            overflow-x: scroll;
+            width: 100%;
+        }
+    }
+
+        .coloreandoPanelHeader > .panel-heading {
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+            background-color: #CED7D8;
+            border-color: black;
+        }
+
+    .tabla2 th {
+        border-color: black;
+        background-color: #CED7D8;
+        color: #080808;
+        font-family: sans-serif;
+        font-size: 13px;
+    }
+
+    tr .filter {
+        background-color: rgb(206, 215, 216);
+    }
+
+    .tabla2 td {
+        font-family: sans-serif;
+        font-size: 13px;
+        border-color: black;
+    }
+
+    .ng-table th.sortable.sort-desc, .ng-table th.sortable.sort-asc {
+        background-color: rgb(202, 211, 212);
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+        font-family: sans-serif;
+        font-weight: bold;
+        color: black;
+    }
+
+    .ng-table {
+        border-collapse: initial;
+        border: 1px solid black;
+    }
+
+        .ng-table td {
+            border-collapse: initial;
+            border: 1px solid black;
+        }
+
+    .actualizar {
+        background-color: #D9C17F;
+        color: #fff;
+        box-shadow: inset 0 0 0 1px #C7B175;
+    }
+
+        .actualizar:hover {
+            background-color: #C7B175;
+            color: #fff;
+        }
+
+        .actualizar:focus {
+            background-color: #C7B175;
+            color: #fff;
+        }
+
+    .colorRow > td {
+        border: none !important;
+    }
+
+    .TituloTableReporte > th {
+        background-color: #257840;
+        color: #fff;
+        font-family: 'Raleway', sans-serif;
+        font-size: 13px;
+    }
+
+    .contenedor-header {
+        position: relative;
+    }
+
+    .derecha {
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        margin-top: -35px;
+    }
+
+
+    hr {
+        margin: 0px 0px;
+        border: 0.5px solid #39719E;
+    }
+
+    .Pendiente {
+        background-color: #dedede;
+        border-radius: 10px;
+    }
+
+    .Recogidos {
+        background-color: #247EBA;
+        border-radius: 10px;
+    }
+
+    .Total > td {
+        background-color: #FFF7AA;
+    }
+
+    .SinMovimiento {
+        background-color: #FDB45C;
+        border-radius: 10px;
+    }
+
+    .table-hover > tbody > tr.Pendiente:hover {
+        background-color: #98B656;
+    }
+
+    .table-hover > tbody > tr.SinMovimiento:hover {
+        background-color: #F29A12;
+    }
+
+    .table-hover > tbody > tr.Recogidos:hover {
+        background-color: #2EA1ED;
+    }
+</style>
+<div class="row" id="MainDiv">
+    <h2 class="text-center">Recepci&oacute;n de bolsas</h2>
+    <br>
+
+    <!--Consulta por fecha-->
+    <div class="col-md-10 col-md-offset-1 space">
+
+        <form class="form-inline">
+            <div class="col-sm-12 col-md-4" style="margin:0px;">
+                <label for="datepickerInicio" style="margin-top: 5px; display:inline-block;">Desde: </label>
+                <input type="text" class="form-control" id="datepickerInicio" placeholder="Ingrese Fecha Inicio" readonly style="background-color: #ffffff; margin-top: 4px;">
+            </div>
+            <div class="col-sm-12 col-md-4" style="margin:0px;">
+                <label for="datepickerFin" style="margin-top: 5px; display:inline-block; margin-right:4px;">Hasta:</label>
+                <input type="text" class="form-control" id="datepickerFin" placeholder="Ingrese Fecha Fin" readonly style="background-color: #ffffff; margin-top: 4px; ">
+
+            </div>
+            <button ng-click="ObtenerReporteResumen()" class="btn btn-primary" style="margin-top: 4px; margin-left:17px">Buscar</button>
+        </form>
+    </div>
+        <br />
+        <div class="col-md-10 col-md-offset-1" ng-show="mostrarError"><span class="text-danger">No hubo recepci&oacuten de Bolsas Naranjas en este d&#237a. Seleccione otra fecha.</span></div>
+        <br />
+        <br />
+    <div class="col-md-10 col-md-offset-1 space" ng-hide="mostrarError" ng-repeat="n in objetoCanvas">
+        <hr />
+        <br />
+        <div class="col-xs-12 col-sm-3">
+            <div id="canvas-holder">
+                <canvas id="donutResumenMatch" width="10" height="10" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <div style="text-align:right;">
+                <h4><span class="label label-success">Promedio por día</span></h4>
+            </div>
+            <table class="table table-hover">
+                <tr class="Total">
+                    <td>Total Asignados</td>
+                    <td style="text-align: right">100 %</td>
+                    <td style="text-align: right">{{nroAgenciasActivas | number : 2}}</td>
+                </tr>
+                <tr>
+                    <td><span class="badge Recogidos"> </span> Con Bolsas</td>
+                    <td style="text-align: right">{{tablaResumen.conFUEs.porcentaje}} %</td>
+                    <td style ="text-align: right">{{tablaResumen.conFUEs.promedio | number : 2}}</tdstyle>
+                </tr>
+                <tr>
+                    <td><span class="badge SinMovimiento"> </span> Sin Bolsas</td>
+                    <td style="text-align: right">{{tablaResumen.sinFUEs.porcentaje}} %</td>
+                    <td style="text-align: right">{{tablaResumen.sinFUEs.promedio | number : 2}}</td>
+                </tr>
+                <tr>
+                    <td><span class="badge Pendiente"> </span> Pendientes</td>
+                    <td style="text-align: right">{{tablaResumen.pendientes.porcentaje}} %</td>
+                    <td style="text-align: right">{{tablaResumen.pendientes.promedio | number : 2}}</td>
+                </tr>
+            </table>
+            <div style="margin-top: 30px; margin-bottom:30px;">
+                <input type="button" name="name" value={{textoBotonDetalle}} class="btn btn-primary" ng-click="mostrarDetalle()" />
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-5">
+            <div class="tablaResponsive">
+                <table class="table table-hover table-striped quitarBorder" style="min-width:400px;">
+                    <thead>
+                        <tr class="TituloTableReporte">
+                            <th>Rango Horario</th>
+                            <th style="text-align:right">% de agencias</th>
+                            <th style="text-align:right">N. de agencias</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="colorRow" ng-repeat="obj in ReporteBolsasNaranjasPorFecha">
+                            <td class="border">{{obj.sArcoHorario | RecortarFecha}}</td>
+                            <td class="border" style="text-align:right">{{obj.iCantidad / numEnvio * 100 | number: 2}} %</td>
+                            <td class="border" style="text-align:right">{{obj.iCantidad / numEnvio * tablaResumen.conFUEs.promedio | number: 2 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div ng-show="detalleMostrado" class="col-xs-12 col-sm-12" style="margin-top: 10px;">
+            <div style="text-align: right; margin-top:10px; margin-bottom: 10px" class="col-xs-12 col-sm-11 col-sm-offset-1">
+                <button tname="name" class="btn btn-success" ng-click="ExportarTabla()"><span class="glyphicon glyphicon-export" /> Exportar tabla </button>
+                <button tname="name" class="btn btn-info" ng-click="ExportarTabla2()"><span class="glyphicon glyphicon-export" /> Exportar detalle </button>
+            </div>
+
+            <div style="text-align: right; margin-top:10px; margin-bottom: 10px" class="col-xs-12 col-sm-11 col-sm-offset-1">
+                
+            </div>
+            <hr />
+        </div>
+
+        <div ng-show="detalleMostrado" class="col-xs-12">
+            <div class="col-xs-12 col-md-offset-1 col-md-10 table-responsive" style="margin-top: 30px;">
+                <table class="table table-bordered tabla2" ng-table="tableParams">
+                    <tr ng-repeat="obj in $data" ng-class="mostrarColorFila(obj.estadoFUEs)">
+                        <td data-title="'C&#243digo'" filter="{sId: 'number'}" sortable="'sId'">{{obj.sId}}</td>
+                        <td data-title="'Agencia'" filter="{sDescripcion: 'text'}" sortable="'sDescripcion'">{{obj.sDescripcion}}</td>
+                        <!--<td style="width:150px;" data-title="'Inform&oacute FUEs'" filter="{sDeclaro: 'text'}" sortable="'sDeclaro'">{{obj.sDeclaro}}</td>-->
+                        <td data-title="'Con FUEs'" filter="{estadoFUEs: 'text'}" sortable="'estadoFUEs'">{{obj.estadoFUEs}}</td>
+                        <td style="width:100px;" data-title="'Cantidad'" filter="{cantidad: 'number'}" sortable="'cantidad'">{{obj.cantidad}}</td>
+                        <!--<td data-title="'Fecha Recepci&#243n'" filter="{dFechaRecepcion: 'date'}" sortable="'dFechaRecepcion'">{{obj.dFechaRecepcion| date:"dd/MM/yyyy HH:mm:ss"}}</td>
+                        <td data-title="'Fecha Recorrido'" filter="{dFechaRecorrido: 'date'}" sortable="'dFechaRecorrido'">{{obj.dFechaRecorrido| date:"dd/MM/yyyy HH:mm:ss"}}</td>-->
+                        <td data-title="'Fecha Registro'" filter="{dFecha: 'date'}" sortable="'dFecha'">{{obj.dFecha| date:"dd/MM/yyyy"}}</td>
+                        <td data-title="'Hora Entrega'" filter="{dFechaEntrega: 'date'}" sortable="'dFechaEntrega'">{{obj.dFechaEntrega | date:"HH:mm:ss"}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
+
+<script type="text/javascript">
+    $(function () {
+        $(".datepicker-control").datepicker({ dateFormat: 'dd-mm-yy' });
+
+
+    });
+</script>

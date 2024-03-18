@@ -1,0 +1,32 @@
+<style>
+  .modal-header-blue {
+    background-color: rgb(0, 72, 133);
+    color: rgb(255,255,255);
+  }
+
+  .modal-footer-gray {
+    background-color: rgb(151, 149, 154);
+  }
+</style>
+
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <div class="modal-content">
+
+      <div class="modal-header modal-header-blue">
+        <h2 class="modal-title">Agencia : {{ agencia.sIdAgencia }} -  {{ agencia.sAgencia }}</h2>
+      </div>
+      <div class="modal-body">
+
+        <campos-dinamicos campos="camposDinamicos" modelo="agencia"></campos-dinamicos>
+
+      </div>
+      <div class="modal-footer modal-footer-gray">
+        <button class="btn btn-danger" ng-click="atras()">Atras</button>
+        <button class="btn btn-success" ng-click="recepcionar()">Recepcionar</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+</div>

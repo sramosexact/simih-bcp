@@ -1,0 +1,111 @@
+<style>
+    .grid {
+        width: 100%;
+        height: 50vh;
+    }
+</style>
+
+<section class="section-container">
+    <div class="section-header">
+        <span class="glyphicon glyphicon-tag glyphicon-style-section-header "></span>
+        Reporte de documentos hacia agencias
+    </div>
+
+    <div class="section-content">
+        <div class="panel panel-info pmb">
+
+
+            <div class="panel-body">
+
+                <div class="form-group">
+
+
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h4 class="tituloHistorico" style="font-family:'Flexo-Italic';">Seleccione el tipo de agencias</h4>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <select class="form-control" ng-change="seleccionarTipoAgencia()" ng-model="tipo.tipoId">
+                            <option ng-selected="tipo==item" ng-repeat="item in tiposAgencia" ng-value="item.tipoId">{{item.tipoNombre}}</option>
+                        </select>
+                    </div>
+
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h4 class="tituloHistorico" style="font-family:'Flexo-Italic';">Indicar el rango de fecha</h4>
+                    </div>
+
+                    <div class="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <input type="text" class="form-control" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="Desde" bs-datepicker>
+                    </div>
+                    <div class="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                        <input type="text" class="form-control" ng-model="untilDate" data-min-date="{{fromDate}}" placeholder="Hasta" bs-datepicker>
+                    </div>
+
+                    <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <button class="btn button-samay-orange" ng-disabled="tipo===nothing" ng-click="generarReporteDocumentosHaciaAgencias()"><span class="mostrarIndicadores">Buscar </span><span class="glyphicon glyphicon-search"></span></button>
+                        <button class="btn button-samay-green" ng-disabled="gridReporteDocumentosHaciaAgencias.data.length===0" ng-click="exportarReporte()"><span class="mostrarIndicadores">Exportar </span><span class="glyphicon glyphicon-export"></span></button>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-separacion">
+
+                        <div ui-grid="gridReporteDocumentosHaciaAgencias" class="grid"
+                             ui-grid-pagination
+                             ui-grid-move-columns
+                             ui-grid-cellnav
+                             ui-grid-expandable                             
+                             ui-grid-resize-columns>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script type="text/ng-template" id="modalTracking.html">
+
+        <div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-seguimiento-header">
+                        <span class="glyphicon glyphicon-random glyphicon-style" aria-hidden="true"></span>
+                        Seguimiento de la correspondencia
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-section-title">
+                            Correspondencia : {{Autogenerado}}
+                        </div>
+                        <div class="modal-section-content">
+                            <div ng-repeat="x in dataSeguimiento" class="modal-item-seguimiento">
+                                <div class="item-seguimiento-body">
+                                    <span class="glyphicon glyphicon-th glyphicon-color-samay-cian"></span>
+                                    {{x.Descripcion}}
+                                </div>
+                                <span class="item-seguimiento-footer">
+                                    {{x.fechaTrack}}
+                                </span>
+                                <span class="item-seguimiento-footer">
+                                    {{x.Observacion}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer-tracking modal-seguimiento-footer">
+                        <button class="btn button-samay-green" ng-click="$hide()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+
+
+</section>

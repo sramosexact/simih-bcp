@@ -1,0 +1,53 @@
+
+.jumbotron 
+	padding 30px 15px
+	margin-bottom 30px
+	color inherit
+	background-color #FFF
+	text-align center
+	
+vendor-prefixes = o ms moz webkit official
+
+
+gris_oscuro = #333333
+gris_claro = #818181
+gris_mas_claro = #F0F0F0
+rojo = #B00000
+
+.line
+	.min
+	.max
+		font-size .8em
+	.total
+		background gris_claro
+		height 5px
+		width 75%
+		margin 0 auto
+	.rep
+		background rojo
+		height 5px
+		width 30%
+		position relative
+		-webkit-animation 10s reproduccion infinite linear
+	.circle
+		background black
+		border-radius 50%
+		height 10px
+		position absolute
+		right 0
+		top -2px
+		width 10px
+		-webkit-animation 1s circle infinite
+
+@keyframes reproduccion
+	0%
+		width 0
+	100%
+		width 100%
+
+@keyframes circle
+	0%
+		transform scale(1)
+	100%
+		transform scale(2)
+		opacity 0

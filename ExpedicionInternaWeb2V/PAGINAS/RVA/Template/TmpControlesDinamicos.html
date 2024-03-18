@@ -1,0 +1,69 @@
+﻿<style type="text/css">
+  .label-style {
+    border: none;
+  }
+
+  .group-style {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .row-style {
+    padding-top: 3px;
+  }
+
+    .fade.in {
+        opacity: 1;
+    }
+
+    .modal.in .modal-dialog {
+        -webkit-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .modal-backdrop.in {
+        filter: alpha(opacity=50);
+        opacity: .5;
+    }
+    .mi-clase-checkbox {
+        height: 30px;
+        width:30px;
+    }
+
+</style>
+
+<div class="form-group group-style" ng-repeat="campo in campos">
+  <div class="row row-style">
+    <div class="col-md-6">
+      <label class="form-control form-inline label-style">
+        {{campo.titulo}} :
+      </label>
+    </div>
+    <div class="col-md-6 text-left">
+        <input ng-if="campo.tipoCampo === 1"
+               type="text"
+               class="form-control form-inline "
+               ng-model="modelo[campo.campo]"
+               only-numbers
+               maxlength="15"
+               ng-disabled="yaRegistrado || !huboRecojo" />
+
+        <input ng-if="campo.tipoCampo === 2"
+               type="text"
+               class="form-control form-inline "
+               ng-model="modelo[campo.campo]"
+               maxlength="15"
+               ng-disabled="yaRegistrado || (modelo[campo.campo] === 'comprobanteServicio' && !huboRecojo)" />
+
+        <input ng-if="campo.tipoCampo === 3"
+               type="checkbox"
+               class="checkbox-inline mi-clase-checkbox"               
+               ng-model="modelo[campo.campo]"   
+               ng-change="cambioCheckbox(campo)"
+               ng-true-value="'1'"
+               ng-false-value="'0'"
+                />
+    </div>    
+  </div>
+</div>

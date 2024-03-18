@@ -1,0 +1,105 @@
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .contenedor {
+    height: 87vh;
+    max-width: 600px;
+    min-width: 340px;
+  }
+
+  .container-agencias {
+    border-color: #809eff !important;
+    height: 90%;
+  }
+
+  .color-button {
+    background: #1d5381;
+  }
+
+  .text-decoration-none:hover {
+    text-decoration: none;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+    .form-check-input {
+        width: 20px;
+        height: 20px;
+        
+    }
+
+    .form-check-label {
+        margin-right: 10px;
+    }
+</style>
+
+<p></p>
+<div class="container-fluid contenedor" style="font-family: 'Flexo-Regular'">
+    <div class="section-header">
+        <i class="fa fa-shopping-bag glyphicon-th-list glyphicon-style-section-header "></i>
+        Recojo de Agencia
+    </div>
+    
+    <p></p>
+    <div class="container-agencias border rounded p-3">
+        <div class="mx-auto rounded text-center font-weight-bold d-flex flex-column justify-content-center text-white mb-3"
+             style="height: 18%; background: #002D74; width: 100% ">
+            <p><span class="texto-global-regular">Agencia: </span><span class="texto-global-regular ">{{agencia.sAgencia}}</span></p>
+
+            <p class="m-0 texto-global-regular"><span>C&oacute;digo:</span> <span class="texto-global-regular">{{agencia.sIdAgencia}}</span></p>
+
+        </div>
+        <form>
+            <div class="d-flex flex-column p-2" style="height: 82%">
+                <p class="m-0 texto-global-cursiva">&#9679; Informaci&oacute;n por registrar</p>
+                <campos-dinamicos campos="camposDinamicos"
+                                  modelo="agencia"
+                                  ya-registrado="verificarSiYaRecogio()"
+                                  hubo-recojo="huboRecojo"
+                                  class="mb-4 texto-global-cursiva""></campos-dinamicos>
+                <div class="form-check mb-4" style="display: flex; align-items: center;">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           ng-model="huboRecojo"
+                           id="checkRecojo"
+                           ng-disabled="verificarSiYaRecogio()"
+                           ng-change="onCambioRecojo()" /> 
+                    <label class="form-check-label texto-global-cursiva" for="checkRecojo">
+                        Hubo Recojo
+                    </label>
+                </div>
+                <div class="form-group mb-4">
+                    <label class="mb-3 texto-global-cursiva" for="txtAreaObservacion">
+                        &#9679; Observaci&oacute;n proveedor (opcional)
+                    </label>
+                    <textarea class="form-control rounded-0 border-left-0 border-right-0"
+                              style="resize: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 10px; color: #333; font-size: 16px; height: 40px; "
+                              id="txtAreaObservacion"
+                              rows="2"
+                              ng-model="agencia.sObservacionProveedor"
+                              ng-disabled="verificarSiYaRecogio() || !huboRecojo"></textarea>
+                </div>
+                <div class="d-flex justify-content-around w-75 mx-auto mt-3">
+                    <button class="btn button-samay-orange"                           
+                            type="button"
+                            ng-click="modalRegistrar()"
+                            ng-hide="verificarSiYaRecogio()"
+                            ng-disabled="camposIncompletos">
+                        {{btnRecogerVisitar}}
+                    </button>
+                    <button class="btn button-samay-cian"                            
+                            type="button"
+                            ng-click="irAtras()">
+                        Atras
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+﻿<style>
+    CajaComponentes {
+        width: auto;
+        position: relative;
+    }
+
+    .fecha-style {
+        /*margin-top: 5px;
+        margin-right: 30px;
+        color: blue;*/
+        background-color: #ffffff;
+    }
+
+    .label-style {
+        border: none !important;
+        box-shadow: none;
+    }
+
+    .group-style {
+        border-bottom-style: solid;
+        border-width: 1px;
+        border-color: #ded4d4;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .row-style {
+        padding-top: 3px;
+    }
+
+    .datepicker-control {
+        color: black;
+    }
+
+    .modal-header-blue {
+        background-color: rgb(0, 72, 133);
+        color: rgb(255,255,255);
+    }
+
+    .modal-footer-gray {
+        background-color: rgb(151, 149, 154);
+    }
+
+    .fade.in {
+        opacity: 1;
+    }
+
+    .modal.in .modal-dialog {
+        -webkit-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .modal-backdrop.in {
+        filter: alpha(opacity=50);
+        opacity: .5;
+    }
+
+</style>
+<div>
+    <div class="modal-header modal-header-blue">
+        <h3 class="modal-title">{{tituloModificacion}}</h3>
+    </div>
+    <form data-toggle="validator" role="form" style="padding : 2px 10px;">
+        <div class="form-group">
+
+            <div class="form-group group-style">
+                <div class="row row-style">
+                    <div class="col-lg-6">
+                        <label for="agencia" class="form-control form-inline label-style">Agencia : </label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control form-inline" ng-model="AgenciaSeleccionada.sAgencia" disabled name="agencia" />
+                    </div>
+                    <!--<div class="col-lg-1"></div>-->
+                </div>
+            </div>
+
+
+            <div class="form-group group-style">
+                <div class="row row-style">
+                    <div class="col-md-6">
+                        <label for="fechaRegistro" class="form-control form-inline label-style">Fecha y Hora de recojo : </label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control form-inline fecha-style datepicker-control" ng-model="fechaRegistro" name="fechaRegistro" placeholder="Ingrese Fecha" id="dpFechaRegistro" readonly />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="time" class="form-control form-inline " ng-model="horaMinutoRegistro" />
+                    </div>
+                    <!--<div class="col-md-1"></div>-->
+                </div>
+            </div>
+
+            <div class="form-group group-style">
+                <div class="row row-style">
+                    <div class="col-md-6">
+                        <label for="fechaRecepcion" class="form-control form-inline label-style">Fecha y Hora de recepción : </label>
+                    </div>
+                    <div class="col-md-3" ng-disabled="true">
+                        <input type="text" class="form-control form-inline fecha-style datepicker-control" ng-model="fechaRecepcion" ng-disabled="true" name="fechaRecepcion" placeholder="Ingrese Fecha" id="dpFechaRecepcion" readonly ng-disabled="habilitarTipoAgencia" />
+                    </div>
+                    <div class="col-md-3" ng-disabled="true" >
+                        <input type="time" class="form-control form-inline " ng-model="horaMinutoRecepcion" ng-disabled="true"  />
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+
+            <campos-dinamicos campos="camposDinamicos" modelo="AgenciaSeleccionada"></campos-dinamicos>
+
+            <div class="form-group group-style">
+                <div class="row row-style">
+                    <div class="col-lg-4">
+                        <label for="observacion" class="form-control form-inline label-style">Observacion : </label>
+                    </div>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control form-inline" ng-model="AgenciaSeleccionada.sObservacion" name="observacion" />
+                    </div>
+                    <!--<div class="col-lg-1"></div>-->
+                </div>
+            </div>
+            
+        </div>
+    </form>
+    <div class="modal-footer modal-footer-gray">
+        <button type="submit" class="btn btn-primary" ng-click="guardarCambios()">{{nombreBotonModificar}}</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+    </div>
+
+
+</div>
+<script type="text/javascript">
+    $(function () {
+        $(".datepicker-control").datepicker({ dateFormat: 'dd-mm-yy' });
+       
+        
+    });
+
+
+
+</script>

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Flexo-Thin';
+    src: local('Flexo Thin'), local('Flexo-Thin'),
+        url('Flexo-Thin.woff2') format('woff2'),
+        url('Flexo-Thin.woff') format('woff'),
+        url('Flexo-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+  }

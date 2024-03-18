@@ -1,0 +1,69 @@
+<style>
+    .grid {
+        width: 100%;
+        height: 50vh;
+    }
+</style>
+
+<section class="section-container">
+    <div class="section-header">
+        <span class="glyphicon glyphicon-tag glyphicon-style-section-header "></span>
+        B&uacute;squeda por matr&iacute;cula
+    </div>
+
+    <div class="section-content">
+        <div class="panel panel-info pmb" style="height:100%">
+
+            <div class="panel-body" style="height:100%">
+                <div class="form-group" style="height:100%">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h4 class="tituloHistorico" style="font-family:'Flexo-Italic';">Ingrese matr&iacute;cula del usuario</h4>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <input type="text" class="form-control" ng-model="matricula" ng-change="buscarBandejas()" placeholder="Nombre o matr&iacute;cula">
+                    </div>
+
+
+                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <h4 class="tituloHistorico" style="font-family:'Flexo-Italic';">Indicar el rango de fecha</h4>
+                        </div>
+
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <input type="text" class="form-control" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="Desde" bs-datepicker>
+                        </div>
+
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                            <input type="text" class="form-control" ng-model="untilDate" data-min-date="{{fromDate}}" placeholder="Hasta" bs-datepicker>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <button class="btn button-samay-orange" ng-disabled="matricula===nothing||matricula.length<6" ng-click="generarReportePorMatricula()"><span class="mostrarIndicadores">Buscar </span><span class="glyphicon glyphicon-search"></span></button>
+                            <button class="btn button-samay-green" ng-disabled="gridReportePorMatricula.data.length===0" ng-click="exportarReporte()"><span class="mostrarIndicadores">Exportar </span><span class="glyphicon glyphicon-export"></span></button>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-separacion">
+
+                        <div ui-grid="gridReportePorMatricula" class="grid"
+                             ui-grid-pagination
+                             ui-grid-move-columns
+                             ui-grid-cellnav
+                             ui-grid-expandable                             
+                             ui-grid-resize-columns>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</section>

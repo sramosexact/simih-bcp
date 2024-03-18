@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Flexo-Italic';
+    src: local('Flexo Italic'), local('Flexo-Italic'),
+        url('Flexo-It.woff2') format('woff2'),
+        url('Flexo-It.woff') format('woff'),
+        url('Flexo-It.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }

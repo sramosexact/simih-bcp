@@ -1,0 +1,225 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ExpedicionInternaPC.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Look" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Basic</Value>
+    </Setting>
+    <Setting Name="UsuarioRecordar" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UsuarioIdCliente" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="UsuarioModoValidacion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="UsuarioCodigo" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UsuarioPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExistePDA" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="grvLote_colLote_Visible" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RutaImpresoraZebra" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExisteDPM" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="TamAutogenerado" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="TamCodAgencia" Type="System.String" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="AgenciaWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">AgenciaWS.asmx/</Value>
+    </Setting>
+    <Setting Name="CampoDigitalizacionWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CampoDigitalizacionWS.asmx/</Value>
+    </Setting>
+    <Setting Name="CampoExternoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CampoExternoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="CampoTipoDocumentoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CampoTipoDocumentoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="CasillaWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CasillaWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ColaboradorWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ColaboradorWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ConfiguracionWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ConfiguracionWS.asmx/</Value>
+    </Setting>
+    <Setting Name="CuboWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CuboWS.asmx/</Value>
+    </Setting>
+    <Setting Name="DocumentoExternoCargaWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DocumentoExternoCargaWS.asmx/</Value>
+    </Setting>
+    <Setting Name="DocumentoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DocumentoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="EntregaWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EntregaWS.asmx/</Value>
+    </Setting>
+    <Setting Name="EstadoVerificacionWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">EstadoVerificacionWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ExpedicionWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ExpedicionWS.asmx/</Value>
+    </Setting>
+    <Setting Name="FeriadoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FeriadoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="GeoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GeoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="IndicadoresWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">IndicadoresWS.asmx/</Value>
+    </Setting>
+    <Setting Name="MensajeriaWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MensajeriaWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ModuloCreacionWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ModuloCreacionWS.asmx/</Value>
+    </Setting>
+    <Setting Name="MonedaWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MonedaWS.asmx/</Value>
+    </Setting>
+    <Setting Name="MotivoCambioEstadoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MotivoCambioEstadoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ObjetoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ObjetoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="OperarioWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OperarioWS.asmx/</Value>
+    </Setting>
+    <Setting Name="PalomarWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PalomarWS.asmx/</Value>
+    </Setting>
+    <Setting Name="PlantillaGeneralWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PlantillaGeneralWS.asmx/</Value>
+    </Setting>
+    <Setting Name="PlantillaWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PlantillaWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ReclamoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ReclamoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="SeguridadWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SeguridadWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ServicioWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ServicioWS.asmx/</Value>
+    </Setting>
+    <Setting Name="SIMServerWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SIMServerWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TipoCorrespondenciaWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TipoCorrespondenciaWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TipoDocumentoExternoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TipoDocumentoExternoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TipoDocumentoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TipoDocumentoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TipoExpedicionWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TipoExpedicionWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TipoFeriadoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TipoFeriadoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TipoReclamoUTDWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TipoReclamoUTDWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TipoResponsableWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TipoResponsableWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TipoUsuarioWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TipoUsuarioWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TurnoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TurnoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="UsuarioFacWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">UsuarioFacWS.asmx/</Value>
+    </Setting>
+    <Setting Name="UsuarioWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">UsuarioWS.asmx/</Value>
+    </Setting>
+    <Setting Name="PublicWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PublicWS.asmx/</Value>
+    </Setting>
+    <Setting Name="AuthWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Auth.asmx/</Value>
+    </Setting>
+    <Setting Name="PF_TodoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PF_Todo.asmx/</Value>
+    </Setting>
+    <Setting Name="RegistroWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">RegistroWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ReporteRVAWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ReporteWS.asmx/</Value>
+    </Setting>
+    <Setting Name="IndicadorANSWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">IndicadorANSWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TipoReclamoJefeWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TipoReclamoJefeWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ReportePeriodoWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ReportePeriodoWS.asmx/</Value>
+    </Setting>
+    <Setting Name="TipoReclamoUsuarioWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TipoReclamoUsuarioWS.asmx/</Value>
+    </Setting>
+    <Setting Name="SeguridadAzureWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SeguridadAzureWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ExisteDMA" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="PageSize" Type="System.String" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="AsistenciaWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">AsistenciaWS.asmx/</Value>
+    </Setting>
+    <Setting Name="RecorridoPisosWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">RecorridoPisosWS.asmx/</Value>
+    </Setting>
+    <Setting Name="ClientId" Type="System.String" Scope="User">
+      <Value Profile="(Default)">57b3789e-9a55-4324-b028-f4460c70f468</Value>
+    </Setting>
+    <Setting Name="Tenant" Type="System.String" Scope="User">
+      <Value Profile="(Default)">f26a3bc4-1409-43a2-ac2f-34ec8395d7ec</Value>
+    </Setting>
+    <Setting Name="scopes" Type="System.String" Scope="User">
+      <Value Profile="(Default)">api://57b3789e-9a55-4324-b028-f4460c70f468/user_impersonation</Value>
+    </Setting>
+    <Setting Name="MinutosInactivo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="ApplicationThemeName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Basic</Value>
+    </Setting>
+    <Setting Name="rutaWS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://localhost:44342/ws/</Value>
+    </Setting>
+    <Setting Name="autoajuste" Type="System.String" Scope="User">
+      <Value Profile="(Default)">true</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,285 @@
+﻿<style type="text/css">
+    .titulo {
+        text-align: center;
+        height: 100px;
+    }
+
+        .titulo h2 {
+            font-size: 40px;
+            font-family: sans-serif;
+            color: black;
+            text-shadow: 1px 1px #343437;
+        }
+
+    .entrada {
+        margin-top: 5px;
+    }
+
+    .lblFecha {
+        margin-right: 30px;
+    }
+
+    .lblCodAgencia {
+        margin-right: 30px;
+    }
+
+    .entradas {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #809EFF;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: #FFFFFF;
+    }
+
+    #idFecha {
+        margin-right: 15px;
+    }
+
+    .iniciar {
+        background-color: rgba(18, 169, 5, 0.8);
+        border-color: rgba(18, 169, 5, 0.8);
+        color: white;
+        font-weight: bold;
+    }
+
+        .iniciar:focus {
+            background-color: rgba(18, 169, 5, 1);
+            border-color: rgba(18, 169, 5, 1);
+            color: white;
+            font-weight: bold;
+        }
+
+        .iniciar:hover {
+            background-color: rgba(18, 169, 5, 1);
+            border-color: rgba(18, 169, 5, 1);
+            color: white;
+            font-weight: bold;
+        }
+
+    .terminar {
+        background-color: rgba(233, 5, 5, 0.5);
+        border-color: rgba(233, 5, 5, 0.5);
+        color: white;
+        font-weight: bold;
+    }
+
+        .terminar:focus {
+            background-color: rgba(233, 5, 5, 0.7);
+            border-color: rgba(233, 5, 5, 0.7);
+            color: white;
+            font-weight: bold;
+        }
+
+        .terminar:hover {
+            background-color: rgba(233, 5, 5, 0.7);
+            border-color: rgba(233, 5, 5, 0.7);
+            color: white;
+            font-weight: bold;
+        }
+
+    .verde {
+        background-color: rgba(18, 169, 5,0.5);
+    }
+
+    .rojo {
+        background-color: rgba(255, 100, 100, 0.5);
+    }
+
+    .amarillo {
+        background-color: yellow;
+    }
+
+    .azul {
+        background-color: rgba(0, 124, 233, 0.4);
+    }
+
+    .blanco {
+        background-color: #ffffff;
+    }
+
+    .indicador-rojo {
+        font-size: 23px;
+        color: #EE5151;
+        text-align: center;
+    }
+
+    .indicador-ambar {
+        font-size: 23px;
+        color: #FFA500;
+        text-align: center;
+    }
+
+    .indicador-verde {
+        font-size: 23px;
+        color: #5cb85c;
+        text-align: center;
+    }
+
+    .indicador-blanco {
+        font-size: 23px;
+        color: #ADD8E6;
+        text-align: center;
+    }
+
+    thead {
+        /*background-color: rgba(92,122,126,0.3);*/
+        background-color: rgb(0,72,133);
+        color: #FFF;
+    }
+
+    .CajaComponentes {
+        width: auto;
+        position: relative;
+    }
+
+    .cajaExportar {
+        width: auto;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: -35px;
+    }
+
+    .cajaActualizar {
+        width: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-left: -100px;
+    }
+
+    .actualizar {
+        background-color: #D9C17F;
+        color: #fff;
+        box-shadow: inset 0 0 0 1px #C7B175;
+    }
+
+        .actualizar:hover {
+            background-color: #C7B175;
+            color: #fff;
+        }
+
+        .actualizar:focus {
+            background-color: #C7B175;
+            color: #fff;
+        }
+
+    .btnReprogramacion {
+        background-color: #;
+    }
+
+    .radio {
+        padding: 5px 5px 5px 5px;
+    }
+
+        .radio:hover {
+            background-color: rgb(120, 243, 183);
+            border-radius: 5px;
+        }
+
+    .ui-grid-row .ui-grid-cell {
+        background-color: inherit !important;
+    }
+
+    .header-grid-color {
+        font-size: 0.8em;
+        /*color: #030303;*/
+        /*background: linear-gradient(to bottom, rgba(180, 215, 235, 1), white);*/
+        /*background-color: rgb(17,97,164);
+        color: rgb(180,215,235);*/
+    }
+
+    .row-style {
+        font-size: 0.8em;
+    }
+
+    .row-button-style {
+        text-align: center;
+    }
+
+    .button-grid-style {
+        padding: 2px 12px;
+    }
+
+    .grid-border {
+        border-color: #809EFF;
+    }
+
+    .indicador-align {
+        font-size: 23px;
+        text-align: center;
+    }
+
+    .grid {
+        width: 100%;
+        border-color: #809EFF !important;
+        border-radius: 4px;
+        border: solid;
+        border-width: 1px;
+        padding: 0px;
+    }
+
+    .alinear-tabla {
+        margin-top: 10px;
+        padding: 0px;
+        margin-right: 0px;
+    }
+
+    .form-inline-block {
+        display: inline-block;
+    }
+
+    .rigth-element {
+        float: right;
+    }
+</style>
+<p></p>
+<div class="row container-fluid">
+
+    <div class="entradas col-md-12 col-xs-12">
+
+        <div class="CajaComponentes">
+            <h2>Mantenimiento de Usuarios</h2>
+            <hr />
+        </div>
+
+        <div class="CajaComponentes">
+            <div class="form-inline form-inline-block">
+
+                <input type="button" class="btn btn-primary" ng-click="nuevoUsuario()" name="nuevoUsuario" value="Nuevo Usuario" id="btnNuevo">
+
+            </div>
+            <div class="form-inline form-inline-block rigth-element">
+                <input type="button" value="Import Data" class="btn btn-success"
+                       ng-click="cargarUsuarios()" />
+            </div>
+            <div class="form-inline form-inline-block rigth-element">
+                <div class="input-group">
+                    <label class="input-group-btn">
+                        <span class="btn btn-primary">Selecciona el archivo</span>
+                        <input type="file" name="file" style="display:none;" multiple         
+                               id="txtFile"
+                               onchange="angular.element(this).scope().loadFile(this.files)"
+                               />
+                    </label>
+                    <input type="text" readonly class="form-control"                            
+                           ng-model="nombreArchivo">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-12 alinear-tabla">
+        <div class="grid" ui-grid="gridUsuario"
+             ui-grid-pagination
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-auto-resize
+             ui-grid-resize-columns>
+        </div>
+    </div>
+
+</div>

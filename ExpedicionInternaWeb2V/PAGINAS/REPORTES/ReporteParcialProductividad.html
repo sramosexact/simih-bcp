@@ -1,0 +1,246 @@
+﻿<h1 class="page-header2" style="margin-top: -43px;"><span class="glyphicon-pag glyphicon-th-list"></span>Reporte de Productividad Parcial</h1>
+<style type="text/css">
+    .text-danger {
+        color: #eca6a6;
+    }
+
+    .text-warning {
+        color: #eeefaa;
+    }
+
+    .btn-file {
+        position: relative;
+        overflow: hidden;
+        display: none;
+        background: white;
+    }
+
+    .ui-grid {
+        border: 1px solid #FFFFFF;
+        border-top: 0px;
+        /* box-sizing: content-box; */
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+        height: 290px;
+    }
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        color: #555;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+        cursor: default;
+        border-top: 2px solid rgb(228, 9, 9);
+    }
+
+    .nav-tabs > li > a {
+        margin-right: 2px;
+        line-height: 1.42857143;
+        border: 1px solid transparent;
+        border-radius: 0px 0px 0 0;
+    }
+
+    .ui-grid-header {
+        box-sizing: content-box;
+    }
+
+    .ui-grid-header-cell-wrapper {
+        position: relative;
+        display: table;
+        box-sizing: border-box;
+        height: 100%;
+        background-color: white;
+        color: rgb(58, 62, 62);
+    }
+
+    .ui-grid-pager-control .first-triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 8.7px 5px 0;
+        border-color: transparent #00B7F9 transparent transparent;
+        margin-left: 2px;
+    }
+
+    .ui-grid-pager-control .last-triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 8.7px;
+        border-color: transparent transparent transparent #00B7F9;
+        margin-left: -1px;
+    }
+
+    .ui-grid-pager-control button {
+        height: 25px;
+        min-width: 26px;
+        background-color: white;
+        border: 0;
+    }
+
+    .ui-grid-row:nth-child(even) .ui-grid-cell {
+        background-color: #FFFFFF;
+    }
+
+    .ui-grid-header-cell:last-child .ui-grid-column-resizer.right {
+        /* border-right: 1px solid #d4d4d4; */
+    }
+
+    .glyphicon-boton {
+        position: relative;
+        top: 4px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        color: #FFFFFF;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .tabs {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        /* background-color: rgb(246, 246, 246); */
+        margin-bottom: -1px;
+    }
+
+        .tabs li {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+            background: #FAFAFA;
+            color: #999;
+            margin: 0px -1px;
+            font-size: 15px;
+        }
+
+            .tabs li:hover {
+                background: #fff;
+                color: #000;
+            }
+
+            .tabs li.active {
+                color: #000;
+                background: #FFFFFF;
+                cursor: pointer;
+                border-top: 2px solid rgb(189, 42, 118);
+                border-radius: 1px;
+            }
+
+            .tabs li.active-salida {
+                color: #000;
+                background: #FFFFFF;
+                cursor: pointer;
+                border-top: 2px solid rgb(96, 169, 23);
+                border-radius: 1px;
+            }
+
+            .tabs li:first-child {
+                margin-left: 0px;
+            }
+
+    .tabs-data {
+        background: #FFFFFF;
+        padding: 15px;
+        border-top: 1px solid rgb(238, 238, 238);
+    }
+
+        .tabs-data h1 {
+            font-size: 1.6em;
+        }
+
+    .glyphicon-tab {
+        position: relative;
+        top: 2px;
+        left: -1px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        COLOR: #00b7f9;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .btn-block2 {
+        display: block;
+        width: 16%;
+    }
+
+    .gridhistorico {
+        width: 99%;
+        height: 450px
+    }
+
+    .inputstl {
+        padding: 9px;
+        border: solid 1px #173955;
+        outline: 0;
+        background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #AACCE8), to(#FFFFFF));
+        background: -moz-linear-gradient(top, #FFFFFF, #AACCE8 1px, #FFFFFF 25px);
+        box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+        -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+        -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    }
+</style>
+
+
+<div class="campoEnvio">
+    <h3 style="margin-left: 20px;">Indicar el rango de Fecha</h3>
+    <div class="row">
+
+        <!--**************************************************************-->
+        <form name="datepickerForm" class="form-group" role="form" style="margin-left: 20px;">
+
+            <!--<div class="form-group">-->
+            <div class="row">
+                <div class="col-md-2">
+                    <input type="text" class="form-control" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="Desde" bs-datepicker>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" ng-model="untilDate" data-min-date="{{fromDate}}" placeholder="Hasta" bs-datepicker>
+                </div>
+                <div class="col-md-1">
+                    <input type="button" class="btn btn-primary" value="Buscar" ng-click="reporteProductividadParcial()" />
+                </div>
+                <div class="col-md-1">
+                    <input type="button" class="btn btn-success " value="Exportar" ng-click="exportar()" />
+                </div>
+
+                <div class="col-md-2">
+                    <input type="file" accept=".xls,.xlsx" name="cargararchivo" id="cargararchivo" import-sheet-js="" multiple="false" ng-model="archivo" onchange="angular.element(this).scope().fileNameChanged(this)" required>
+                </div>
+                
+                <div class="col-md-1">
+                    <input type="button" class="btn btn-info " value="Importar" ng-click="manejarEventoImportarReporte()" />
+                </div>
+
+            </div>
+            <!--</div>-->
+        </form>
+        <!--**************************************************************-->
+
+    </div>
+    <div class="row" style="margin-top: 50px;">
+
+
+        <div ui-grid="gridReporteParcial" ui-grid-pagination class="gridhistorico"
+             ui-grid-move-columns
+             ui-grid-cellnav
+             ui-grid-resize-columns>
+        </div>
+
+    </div>
+
+</div>
+

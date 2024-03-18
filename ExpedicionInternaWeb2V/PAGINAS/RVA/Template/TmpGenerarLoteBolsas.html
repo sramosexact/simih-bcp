@@ -1,0 +1,83 @@
+﻿<style>
+
+    .label-style {
+        border: none !important;
+        box-shadow: none;
+    }
+
+    .group-style {
+
+        /*border-bottom-style: solid;
+        border-width: 1px;
+        border-color: #ded4d4;*/
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .row-style {
+        padding-top: 3px;
+    }
+
+    .fade.in {
+        opacity: 1;
+    }
+
+    .modal.in .modal-dialog {
+        -webkit-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .modal-backdrop.in {
+        filter: alpha(opacity=50);
+        opacity: .5;
+    }
+    
+</style>
+<div class="modal-content">
+    <div class="modal-header">
+
+        <h3 class="modal-title">Generar Lote</h3>
+    </div>
+    <div class="modal-body">
+
+        <div class="form-group group-style">
+            <div class="row row-style">
+                <div class="col-lg-5">
+                    <label for="codigoLote" class="form-control form-inline label-style">Código de lote : </label>
+                </div>
+                <div class="col-lg-7">
+                    <input type="text"
+                           name="codigoLote"
+                           class="form-control form-inline" 
+                           maxlength="20"
+                           ng-model="codigoLote" 
+                           ng-change="codigoLote=codigoLote.toUpperCase()"  />
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group group-style">
+            <div class="row row-style">
+                <div class="col-lg-5">
+                    <label for="observacion" class="form-control form-inline label-style">Observación : </label>
+                </div>
+                <div class="col-lg-7">
+                    <input type="text" 
+                           name="observacion"
+                           class="form-control form-inline" 
+                           maxlength="20"
+                           ng-model="observacion" 
+                           ng-change="observacion=observacion.toUpperCase()"  />
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-click="crearLote()">Aceptar</button>
+        <button class="btn btn-danger" ng-click="cancelar()">Cancelar</button>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .contenedor {
+    height: 87vh;
+    max-width: 600px;
+    min-width: 340px;
+  }
+
+  .container-agencias {
+    border-color: #809eff !important;
+    height: 90%;
+  }
+
+  .color-button {
+    background: #1d5381;
+  }
+
+  .text-decoration-none:hover {
+    text-decoration: none;
+  }
+</style>
+
+<p></p>
+<div class="container-fluid contenedor">
+  <h3 >Entrega a Agencia</h3>
+  <hr />
+  <div class="container-agencias border rounded bg-white p-3">
+    <div class="text-center font-weight-bold d-flex flex-column justify-content-center"
+         style="font-size: 1.1rem; height: 18%">
+      <p>Agencia: {{agencia.sAgencia}}</p>
+      <p>C&oacute;digo: {{agencia.sIdAgencia}}</p>
+    </div>
+    <div class="d-flex flex-column justify-content-around h-25">
+      <button class="btn btn-outline-primary w-75 mx-auto"
+              style="font-weight: 600"
+              ng-click="empezarRegistroLlegada()">
+        {{tituloRegistrarOVerDetalles}}
+      </button>
+      <button class="btn btn-outline-danger w-75 mx-auto"
+              style="font-weight: 600"
+              ng-click="irRegistroODetallesIncidencia()">
+        {{tituloReportarOVerIncidencia}}
+      </button>
+      <button class="btn btn-outline-secondary w-75 mx-auto"
+              style="font-weight: 600"
+              ng-click="irAtras()">
+        ATRAS
+      </button>
+    </div>
+  </div>
+</div>

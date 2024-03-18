@@ -1,0 +1,116 @@
+﻿
+<style type ="text/css">
+
+    .topBottom {
+        margin-top: 25px;
+        margin-bottom: 25px;         
+    }
+
+    .rightLeft {
+        margin-right: 30px;
+        margin-left: 10px;
+    }
+
+    .badge23 {
+      display: inline-block;
+      min-width: 10px;
+      padding: 3px 7px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      line-height: 1;
+      vertical-align: baseline;
+      white-space: nowrap;
+      text-align: center;
+      background-color: rgba(255, 164, 32, 0);
+      border-radius: 10px;
+      margin-right: 5px;
+    }
+
+    .list-group {
+      margin-bottom: 4px;
+      padding-left: 0;
+    }
+
+    .fondo {
+        background-color:black;
+    }
+    
+
+    .list-group-item2 {
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      margin-bottom: -1px;  
+    /*  background-color: #fff;    */
+      border: 0px solid #ddd; 
+      color: white;      
+    }
+
+    .espaciado {
+          padding-left: 2px;
+          padding-right: 2px;
+    }
+    /*
+    .list-group-item>.badge {
+      float: right;
+    }
+
+    a {
+      color: #428bca;
+      text-decoration: none;
+    }*/
+
+</style>
+
+
+<div ng-controller="barraAyudasim">
+    
+    <div class="row">      
+        <div class="col-xs-12" >                                              
+            <select ng-model="selectedItem" class="form-control" ng-options="op as op.opcion for op in atributo"></select>                 
+        </div>
+    </div>
+    
+    <div class="row">        
+        <div class="col-xs-12 topBottom">
+            <input type="text" class="form-control" name="buscador" value=" " />
+        </div>
+    </div>
+    
+  <!--  <div class="panel panel-default">   
+        <div class="panel-heading">
+            <div class="panel-body"> 
+                <ul class="list-group" ng-repeat="data in datos">                
+                    <li class="list-group-item"> 
+                    {{data}} 
+                    <span class="badge badge23"><a Href="#">Ver</a></span>
+                </li>
+                </ul>
+            </div>
+        </div>    
+    </div> -->
+   
+    <div class="row fondo" >       
+        <div class="col-xs-12 topBottom espaciado">                                 
+            <ul class="list-group" ng-repeat="data in datos" >                
+                <li class="list-group-item list-group-item2 fondo"> 
+                    Elemento de {{data.De}}; Para: {{data.Para}}; Recibido el {{data.Recibido}}
+                    <span class="badge badge23"><a Href="#">Ver</a></span>
+                </li>                                     
+            </ul>
+        </div>
+    </div>
+
+    <div class="row" >       
+        <div class="col-xs-12"> 
+            <ul class="list-group topBottom" ng-repeat="oficinaT in oficinaP">                
+                <li class="list-group-item">{{oficinaT.sDescripcion}}</li>   
+                <li class="list-group-item">{{oficinaT.Valor1}}</li>
+                <li class="list-group-item">{{oficinaT.Valor2}}</li>
+                <li class="list-group-item">{{oficinaT.Valor3}}</li>
+                <li class="list-group-item">{{oficinaT.Valor4}}</li>
+            </ul>            
+        </div>    
+    </div>        
+</div>

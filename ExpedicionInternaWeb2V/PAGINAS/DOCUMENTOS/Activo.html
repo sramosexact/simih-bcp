@@ -1,0 +1,433 @@
+<style type="text/css">
+    .ui-grid {
+        border: 1px solid #FFFFFF;
+        border-top: 0px;
+        /* box-sizing: content-box; */
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        color: #555;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+        cursor: default;
+        border-top: 2px solid rgb(228, 9, 9);
+    }
+
+    .nav-tabs > li > a {
+        margin-right: 2px;
+        line-height: 1.42857143;
+        border: 1px solid transparent;
+        border-radius: 0px 0px 0 0;
+    }
+
+    .ui-grid-header {
+        box-sizing: content-box;
+    }
+
+    .ui-grid-header-cell-wrapper {
+        position: relative;
+        display: table;
+        box-sizing: border-box;
+        height: 100%;
+        background-color: white;
+        color: rgb(58, 62, 62);
+    }
+
+    .ui-grid-pager-control .first-triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 8.7px 5px 0;
+        border-color: transparent #00B7F9 transparent transparent;
+        margin-left: 2px;
+    }
+
+    .ui-grid-pager-control .last-triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 8.7px;
+        border-color: transparent transparent transparent #00B7F9;
+        margin-left: -1px;
+    }
+
+    .ui-grid-pager-control button {
+        height: 25px;
+        min-width: 26px;
+        background-color: white;
+        border: 0;
+    }
+
+    .ui-grid-row:nth-child(even) .ui-grid-cell {
+        background-color: #FFFFFF;
+    }
+
+    .ui-grid-header-cell:last-child .ui-grid-column-resizer.right {
+        /* border-right: 1px solid #d4d4d4; */
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #0D8BB8;
+        /* border-color: #357ebd; */
+    }
+
+    .grid {
+        width: 100%;
+        height: 70vh;
+    }
+
+    .btn-default {
+        color: #333;
+        background-color: #FCFCFC;
+        border-color: #ccc;
+    }
+
+    .btn-tab {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: normal;
+        text-align: center;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border-radius: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border-bottom: 0;
+        margin-bottom: -1px;
+        border-left: 1px solid rgb(226, 220, 220);
+        border-right: 1px solid rgb(226, 220, 220);
+        border-top-color: rgb(199, 5, 5);
+        background-color: white;
+    }
+
+    .btn-tab-derecha {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: normal;
+        text-align: center;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        border-radius: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border-bottom: 0;
+        margin-bottom: -1px;
+        border-left: 1px solid rgb(226, 220, 220);
+        border-right: 1px solid rgb(226, 220, 220);
+        border-top-color: rgb(199, 5, 5);
+        background-color: white;
+        color: rgb(94, 89, 137);
+    }
+
+    .btn-group-tap {
+        float: none;
+        display: inline-table;
+        width: 1%;
+        border-bottom: 1px solid rgb(226, 220, 220);
+    }
+
+    .btn-group-tap-derecha {
+        float: none;
+        display: inline-table;
+        width: 80%;
+        border-bottom: 1px solid rgb(226, 220, 220);
+    }
+
+    .btn-default-tab:hover, .btn-default-tab:focus, .btn-default-tab.focus, .btn-default-tab:active, .btn-default-tab.active, .open > .dropdown-toggle.btn-default {
+        color: #333;
+        background-color: #EAEAEA;
+        border-color: #FFFFFF;
+        border-top-color: rgb(199, 5, 5);
+    }
+
+    .btn-group-justified-tab {
+        display: table;
+        width: 0%;
+        table-layout: fixed;
+        border-collapse: separate;
+    }
+
+    .tabs {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        /* background-color: rgb(246, 246, 246); */
+        margin-bottom: -1px;
+    }
+
+        .tabs li {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+            background: #FAFAFA;
+            color: #999;
+            margin: 0px -1px;
+            font-size: 15px;
+        }
+
+            .tabs li:hover {
+                background: #fff;
+                color: #000;
+            }
+
+            .tabs li.active {
+                color: #000;
+                background: #FFFFFF;
+                cursor: pointer;
+                border-top: 2px solid rgb(189, 42, 118);
+                border-radius: 1px;
+            }
+
+            .tabs li.active-salida {
+                color: #000;
+                background: #FFFFFF;
+                cursor: pointer;
+                border-top: 2px solid rgb(96, 169, 23);
+                border-radius: 1px;
+            }
+
+            .tabs li:first-child {
+                margin-left: 0px;
+            }
+
+    .tabs-data {
+        background: #FFFFFF;
+        padding: 15px;
+        border-top: 1px solid rgb(238, 238, 238);
+    }
+
+        .tabs-data h1 {
+            font-size: 1.6em;
+        }
+
+    .glyphicon-tab {
+        position: relative;
+        top: 2px;
+        left: -1px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        COLOR: #00b7f9;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+
+
+    .modal-content {
+        position: relative;
+        background-color: #fff;
+        border: 1px solid #999;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 6px;
+        -webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+        box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+        background-clip: padding-box;
+        outline: 0;
+        width: 150%;
+        right: 20%;
+    }
+
+    .autoG {
+        color: rgb(202, 0, 0);
+        /* text-align: center; */
+        font-style: italic;
+    }
+
+    .ui-grid-row-header-cell {
+        background-color: #fff !important;
+        border-bottom: solid 1px #fff;
+        color: #116d8e;
+        margin-right: 10px;
+    }
+
+    .ui-grid-pager-max-pages-number {
+        top: 0px !important
+    }
+</style>
+
+<section class="section-container">
+
+    <div class="section-header">
+        <span class="fa fa-file-text glyphicon-style-section-header "></span>
+        Documentos en proceso
+    </div>
+
+
+    <div ng-controller="contrActivo">
+        <div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-body">
+                            <p></p>
+                            <h5 class="page-header" style="font-family:'Flexo-Italic';">
+                                Documentos que se encuentran en el flujo activo de la entrega tantos los enviados por ti y los que estan llegando hacia ti.
+                            </h5>
+                            <p></p>
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <!-- bsActivePane is optional -->
+                                    <ul class="tabs">
+                                        <li ng-repeat="tab in tabs" ng-class="{active: current == tab.name }">
+                                            <span class="{{tab.icon}}" aria-hidden="true"></span>
+                                            <span ng-bind="tab.name" ng-click="toggleTab(tab)"></span>
+                                        </li>
+                                    </ul>
+                                    <div ng-include="tab" class="tabs-data"></div>
+
+                                    <script type="text/ng-template" id="T1.html">
+                                       
+                                            <div class="form-group button-aling-right">
+                                                <button class="btn button-samay-green" ng-disabled="datasource.data.length===0" ng-click="exportarReporteEntrada()"><span class="mostrarIndicadores">Exportar </span><span class="glyphicon glyphicon-export"></span></button>
+                                            </div>
+                                            <div ui-grid="datasource" ui-grid-pagination class="grid"
+                                                 ui-grid-move-columns
+                                                 ui-grid-cellnav
+                                                 ui-grid-expandable
+                                                 ui-grid-resize-columns>
+                                            </div>
+                                    </script>
+                                    <script type="text/ng-template" id="T2.html">
+                                        <div class="form-group button-aling-right">
+                                            <button class="btn button-samay-green" ng-disabled="datasource2.data.length===0" ng-click="exportarReporteSalida()"><span class="mostrarIndicadores">Exportar </span><span class="glyphicon glyphicon-export"></span></button>
+                                        </div>
+                                        <div ui-grid="datasource2" ui-grid-pagination class="grid"
+                                             ui-grid-move-columns
+                                             ui-grid-cellnav
+                                             ui-grid-expandable
+                                             ui-grid-resize-columns>
+                                        </div>
+                                    </script>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--<script type="text/ng-template" id="modalTracking.html">
+
+            <div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header-tracking">
+                            <h3 class="modal-title"><span class="glyphicon-track-icon glyphicon-pushpin" aria-hidden="true"></span>Seguimiento de la correspondencia </h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-info">
+                                        <div class="panel-body">
+                                            <div class="list-group">
+                                                <div href="" class="group-title"><h5>Correspondencia : {{Autogenerado}}</h5> </div>
+                                                <div ng-repeat="x in dataSeguimiento">
+                                                    <div class="group-content" style="display: block;">
+                                                        <div href="" class="list active">
+                                                            <div class="list-content">
+                                                                <div>
+                                                                    <span class="place-right glyphicon glyphicon-flag fg-red smaller" style="padding-left: 10px"></span>
+                                                                    <span class="glyphicon-track glyphicon-th" aria-hidden="true"></span>        {{x.Descripcion}}
+                                                                </div>
+                                                                <span class="list-subtitle">
+                                                                    <span class="place-right"></span>
+                                                                    {{x.fechaTrack}}
+                                                                </span>
+                                                                <span class="list-remark">
+                                                                    {{x.Observacion}}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer-tracking">
+                            <button class="btn btn-warning" ng-click="$hide()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>-->
+
+        <script type="text/ng-template" id="modalTracking.html">
+
+            <div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-seguimiento-header">
+                            <span class="glyphicon glyphicon-random glyphicon-style" aria-hidden="true"></span>
+                            Seguimiento de la correspondencia
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-section-title">
+                                Correspondencia : {{Autogenerado}}
+                            </div>
+                            <div class="modal-section-content">
+                                <div ng-repeat="x in dataSeguimiento" class="modal-item-seguimiento">
+                                    <div class="item-seguimiento-body">
+                                        <span class="glyphicon glyphicon-th glyphicon-color-samay-cian"></span>
+                                        {{x.Descripcion}}
+                                        <!--<span class="glyphicon glyphicon-flag glyphicon-color-samay-green"></span>-->
+                                    </div>
+                                    <span class="item-seguimiento-footer">
+                                        {{x.fechaTrack}}
+                                    </span>
+                                    <span class="item-seguimiento-footer">
+                                        {{x.Observacion}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer-tracking modal-seguimiento-footer">
+                            <button class="btn button-samay-green" ng-click="$hide()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+    </div>
+
+
+
+
+</section>

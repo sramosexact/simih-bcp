@@ -1,0 +1,93 @@
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .contenedor {
+        height: 87vh;
+        max-width: 600px;
+        min-width: 340px;
+    }
+
+    .container-agencias {
+        border-color: #809eff !important;
+        height: 90%;
+    }
+
+    .color-button {
+        background: #1d5381;
+    }
+
+    .text-decoration-none:hover {
+        text-decoration: none;
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+    }
+
+    .text-normal {
+        color: #797979;
+    }
+
+    .form-check-input {
+        width: 20px;
+        height: 20px;
+    }
+
+    .form-check-label {
+        margin-right: 10px;
+    }
+</style>
+
+<p></p>
+
+<div class="container-fluid contenedor" style="font-family: 'Flexo-Regular';">
+    <div class="section-header">
+        <i class="fa fa-exclamation-triangle glyphicon-th-list glyphicon-style-section-header " style="color: #FFB81C;"></i>
+        {{tituloTipoRegistro}} - Incidencia
+    </div>
+    <p></p>
+    <div class="container-agencias border rounded p-3">
+        <div class="mx-auto rounded text-center font-weight-bold d-flex flex-column justify-content-center text-white mb-3"
+             style="height: 18%; background: #E00070; width: 100% ">
+            <p class="texto-global-regular">Agencia: {{agencia.sAgencia}}</p>
+            <p class="m-0 texto-global-regular">C&oacute;digo: {{agencia.sIdAgencia}}</p>
+        </div>
+        <form class="p-2">
+            <div style="height: 82%">
+                <label class="mb-3 texto-global-regular" for="motivoProveedor">Motivo:</label>
+                <select name="motivoProveedor"
+                        class="form-control form-inline w-100 text-normal mb-5 texto-global-regular" "
+                        ng-model="motivoProveedorSeleccionado"
+                        ng-options="item as item.sMotivo for item in motivoList track by item.iIdMotivo"
+                        ng-disabled="enviado"
+                        ng-change="verificarMotivo()"></select>
+                <textarea class="mb-5 form-control rounded-0 border-left-0 border-right-0"
+                          style="resize: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 10px; color: #333; font-size: 16px; height: 40px; "
+                          id="txtOtroMotivo"
+                          rows="2"
+                          ng-model="otroMotivo"
+                          ng-disabled="noElegioMotivoOtro || enviado "></textarea>
+                <div class="w-75 mx-auto mt-3">
+                    <div class="d-flex justify-content-around">
+                        <button class="btn button-samay-orange"
+                                type="button"
+                                ng-click="confirmarRegistroIncidencia()"
+                                ng-disabled="sinEleccionMotivo || (!noElegioMotivoOtro && otroMotivo == '') "
+                                ng-hide="enviado">
+                            Enviar
+                        </button>
+                        <button class="btn button-samay-cian"
+                                type="button"
+                                ng-click="irAtras()">
+                            Atras
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

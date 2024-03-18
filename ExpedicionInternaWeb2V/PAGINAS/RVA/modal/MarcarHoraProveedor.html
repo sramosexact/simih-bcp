@@ -1,0 +1,51 @@
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .text-negrita {
+    color: #575757;
+  }
+
+  .text-normal {
+    color: #797979;
+  }
+    .fade.in {
+        opacity: 1;
+    }
+
+    .modal.in .modal-dialog {
+        -webkit-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .modal-backdrop.in {
+        filter: alpha(opacity=50);
+        opacity: .5;
+    }
+</style>
+
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title text-negrita">{{tituloModal}}</h5>
+  </div>
+  <div class="modal-body">
+    <p class="m-0 text-center text-negrita">{{ confirmacionRegistro }}</p>
+    <p ng-if="enAgencia" class="text-center">
+      <b class="text-negrita">{{ agencia.sAgencia }} {{agencia.sIdAgencia}}</b>
+    </p>
+    <p class="text-center">
+      Hora de {{tipoRegistro}}: <b class="text-negrita">{{ horaRegistro }}</b>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button"
+            class="btn w-50 btn-success m-auto"
+            ng-click="aceptar()">
+      Aceptar
+    </button>
+  </div>
+</div>

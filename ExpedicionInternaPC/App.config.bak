@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <section name="ExpedicionInternaPC.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <connectionStrings />
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+    </startup>
+    <system.serviceModel>
+        <bindings />
+        <client />
+    </system.serviceModel>
+    <userSettings>
+        <ExpedicionInternaPC.Properties.Settings>
+            <setting name="Look" serializeAs="String">
+                <value>DevExpress Style</value>
+            </setting>
+            <setting name="UsuarioRecordar" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="UsuarioIdCliente" serializeAs="String">
+                <value>1</value>
+            </setting>
+            <setting name="UsuarioModoValidacion" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="UsuarioCodigo" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="UsuarioPassword" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ExistePDA" serializeAs="String">
+                <value>1</value>
+            </setting>
+            <setting name="grvLote_colLote_Visible" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="RutaImpresoraZebra" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="ExisteDPM" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="TamAutogenerado" serializeAs="String">
+                <value>6</value>
+            </setting>
+            <setting name="TamCodAgencia" serializeAs="String">
+                <value>6</value>
+            </setting>
+            <setting name="AgenciaWS" serializeAs="String">
+                <value>AgenciaWS.asmx/</value>
+            </setting>
+            <setting name="CampoDigitalizacionWS" serializeAs="String">
+                <value>CampoDigitalizacionWS.asmx/</value>
+            </setting>
+            <setting name="CampoExternoWS" serializeAs="String">
+                <value>CampoExternoWS.asmx/</value>
+            </setting>
+            <setting name="CampoTipoDocumentoWS" serializeAs="String">
+                <value>CampoTipoDocumentoWS.asmx/</value>
+            </setting>
+            <setting name="CasillaWS" serializeAs="String">
+                <value>CasillaWS.asmx/</value>
+            </setting>
+            <setting name="ColaboradorWS" serializeAs="String">
+                <value>ColaboradorWS.asmx/</value>
+            </setting>
+            <setting name="ConfiguracionWS" serializeAs="String">
+                <value>ConfiguracionWS.asmx/</value>
+            </setting>
+            <setting name="CuboWS" serializeAs="String">
+                <value>CuboWS.asmx/</value>
+            </setting>
+            <setting name="DocumentoExternoCargaWS" serializeAs="String">
+                <value>DocumentoExternoCargaWS.asmx/</value>
+            </setting>
+            <setting name="DocumentoWS" serializeAs="String">
+                <value>DocumentoWS.asmx/</value>
+            </setting>
+            <setting name="EntregaWS" serializeAs="String">
+                <value>EntregaWS.asmx/</value>
+            </setting>
+            <setting name="EstadoVerificacionWS" serializeAs="String">
+                <value>EstadoVerificacionWS.asmx/</value>
+            </setting>
+            <setting name="ExpedicionWS" serializeAs="String">
+                <value>ExpedicionWS.asmx/</value>
+            </setting>
+            <setting name="FeriadoWS" serializeAs="String">
+                <value>FeriadoWS.asmx/</value>
+            </setting>
+            <setting name="GeoWS" serializeAs="String">
+                <value>GeoWS.asmx/</value>
+            </setting>
+            <setting name="IndicadoresWS" serializeAs="String">
+                <value>IndicadoresWS.asmx/</value>
+            </setting>
+            <setting name="MensajeriaWS" serializeAs="String">
+                <value>MensajeriaWS.asmx/</value>
+            </setting>
+            <setting name="ModuloCreacionWS" serializeAs="String">
+                <value>ModuloCreacionWS.asmx/</value>
+            </setting>
+            <setting name="MonedaWS" serializeAs="String">
+                <value>MonedaWS.asmx/</value>
+            </setting>
+            <setting name="MotivoCambioEstadoWS" serializeAs="String">
+                <value>MotivoCambioEstadoWS.asmx/</value>
+            </setting>
+            <setting name="ObjetoWS" serializeAs="String">
+                <value>ObjetoWS.asmx/</value>
+            </setting>
+            <setting name="OperarioWS" serializeAs="String">
+                <value>OperarioWS.asmx/</value>
+            </setting>
+            <setting name="PalomarWS" serializeAs="String">
+                <value>PalomarWS.asmx/</value>
+            </setting>
+            <setting name="PlantillaGeneralWS" serializeAs="String">
+                <value>PlantillaGeneralWS.asmx/</value>
+            </setting>
+            <setting name="PlantillaWS" serializeAs="String">
+                <value>PlantillaWS.asmx/</value>
+            </setting>
+            <setting name="ReclamoWS" serializeAs="String">
+                <value>ReclamoWS.asmx/</value>
+            </setting>
+            <setting name="SeguridadWS" serializeAs="String">
+                <value>SeguridadWS.asmx/</value>
+            </setting>
+            <setting name="ServicioWS" serializeAs="String">
+                <value>ServicioWS.asmx/</value>
+            </setting>
+            <setting name="SIMServerWS" serializeAs="String">
+                <value>SIMServerWS.asmx/</value>
+            </setting>
+            <setting name="TipoCorrespondenciaWS" serializeAs="String">
+                <value>TipoCorrespondenciaWS.asmx/</value>
+            </setting>
+            <setting name="TipoDocumentoExternoWS" serializeAs="String">
+                <value>TipoDocumentoExternoWS.asmx/</value>
+            </setting>
+            <setting name="TipoDocumentoWS" serializeAs="String">
+                <value>TipoDocumentoWS.asmx/</value>
+            </setting>
+            <setting name="TipoExpedicionWS" serializeAs="String">
+                <value>TipoExpedicionWS.asmx/</value>
+            </setting>
+            <setting name="TipoFeriadoWS" serializeAs="String">
+                <value>TipoFeriadoWS.asmx/</value>
+            </setting>
+            <setting name="TipoReclamoUTDWS" serializeAs="String">
+                <value>TipoReclamoUTDWS.asmx/</value>
+            </setting>
+            <setting name="TipoResponsableWS" serializeAs="String">
+                <value>TipoResponsableWS.asmx/</value>
+            </setting>
+            <setting name="TipoUsuarioWS" serializeAs="String">
+                <value>TipoUsuarioWS.asmx/</value>
+            </setting>
+            <setting name="TurnoWS" serializeAs="String">
+                <value>TurnoWS.asmx/</value>
+            </setting>
+            <setting name="UsuarioFacWS" serializeAs="String">
+                <value>UsuarioFacWS.asmx/</value>
+            </setting>
+            <setting name="UsuarioWS" serializeAs="String">
+                <value>UsuarioWS.asmx/</value>
+            </setting>
+            <setting name="PublicWS" serializeAs="String">
+                <value>PublicWS.asmx/</value>
+            </setting>
+            <setting name="AuthWS" serializeAs="String">
+                <value>Auth.asmx/</value>
+            </setting>
+            <setting name="PF_TodoWS" serializeAs="String">
+                <value>PF_Todo.asmx/</value>
+            </setting>
+            <setting name="RegistroWS" serializeAs="String">
+                <value>RegistroWS.asmx/</value>
+            </setting>
+            <setting name="ReporteRVAWS" serializeAs="String">
+                <value>ReporteWS.asmx/</value>
+            </setting>
+            <setting name="IndicadorANSWS" serializeAs="String">
+                <value>IndicadorANSWS.asmx/</value>
+            </setting>
+            <setting name="TipoReclamoJefeWS" serializeAs="String">
+                <value>TipoReclamoJefeWS.asmx/</value>
+            </setting>
+            <setting name="ReportePeriodoWS" serializeAs="String">
+                <value>ReportePeriodoWS.asmx/</value>
+            </setting>
+            <setting name="TipoReclamoUsuarioWS" serializeAs="String">
+                <value>TipoReclamoUsuarioWS.asmx/</value>
+            </setting>
+            <setting name="SeguridadAzureWS" serializeAs="String">
+                <value>SeguridadAzureWS.asmx/</value>
+            </setting>
+            <setting name="ExisteDMA" serializeAs="String">
+                <value>1</value>
+            </setting>
+            <setting name="PageSize" serializeAs="String">
+                <value>50</value>
+            </setting>
+            <setting name="rutaWS" serializeAs="String">
+                <value>https://localhost:44342/ws/</value>
+            </setting>
+            <setting name="AsistenciaWS" serializeAs="String">
+                <value>AsistenciaWS.asmx/</value>
+            </setting>
+            <setting name="RecorridoPisosWS" serializeAs="String">
+                <value>RecorridoPisosWS.asmx/</value>
+            </setting>
+            <setting name="ClientId" serializeAs="String">
+                <value>57b3789e-9a55-4324-b028-f4460c70f468</value>
+            </setting>
+            <setting name="Tenant" serializeAs="String">
+                <value>f26a3bc4-1409-43a2-ac2f-34ec8395d7ec</value>
+            </setting>
+            <setting name="scopes" serializeAs="String">
+                <value>api://57b3789e-9a55-4324-b028-f4460c70f468/user_impersonation</value>
+            </setting>
+            <setting name="MinutosInactivo" serializeAs="String">
+                <value>30</value>
+            </setting>
+        </ExpedicionInternaPC.Properties.Settings>
+    </userSettings>
+    <!--<system.windows.forms jitDebugging="true" />-->
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.2.0.0" newVersion="4.2.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+
+  <appSettings>
+    <!--<add key="rutaLlave" value="D:/Llaves/key.txt" />-->
+    <!--<add key="cadenaConexion" value="8m/tcx3rIM/L/sR72OSyFFDAcaspGOyHyakQXSEWcHS71brpixUEcjGYjgziUHA5gAp7H26c3mcnDBFyvnDwklJWxzf6RG/1moLvaAmElPQ/SqOul5PPsuHnR55dD+/n" />
+    <add key="cadenaConexion2" value="8m/tcx3rIM/L/sR72OSyFFDAcaspGOyHyakQXSEWcHSZRfgYVvIRu5lxAADLbTf0RW/GdRzR1sIfNr5bpn7pRKz6WPBGncF7D6d9Ka5PgTutNlr2KwS1nMZB+7zJZ/hT" />-->
+  </appSettings>
+</configuration>

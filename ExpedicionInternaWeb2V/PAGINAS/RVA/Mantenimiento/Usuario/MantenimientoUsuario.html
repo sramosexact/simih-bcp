@@ -1,0 +1,96 @@
+﻿<style>
+    .row-style {
+        padding-top: 3px;
+    }
+</style>
+<div class="modal-content">
+    <div class="modal-header">
+
+        <h3 class="modal-title">{{tituloModal}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row row-style">
+                <div class="col-lg-3">
+                    <label for="txtUsuario">Usuario</label>
+                </div>
+                <div class="col-lg-9">
+                    <input type="text" 
+                           class="form-control form-inline" 
+                           name="txtUsuario" 
+                           ng-model="registro.sUsuario" 
+                           maxlength="{{usuarioMaxLength}}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row row-style">
+                <div class="col-lg-3">
+                    <label for="cboTipoUsuario">Tipo usuario</label>
+                </div>
+                <div class="col-lg-9">
+                    <select name="cboTipoUsuario" 
+                            class="form-control form-inline" 
+                            ng-model="tipoUsuarioSeleccionado" 
+                            ng-options="item as item.sTipoUsuario for item in tipoUsuarioList track by item.idTipoUsuario" 
+                            ng-change="habilitarControlPorTipoUsuario()">
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="!deshabilitarAgencia">
+            <div class="row row-style">
+                <div class="col-lg-3">
+                    <label for="cboAgencia">Agencia</label>
+                </div>
+                <div class="col-lg-9">
+                    <select name="cboAgencia" 
+                            class="form-control form-inline" 
+                            ng-model="agenciaSeleccionado" 
+                            ng-options="item as item.sAgencia for item in agenciaList track by item.sCodigoAgencia">
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="!deshabilitarProveedor">
+            <div class="row row-style">
+                <div class="col-lg-3">
+                    <label for="cboProveedor">Proveedor</label>
+                </div>
+                <div class="col-lg-9">
+                    <select name="cboProveedor"
+                            class="form-control form-inline" 
+                            ng-model="proveedorSeleccionado" 
+                            ng-options="item as item.sProveedor for item in proveedorList track by item.iIdProveedor">
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row row-style">
+                <div class="col-lg-3">
+                    <label for="cboEstado">Estado</label>
+                </div>
+                <div class="col-lg-3">
+                    <select name="cboEstado" 
+                            class="form-control" 
+                            ng-model="estadoSeleccionado"
+                            ng-options="item as item.sActivo for item in estadoList track by item.iActivo" 
+                            ng-disabled="!deshabilitarEstado">
+                    </select>
+                </div>
+                <div class="col-lg-6"></div>
+            </div>
+        </div>
+        
+        <div class="modal-footer">            
+            <button class="btn btn-success" ng-click="guardar()">Guardar</button>
+            <button class="btn btn-danger" ng-click="cancel()">Cancelar</button>
+        </div>
+
+    </div>
+</div>

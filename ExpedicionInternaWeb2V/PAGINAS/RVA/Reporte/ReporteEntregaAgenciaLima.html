@@ -1,0 +1,366 @@
+﻿<style>
+    .inline {
+        display: inline-block;
+    }
+
+    .medium {
+        width: 50%;
+        height: 50%;
+    }
+
+    thead {
+        background-color: rgba(92,122,126,0.3);
+    }
+
+    .nameProv {
+        color: black;
+        font-size: 25px;
+    }
+
+    .space {
+        margin-bottom: 25px;
+    }
+
+    tr {
+        cursor: pointer;
+    }
+
+    .Total > td {
+        background-color: #FFF7AA;
+    }
+
+    .Pendiente {
+        background-color: #dedede;
+        border-radius: 10px;
+    }
+
+    .Recogidos {
+        background-color: #247EBA;
+        border-radius: 10px;
+    }
+
+    .SinMovimiento {
+        background-color: #FDB45C;
+        border-radius: 10px;
+    }
+
+    .table-hover > tbody > tr.Pendiente:hover {
+        background-color: #98B656;
+    }
+
+    @media (max-width: 1200px) {
+        .tablaResponsive {
+            overflow-x: scroll;
+            width: 100%;
+        }
+    }
+
+
+    .table-hover > tbody > tr.SinMovimiento:hover {
+        background-color: #F29A12;
+    }
+
+    .table-hover > tbody > tr.Recogidos:hover {
+        background-color: #2EA1ED;
+    }
+
+    .panel-recogido > .panel-heading {
+        color: #fff;
+        background-color: #247EBA;
+        border-color: #247EBA;
+    }
+
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        border-top: none;
+    }
+
+    .panel-body {
+        padding: 0px;
+    }
+
+    .fondoCajas {
+        background-color: #FFF7AA;
+        border-radius: 10px;
+    }
+
+    .CantidadDetal {
+        font-size: 19px;
+        color: #393939;
+    }
+
+    .TituloTableReporte > th {
+        background-color: #257840;
+        color: #fff;
+        font-family: 'Raleway', sans-serif;
+        font-size: 13px;
+    }
+
+    hr {
+        margin: 0px 0px;
+        border: 0.5px solid #39719E;
+    }
+
+    .derecha {
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        margin-top: -30px;
+    }
+
+    .contenedor-header {
+        position: relative;
+    }
+
+
+    .tabla2 th {
+        border-color: black;
+        background-color: #CED7D8;
+        color: #080808;
+        font-family: sans-serif;
+        font-size: 13px;
+    }
+
+    tr .filter {
+        background-color: rgb(206, 215, 216);
+    }
+
+    .tabla2 td {
+        font-family: sans-serif;
+        font-size: 13px;
+        border-color: black;
+    }
+
+    .ng-table {
+        border-collapse: initial;
+        border: 1px solid black;
+    }
+
+        .ng-table td {
+            border-collapse: initial;
+            border: 1px solid black;
+        }
+
+    .label-date-style {
+        border: none;
+        background-color: #fff;
+        padding-top: 10px;
+        margin-bottom: 0px;
+        padding-right: 7px;
+        padding-left: 7px;
+    }
+
+    .row-style {
+        font-size: 0.8em;
+    }
+
+    .indicador-rojo {
+        font-size: 23px;
+        color: #EE5151;
+        text-align: center;
+    }
+
+    .indicador-ambar {
+        font-size: 23px;
+        color: #FFA500;
+        text-align: center;
+    }
+
+    .indicador-verde {
+        font-size: 23px;
+        color: #5cb85c;
+        text-align: center;
+    }
+
+    .indicador-blanco {
+        font-size: 23px;
+        color: #ADD8E6;
+        text-align: center;
+    }
+
+    thead {
+        background-color: rgba(92,122,126,0.3);
+    }
+
+    .ui-grid-row .ui-grid-cell {
+        background-color: inherit !important;
+    }
+
+    .header-grid-color {
+        font-size: 0.8em;
+        background: none !important;
+        background-color: #ced7d8 !important;
+        border-color: #aaa2a2;
+        /*background: linear-gradient(to bottom, rgba(180, 215, 235, 1), white);*/
+    }
+
+    .row-style {
+        font-size: 0.8em;
+    }
+
+    .grid-border {
+        border-color: #809EFF;
+    }
+
+    .indicador-align {
+        font-size: 23px;
+        text-align: center;
+    }
+
+    .grid {
+        width: 100%;
+    }
+
+    .contenedor-principal {
+        height: calc(100vh - 70px) !important;
+        width: 100%;
+    }
+
+    .container-controls {
+        margin-bottom: 20px !important;
+        margin-top: 20px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        padding-left: 20px;
+        background-color: #FFF !important;
+    }
+
+    .container-body {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: calc(100% - 135px);
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background-color: #FFF;
+        padding-left: 20px;
+        margin: 0px;
+    }
+
+    .tabla-asignados {
+        margin-top: 20px;
+    }
+       
+
+</style>
+
+
+<div class="section-container " style="font-family:'Flexo-Regular';">
+    <div class="contenedor-principal">
+
+        <div class="section-header">
+            <span class="fa fa-pie-chart glyphicon-th-list glyphicon-style-section-header "></span>
+            Reporte de entrega de valijas - Lima
+        </div>
+
+
+
+        <div class="row container-controls">
+            <!--Consulta por fecha-->
+            <div class="col-md-12">
+
+                <form class="form-inline">
+                    <label class="form-inline label-date-style" for="fecha">Desde</label>
+                    <input type="text"
+                           class="form-control datepicker-control"
+                           id="datepicker" placeholder="Ingrese Fecha"
+                           readonly
+                           style="background-color: #ffffff; margin-top:4px;"
+                           ng-model="FechaDesde">
+                    <label class="form-inline label-date-style" for="fecha">Hasta</label>
+                    <input type="text"
+                           class="form-control datepicker-control"
+                           id="datepicker2"
+                           placeholder="Ingrese Fecha"
+                           readonly
+                           style="background-color: #ffffff; margin-top:4px;"
+                           ng-model="FechaHasta">
+                    <button ng-click="ObtenerAgenciaReportadas()" class="btn btn-primary" style="margin-top: 4px;">Buscar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container-body">
+            <div class="row" id="MainDiv">
+
+                <!--Autogenerando-->
+                <div class="col-md-12" ng-show="mostrarError"><span class="text-danger">No hubo entrega de valijas en este d&#237a. Seleccione otra fecha.</span></div>
+                
+                <div class="col-md-12 space" ng-repeat="(index, Prov) in Proveedores">
+                    <div class="contenedor-header">
+                        <h1 class="nameProv">{{Prov.Objeto.Proveedor}}</h1>
+                        <button ng-if="RangoDias" type="button" class="btn btn-sm btn-success derecha" ng-click="ExportarData(Prov.Objeto.IdProveedor)"><i class="fa fa-file-excel-o"></i> Exportar Excel</button>
+                    </div>
+                    <hr />
+                    <br />
+
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                            <div id="canvas-holder">
+                                <canvas id="{{Prov.Objeto.Proveedor}}" width="10" height="10" />
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+                            <table class="table table-hover tabla-asignados">
+                                <tr class="Total">
+                                    <td>Total Asignados</td>
+                                    <td>100 %</td>
+                                    <td ng-if="RangoDias">{{Prov.Objeto.Asignados}}</td>
+                                </tr>
+                                <tr ng-click="VerMapping('Recogidos',index)">
+                                    <td><span class="badge Recogidos"> </span> Entregados</td>
+                                    <td>{{Prov.Objeto.EntregadosPorcentaje}}</td>
+                                    <td ng-if="RangoDias">{{Prov.Objeto.Entregados}}</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge SinMovimiento"> </span> Enviados</td>
+                                    <td>{{Prov.Objeto.FaltantesPorcentaje}}</td>
+                                    <td ng-if="RangoDias">{{Prov.Objeto.Faltantes}}</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="badge Pendiente"> </span> Pendientes</td>
+                                    <td>{{Prov.Objeto.PendientesPorcentaje}}</td>
+                                    <td ng-if="RangoDias">{{Prov.Objeto.Pendientes}}</td>
+                                </tr>
+
+                            </table>
+
+                            <div style="margin-top: 30px; margin-bottom:30px;">
+                                <input type="button" name="name" value={{textoBotonDetalle}} class="btn btn-primary" ng-click="mostrarDetalle()" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Termina Autogenerado-->
+
+                <div ng-show="detalleMostrado" class="col-xs-12 col-sm-12" style="margin-top: 10px;">
+                    <div style="text-align: right; margin-top: 10px; margin-bottom: 10px" class="col-xs-12 col-sm-12">
+                        <button tname="name" class="btn btn-success" ng-click="ExportarTablaDetalle()"><i class="fa fa-file-excel-o"></i> Exportar tabla </button>
+                    </div>
+                    <hr />
+
+                    <div class="grid" ui-grid="GridRegistroAgencias"
+                         ui-grid-pagination
+                         ui-grid-move-columns
+                         ui-grid-cellnav
+                         ui-grid-auto-resize
+                         ui-grid-resize-columns>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $(".datepicker-control").datepicker({ dateFormat: 'dd-mm-yy' });
+
+
+    });
+</script>

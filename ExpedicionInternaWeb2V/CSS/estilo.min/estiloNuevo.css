@@ -1,0 +1,305 @@
+﻿.col-xs-2 {
+    width: 18.666667%;
+}
+
+/*.sidebar {
+    position: fixed;
+    top: 31px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+    border-right: 0 solid #eee;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 1px #999;
+}*/
+
+
+label {
+    
+    margin-right: 0px;
+}
+
+.tile-group {
+    
+    margin-right: 0px;
+
+}
+
+.navbar-brand {
+    padding: 11px 15px;
+    font-size: 20px;
+    line-height: 17px;
+    height: 50px;
+    margin-top: -11px;
+    margin-left: -26px;
+}
+
+.navbar-inverse .navbar-toggle {
+    padding: 4px 5px;
+    margin-top: 2px;
+    border-color: transparent;
+    margin-right: -10px;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: #4d5d62;
+    border-radius: 0px;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border: none;
+    box-shadow: none;
+}
+
+.navbar-collapse.in {
+
+}
+
+.navbar-collapse.collapsing {
+
+    }
+
+    .panel-body {
+        padding: 15px;
+        margin-left: 10px;
+    }
+
+.contenedorUsu {
+    display: inline;
+    float: right;
+    padding-bottom: 5px;
+    margin-left: -5px;
+}
+
+ .formHistorico{
+        margin-left: 10px;
+    }
+
+    .tituloHistorico{
+        margin-left: 10px;
+    }
+
+.bloqueBusqueda{
+
+}
+
+
+
+
+@media (max-width: 920px) {
+
+    body {
+        padding-top: 50px;
+    }
+
+    .logo {
+        top: 50px;
+        z-index: -10;
+    }
+
+    .CenterUsu > .bandejaActual {
+        display: none;
+    }
+
+    
+
+    
+}
+
+
+
+.page-header2 {
+    left: 23%;
+}
+
+.cajaCuasiInvisible {
+    position: fixed;
+    top: 30px;
+    left: 0px;
+    right: 0px;
+    height: 40px;
+    background: rgba(255, 255, 255,0.9);
+    z-index: 800;
+}
+
+@media (max-width:991px) {
+    .descripcionNotificacion {
+        /*display: none;*/
+    }
+
+    .panel.panel-info{
+        margin-left: 25px;
+    }
+
+    .page-header2 {
+        left: 230px;
+    }
+
+  /*  .sidebar {
+        position: fixed;
+        top: 31px;
+        bottom: 0;
+        left: 0;
+        z-index: 800;
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #fff;
+        border-right: 0 solid #eee;
+        background-color: #FFFFFF;
+        box-shadow: 0 0 1px #999;
+        width: 190px;
+    }*/
+
+    .tituloHistorico{
+        margin-left: 35px;
+    }
+
+    .formHistorico{
+        margin-left: 40px;
+    }
+
+    .tablaHistoricos{
+    
+        margin-left: 15px;
+
+    }
+
+        .bloqueBusqueda{
+            margin-left: 20px;
+        }
+
+    
+}
+
+@media (max-width: 883px) {
+
+    .tablaHistoricos{
+    
+        margin-left: 25px;
+
+    }
+}
+
+.campoEnvio {
+    
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+
+    .ajustarCont {
+    
+        /*padding-left: 30px;*/
+
+    }
+
+   
+
+
+
+@media (max-width: 768px) {
+
+    .mostrarIndicadores {
+        
+        display: none;
+    
+    } 
+
+    .panel.panel-info{
+        margin-left: 100px;
+    }
+    
+    .main {
+        padding-left: 90px;
+    }
+
+    .menuResponsive {
+        margin-top: -10px;
+        background-color: rgb(55, 82, 92);
+        margin-left: 161px;
+        margin-right: -29px;
+    }
+
+    .contenedorUsu {
+        
+        display: inline;
+        float:left;       
+    }
+
+    .CenterUsu .bandejaActual {
+        
+        display: inline-block;
+    
+    }
+
+    .campoEnvio {
+    
+        margin-left: 120px;
+    }
+
+    .ajustarCont {
+    
+        /*padding-left: 100px;*/
+
+    }
+
+    .tituloHistorico{
+        margin-left: 120px;
+    }
+
+    .formHistorico{
+        margin-left: 120px;
+    }
+
+    .tablaHistoricos{
+    
+        margin-left: 120px;
+
+    }
+
+    .bloqueBusqueda{
+        margin-left: 120px;
+    }
+
+
+
+
+}
+
+@media (max-width: 393px) {
+
+    .tile-group {
+        padding-top: 80px;
+    }
+
+}
+
+.navbar{
+    min-height: 0px;
+}
+
+.tablaReporte {
+    
+
+
+}
+
+    .tablaReporte > thead {
+        background: #6e9ba9;
+        color: white;
+    }
+
+
+
+
+
+
+
+
+

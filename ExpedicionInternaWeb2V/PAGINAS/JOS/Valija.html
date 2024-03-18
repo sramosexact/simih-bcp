@@ -1,0 +1,515 @@
+<style type="text/css">
+    .ui-grid {
+        border: 1px solid #FFFFFF;
+        border-top: 0px;
+        /* box-sizing: content-box; */
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        color: #555;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+        cursor: default;
+        border-top: 2px solid rgb(228, 9, 9);
+    }
+
+    .nav-tabs > li > a {
+        margin-right: 2px;
+        line-height: 1.42857143;
+        border: 1px solid transparent;
+        border-radius: 0px 0px 0 0;
+    }
+
+    .ui-grid-header {
+        box-sizing: content-box;
+    }
+
+    .ui-grid-header-cell-wrapper {
+        position: relative;
+        display: table;
+        box-sizing: border-box;
+        height: 100%;
+        background-color: white;
+        color: rgb(58, 62, 62);
+    }
+
+    .ui-grid-pager-control .first-triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 8.7px 5px 0;
+        border-color: transparent #00B7F9 transparent transparent;
+        margin-left: 2px;
+    }
+
+    .ui-grid-pager-control .last-triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 0 5px 8.7px;
+        border-color: transparent transparent transparent #00B7F9;
+        margin-left: -1px;
+    }
+
+    .ui-grid-pager-control button {
+        height: 25px;
+        min-width: 26px;
+        background-color: white;
+        border: 0;
+    }
+
+    .ui-grid-row:nth-child(even) .ui-grid-cell {
+        background-color: #FFFFFF;
+    }
+
+    .ui-grid-header-cell:last-child .ui-grid-column-resizer.right {
+        /* border-right: 1px solid #d4d4d4; */
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #0D8BB8;
+        /* border-color: #357ebd; */
+    }
+
+    .grid {
+        width: 100%;
+        height: 348px;
+    }
+
+    .btn-default {
+        color: #333;
+        background-color: #FCFCFC;
+        border-color: #ccc;
+    }
+
+    .tabs {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+        /* background-color: rgb(246, 246, 246); */
+        margin-bottom: -1px;
+    }
+
+        .tabs li {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px;
+            background: #FAFAFA; /*#F1F1F1*/
+            color: #999; /*#000*/
+            margin: 0px -1px;
+            font-size: 15px;
+        }
+
+            .tabs li:hover {
+                background: #fff;
+                color: #000;
+            }
+
+            .tabs li.active {
+                color: #37525C;
+                background: #FFFFFF;
+                cursor: pointer;
+                border-top: 2px solid #E00070;
+                border-radius: 1px;
+            }
+
+            .tabs li.active-salida {
+                color: #000;
+                background: #FFFFFF;
+                cursor: pointer;
+                border-top: 2px solid rgb(251, 177, 48);
+                border-radius: 1px;
+            }
+
+            .tabs li:first-child {
+                margin-left: 0px;
+            }
+
+    .tabs-data {
+        background: #FFFFFF;
+        padding: 15px;
+        border-top: 1px solid rgb(238, 238, 238);
+    }
+
+        .tabs-data h1 {
+            font-size: 1.6em;
+        }
+
+    .glyphicon-tab {
+        position: relative;
+        top: 2px;
+        left: -1px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .gridvalija {
+        width: 100%;
+        height: 450px
+    }
+
+    .ubicacion {
+        position: relative;
+        top: 0px;
+    }
+
+    lyphicon-ub {
+        position: relative;
+        top: 0px;
+        left: 2px;
+        display: inline-block;
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        font-size: 19px;
+        -webkit-font-smoothing: antialiased;
+        COLOR: #F90B6E;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .posi {
+        margin-left: 95%;
+    }
+
+    .anchoLabel {
+        width: 220px;
+    }
+
+    @media (max-width: 1100px) {
+        .posi {
+            margin-left: 85%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .form-inline1 .form-control1 {
+            display: inline-block;
+            /* width: auto; */
+            vertical-align: middle;
+        }
+    }
+
+    .form-control1 {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 16px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+
+
+
+    .alert-m {
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.95);
+        border-radius: 0px;
+        margin-top: -2px;
+        color: #020202;
+        background-color: #E6CC7C;
+    }
+</style>
+
+
+<section class="section-container">
+
+
+    <div class="section-header">
+        <span class="fa fa-university glyphicon-style-section-header "></span>
+        JOS
+    </div>
+
+    <div class="section-content">
+        <div class="panel panel-info">
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="page-header">
+                            <span class="aviso" style="font-family:'Flexo-Italic';">Agencias que usted administra </span>
+                        </h4>
+                    </div>
+                </div>
+                <p></p>
+                <div class="row" ng-model="inspector">
+                    <div class="col-xs-3 col-md-3 col-lg-3">
+                        <h5>Seleccione una ubicación  <span class="glyphicon glyphicon-map-marker glyphicon-color-samay-magenta"></span></h5>
+                    </div>
+                    <div class="col-xs-3 col-md-3" ng-hide="inspector.length <= 1">
+                        <select ng-model="selectedItem" class="form-control" ng-options="Tipo as Tipo.sDescripcion for Tipo in hijosdoc" ng-change="seleccionaPunto()"></select>
+                    </div>
+                    <div class="col-xs-3 col-md-3" ng-hide="inspector.length > 1">
+                        <div ng-model="selectedItem" class="form-control" ng-bind="puntoEntrega">{{puntoEntrega}}</div>
+                    </div>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <ul class="tabs">
+                            <li ng-repeat="tab in tabs" ng-class="{active: current == tab.name }">
+                                <span class="{{tab.icon}}" aria-hidden="true"></span>
+                                <span ng-bind="tab.name" ng-click="toggleTab(tab)"></span>
+                            </li>
+                        </ul>
+                        <div ng-include="tab" class="tabs-data"></div>
+
+                        <script type="text/ng-template" id="ingresos.html">
+                            <div ui-grid="dataIngreso" ui-grid-pagination class="gridvalija"
+                                 ui-grid-move-columns
+                                 ui-grid-cellnav
+                                 ui-grid-selection>
+                            </div>
+                        </script>
+                        <script type="text/ng-template" id="noingreso.html">
+                            <div ui-grid="dataNoingreso" ui-grid-pagination class="gridvalija"
+                                 ui-grid-move-columns
+                                 ui-grid-cellnav
+                                 ui-grid-expandable
+                                 ui-grid-selection>
+                            </div>
+                        </script>
+
+                        <script type="text/ng-template" id="salida.html">
+                            <div ui-grid="salida" ui-grid-pagination class="gridvalija"
+                                 ui-grid-move-columns
+                                 ui-grid-cellnav
+                                 ui-grid-expandable
+                                 ui-grid-selection>
+                            </div>
+                        </script>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+       
+                <script type="text/ng-template" id="historico.html">
+                    <form name="datepickerForm" class="form-inline" role="form">
+                        <div class="row">
+
+                            <div class="col-xs-5">
+                                <input type="text" class="form-control1" ng-model="fech.fromDate" data-max-date="{{fech.untilDate}}" placeholder="Desde" bs-datepicker>
+                            </div>
+                            <div class="col-xs-5">
+                                <input type="text" class="form-control1" ng-model="fech.untilDate" data-min-date="{{fech.fromDate}}" placeholder="Hasta" bs-datepicker>
+                            </div>
+                            <div class="col-xs-1">
+                                <input type="button" class="btn btn-success" value="Buscar" ng-click="actualizando()" />
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row">
+                        <div class=" col-lg-12" style="margin: 20px;">
+                            <ul class="tabs">
+                                <li ng-repeat="tab1 in subtabs" ng-class="{active: current2 == tab1.name }">
+                                    <span ng-bind="tab1.name" ng-click="toggleTab2(tab1)"></span>
+                                </li>
+                            </ul>
+
+                            <div ng-include="tab1" class="subtabs-data"></div>
+                        </div>
+                    </div>
+
+                </script>
+
+                <script type="text/ng-template" id="ingresohis.html">
+                    <div ui-grid="ingresohis" ui-grid-pagination class="gridvalija"
+                         ui-grid-move-columns
+                         ui-grid-cellnav
+                         ui-grid-resize-columns>
+                    </div>
+                </script>
+
+
+                <script type="text/ng-template" id="creacion.html">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Escojer quien va a crear la Valija de hoy
+                            <div ng-repeat="bandeja in bandejaAsociadas">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <input type="radio" ng-model="bandejaA.j"
+                                                   ng-value="bandeja.Nombre" name="valij">
+                                        </span>
+                                        <input type="text" class="form-control" ng-model="bandeja.Nombre" aria-label="...">
+                                    </div><!-- /input-group -->
+                                </div>
+                            </div>
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <h4>{{bandejaA.descripcion}} </h4><h3>{{bandejaA.j}}</h3>
+                                <button type="button" ng-click="asignar()" class="btn btn-primary btn-lg">Asignar</button>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+
+                <!--    </tabset>-->
+
+                <script type="text/ng-template" id="modalTracking.html">
+
+                    <div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-seguimiento-header">
+                                    <span class="glyphicon glyphicon-random glyphicon-style" aria-hidden="true"></span>
+                                    Seguimiento de la correspondencia
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-section-title">
+                                        Correspondencia : {{Autogenerado}}
+                                    </div>
+                                    <div class="modal-section-content">
+                                        <div ng-repeat="x in dataSeguimiento" class="modal-item-seguimiento">
+                                            <div class="item-seguimiento-body">
+                                                <span class="glyphicon glyphicon-th glyphicon-color-samay-cian"></span>
+                                                {{x.Descripcion}}
+                                                <!--<span class="glyphicon glyphicon-flag glyphicon-color-samay-green"></span>-->
+                                            </div>
+                                            <span class="item-seguimiento-footer">
+                                                {{x.fechaTrack}}
+                                            </span>
+                                            <span class="item-seguimiento-footer">
+                                                {{x.Observacion}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer-tracking modal-seguimiento-footer">
+                                    <button class="btn button-samay-green" ng-click="$hide()">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+
+
+
+                <script type="text/ng-template" id="modalContenido.html">
+                    <div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" style="width:800px;">
+                            <div class="modal-content contentA">
+                                <div class="modal-header-tracking headerA">
+                                    <h3 class="modal-title">
+                                        <span class="glyphicon-track-iconA glyphicon-th-list glyphicon-color-samay-cian" aria-hidden="true">
+                                        </span>Confirmar documentos de Entrega : {{Entrega}}  <h4><span class="fechaA">Enviado el {{fecha}}</span></h4>
+                                    </h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="panel panel-info">
+                                                <div class="panel-body">
+                                                    <div class="list-group list-groupA">
+                                                        <a href="" class="group-title">
+                                                            <h5>
+                                                                Seleccione las correspondencias que desea confirmar.
+                                                            </h5>
+
+                                                        </a>
+                                                        <br />
+                                                        <div ui-grid="subGridOptions"
+                                                             ui-grid-move-columns
+                                                             ui-grid-resize-columns
+                                                             ui-grid-selection></div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer-tracking modal-footer-trackingA">
+                                    <div id="mensajeA"></div>
+                                    <button class="btn btn-primary button-samay-green" ng-click="Recibircadena()">CONFIRMAR</button>
+                                    <button id="cancelarBtn" class="btn btn-danger button-samay-magenta" ng-click="$hide()">CANCELAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+
+
+
+                <script type="text/ng-template" id="modalContenido2.html">
+                    <div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" style="width:800px;">
+                            <div class="modal-content contentA">
+                                <div class="modal-header-tracking headerA">
+                                    <h3 class="modal-title">
+                                        <span class="glyphicon-track-iconA glyphicon-th-list" aria-hidden="true">
+                                        </span>Documentos de Entrega : {{Entrega}}  <h4></h4>
+                                    </h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="panel panel-info">
+                                                <div class="panel-body">
+                                                    <div class="list-group list-groupA">
+
+                                                        <br />
+                                                        <div ui-grid="subGridOptions"
+                                                             ui-grid-move-columns
+                                                             ui-grid-resize-columns></div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer-tracking modal-footer-trackingA">
+                                    <div id="mensajeA"></div>
+                                    <button class="btn btn-danger" ng-click="$hide()">CERRAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+
+
+                <div class="posi">
+                    <input type="button" class="btn btn-success" value="Recibir" ng-click="Recibircadena()" ng-hide="pestania" />
+                </div>
+    
+
+
+    </div>
+
+</section>
+

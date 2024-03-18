@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2AAA557-52A4-4D1A-A205-48320C29BBA2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExpedicionInternaWeb2V</RootNamespace>
+    <AssemblyName>ExpedicionInternaWeb2V</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44305</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\jquery.timepicker.css" />
+    <Content Include="Content\jquery.timepicker.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="CSS\estilo.min\estilo.min.css" />
+    <Content Include="CSS\estilo.min\estiloNuevo.css" />
+    <Content Include="CSS\estilo.min\StyleSheet1.css" />
+    <Content Include="CSS\loading-bar.css" />
+    <Content Include="CSS\miestilo.css" />
+    <Content Include="Error\404.htm" />
+    <Content Include="Error\500.htm" />
+    <Content Include="fonts\fuente.css" />
+    <Content Include="fonts\FUENTE\PasionSans\pasionSans.css" />
+    <Content Include="IMAGE\simih_small.png" />
+    <Content Include="img\logo-header_icono.png" />
+    <Content Include="img\logoRVA.png" />
+    <Content Include="img\logoRVA_icono.png" />
+    <Content Include="JS\app.js" />
+    <Content Include="JS\appconfig.js" />
+    <Content Include="JS\config.js" />
+    <Content Include="JS\constant\tipoNotificacion.js" />
+    <Content Include="JS\Controladores\Activo.js" />
+    <Content Include="JS\Controladores\ConfirmarEnvio.js" />
+    <Content Include="JS\Controladores\Correspondencia.js" />
+    <Content Include="JS\Controladores\HistoricoCorreos.js" />
+    <Content Include="JS\Controladores\Inicio.js" />
+    <Content Include="JS\Controladores\Jos.js" />
+    <Content Include="JS\Controladores\Login.js" />
+    <Content Include="JS\Controladores\notificacion.js" />
+    <Content Include="JS\Controladores\Pagina.js" />
+    <Content Include="JS\Controladores\Reportes\BCP\ReporteDocumentosEntreExpediciones.js" />
+    <Content Include="JS\Controladores\Reportes\BCP\ReporteDocumentosHaciaAgencias.js" />
+    <Content Include="JS\Controladores\Reportes\BCP\ReportePorAutogenerado.js" />
+    <Content Include="JS\Controladores\Reportes\BCP\ReportePorEstado.js" />
+    <Content Include="JS\Controladores\Reportes\BCP\ReportePorMatricula.js" />
+    <Content Include="JS\Controladores\Reportes\ReporteDocumentosEspeciales.js" />
+    <Content Include="JS\Controladores\Reportes\ReporteCumplimientoCustodia.js" />
+    <Content Include="JS\Controladores\Reportes\ReporteEstados.js" />
+    <Content Include="JS\Controladores\Reportes\ReporteParcialProductividad.js" />
+    <Content Include="JS\Controladores\Reportes\ReportePendientes.js" />
+    <Content Include="JS\Controladores\Reportes\ReportePendientesCustodia.js" />
+    <Content Include="JS\Controladores\Reportes\ReporteProductividad.js" />
+    <Content Include="JS\Controladores\Reportes\ReporteReclamos.js" />
+    <Content Include="JS\Controladores\Reportes\ReporteRetirados.js" />
+    <Content Include="JS\Controladores\Reportes\ReporteEstadosCustodia.js" />
+    <Fakes Include="Fakes\Newtonsoft.Json.fakes" />
+    <Content Include="CSS\styl\grid.styl" />
+    <Content Include="CSS\styl\confirmado.styl" />
+    <Content Include="CSS\styl\tracking.styl" />
+    <Content Include="fonts\FUENTE\PasionSans\PassionSansPDab-HairlineI 2.ttf" />
+    <Content Include="fonts\FUENTE\PasionSans\PassionSansPDab-HairlineI_2.eot" />
+    <Content Include="index.html" />
+    <Content Include="JS\Controladores\RVA\Auditoria\AuditoriaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\LoginController.js" />
+    <Content Include="JS\Controladores\RVA\Mantenimiento\Agencia\ListadoAgenciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Mantenimiento\Agencia\MantenimientoAgenciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Mantenimiento\Correo\ListadoCorreoCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Mantenimiento\Correo\MantenimientoCorreoCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Mantenimiento\Feriado\ListadoFeriadoCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Mantenimiento\Feriado\MantenimientoFeriadoCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Mantenimiento\RangoRecepcionValijas\ListadoRangoRecepcionCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Mantenimiento\RangoRecepcionValijas\MantenimientoRangoRecepcionCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Mantenimiento\Usuario\ListadoUsuarioCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Mantenimiento\Usuario\MantenimientoUsuarioCtrl.js" />
+    <Content Include="JS\Controladores\RVA\ModalController\GenerarLoteBolsasCtrl.js" />
+    <Content Include="JS\Controladores\RVA\ModalController\MarcarHoraProveedorCtrl.js" />
+    <Content Include="JS\Controladores\RVA\ModalController\ModificarRecepcionLimaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\ModalController\ModificarRecepcionProvinciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\ModalController\ModificarRegistroEnvioLimaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\ModalController\MostrarPDFCtrl.js" />
+    <Content Include="JS\Controladores\RVA\ModalController\RegistrarReprogramacionCtrl.js" />
+    <Content Include="JS\Controladores\RVA\ModalController\SeleccionarMotivoCtrl.js" />
+    <Content Include="JS\Controladores\RVA\ModalController\SeleccionarProveedorCtrl.js" />
+    <Content Include="JS\Controladores\RVA\P-Envio\recepcionagencia\RecepcionAgenciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\P-Envio\recepcionagencia\RecepcionAgenciaDetalleCtrl.js" />
+    <Content Include="JS\Controladores\RVA\P-Envio\RegistroUtd\EnviarValijaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\P-Recojo\RecepcionUtd\RecepcionarLimaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\P-Recojo\RecepcionUtd\RecepcionarProvinciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\P-Recojo\RegistroAgencia\EnvioUTDCtrl.js" />
+    <Content Include="JS\Controladores\RVA\P-Recojo\RegistroAgencia\ListaEnvioUTDCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Entrega\DetallesEntregaAgenciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Entrega\DetallesEntregaUTDCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Entrega\EntregaOIncidenciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Entrega\ListaEntregaAgenciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Entrega\ListaEntregaUTDCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Incidencia\IncidenciaParaAgenciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Recojo\DetallesRecojoAgenciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Recojo\DetallesRecojoUTDCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Recojo\ListaRecojoAgenciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Recojo\ListaRecojoUTDCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Prov-Recojo\RecojoOIncidenciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\RecepcionBolsas\RecepcionarBolsasCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Reporte\ReporteAgenciaProvinciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Reporte\ReporteEntregaAgenciaLimaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Reporte\ReporteEntregaRecojoLimaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Reporte\ReporteEnvioAgenciaLimaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Reporte\ReporteIncidenciaLimaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Reporte\ReporteProveedorTrasladoAgenciaAUTDCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Reporte\ReporteRecepcionAgenciaProvinciaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Reporte\ReporteRecepcionBolsasCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Reporte\ReporteRecepcionLimaCtrl.js" />
+    <Content Include="JS\Controladores\RVA\Reporte\ReporteRecojoLimaCtrl.js" />
+    <Content Include="JS\Recursos\requester.js" />
+    <Content Include="JS\Servicios\exportarService.js" />
+    <Content Include="JS\Servicios\importarService.js" />
+    <Content Include="JS\Servicios\notificacionService.js" />
+    <Content Include="JS\Servicios\promesa.js" />
+    <Content Include="JS\Servicios\servicios.js" />
+    <Content Include="JS\Servicios\utilsService.js" />
+    <Content Include="Librerias\0-lib\angular-1.8.2\angular-animate.min.js" />
+    <Content Include="Librerias\0-lib\angular-1.8.2\angular-local-storage.min.js" />
+    <Content Include="Librerias\0-lib\angular-1.8.2\angular-route.min.js" />
+    <Content Include="Librerias\0-lib\angular-1.8.2\angular-touch.min.js" />
+    <Content Include="Librerias\0-lib\angular-1.8.2\angular.min.js" />
+    <Content Include="Librerias\0-lib\ui-grid-4.11.1\ui-grid.css" />
+    <Content Include="Librerias\0-lib\ui-grid-4.11.1\ui-grid.js" />
+    <Content Include="Librerias\angular-strap.docs.tpl.js" />
+    <Content Include="Librerias\angular-strap.js" />
+    <Content Include="Librerias\angular-strap.tpl.js" />
+    <Content Include="Librerias\Angular\angular-animate\angular-animate.min.js" />
+    <Content Include="Librerias\Angular\angular-route\angular-route.min.js" />
+    <Content Include="Librerias\Angular\angular-touch.min.js" />
+    <Content Include="Librerias\Angular\angular\angular.min.js" />
+    <Content Include="Librerias\0-lib\bootstrap\bootstrap-5.2.0.min.css" />
+    <Content Include="Librerias\0-lib\bootstrap\bootstrap-5.2.0.min.js" />
+    <Content Include="Librerias\chartjs\Chart.min.js" />
+    <Content Include="Librerias\css\animate.css" />
+    <Content Include="Librerias\docs.min.css" />
+    <Content Include="Librerias\FileSaver.min.js" />
+    <Content Include="Librerias\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Librerias\img\a01.png" />
+    <Content Include="Librerias\img\a02.png" />
+    <Content Include="Librerias\img\a03.png" />
+    <Content Include="Librerias\img\a04.png" />
+    <Content Include="Librerias\img\a06.png" />
+    <Content Include="Librerias\img\a07.png" />
+    <Content Include="Librerias\img\a08.png" />
+    <Content Include="Librerias\img\a09.png" />
+    <Content Include="Librerias\img\a10.png" />
+    <Content Include="Librerias\img\a11.png" />
+    <Content Include="Librerias\img\a12.png" />
+    <Content Include="Librerias\img\a13.png" />
+    <Content Include="Librerias\img\a14.png" />
+    <Content Include="Librerias\img\a15.png" />
+    <Content Include="Librerias\img\a16.png" />
+    <Content Include="Librerias\img\a17.png" />
+    <Content Include="Librerias\img\a18.png" />
+    <Content Include="Librerias\img\a19.png" />
+    <Content Include="Librerias\img\a20.png" />
+    <Content Include="Librerias\img\a21.png" />
+    <Content Include="Librerias\img\b02.png" />
+    <Content Include="Librerias\img\b03.png" />
+    <Content Include="Librerias\img\b05.png" />
+    <Content Include="Librerias\img\b06.png" />
+    <Content Include="Librerias\img\b07.png" />
+    <Content Include="Librerias\img\b10.png" />
+    <Content Include="Librerias\img\b11.png" />
+    <Content Include="Librerias\img\b12.png" />
+    <Content Include="Librerias\img\b13.png" />
+    <Content Include="Librerias\img\b14.png" />
+    <Content Include="Librerias\img\b16.png" />
+    <Content Include="Librerias\img\b17.png" />
+    <Content Include="Librerias\img\b18.png" />
+    <Content Include="Librerias\img\b20.png" />
+    <Content Include="Librerias\img\b21.png" />
+    <Content Include="Librerias\img\back.jpg" />
+    <Content Include="Librerias\img\browser-icons.png" />
+    <Content Include="Librerias\img\business\banner_diagnostico.jpg" />
+    <Content Include="Librerias\img\business\banner_estrategica.jpg" />
+    <Content Include="Librerias\img\business\banner_financiera.jpg" />
+    <Content Include="Librerias\img\business\banner_marketing.jpg" />
+    <Content Include="Librerias\img\business\banner_procesos.jpg" />
+    <Content Include="Librerias\img\business\banner_rrhh.jpg" />
+    <Content Include="Librerias\img\business\banner_tecnologias.jpg" />
+    <Content Include="Librerias\img\business\BB_Diagnostico.jpg" />
+    <Content Include="Librerias\img\business\BB_estrategica.jpg" />
+    <Content Include="Librerias\img\business\BB_Finanzas.jpg" />
+    <Content Include="Librerias\img\business\BB_Marketing.jpg" />
+    <Content Include="Librerias\img\business\BB_negocios.jpg" />
+    <Content Include="Librerias\img\business\BB_Procesos.jpg" />
+    <Content Include="Librerias\img\business\BB_rrhh.jpg" />
+    <Content Include="Librerias\img\business\BB_ti.jpg" />
+    <Content Include="Librerias\img\business\INTRO_Consulting.jpg" />
+    <Content Include="Librerias\img\business\INTRO_outsourcing.jpg" />
+    <Content Include="Librerias\img\business\INTRO_sobre.jpg" />
+    <Content Include="Librerias\img\business\pie_diagnostico.jpg" />
+    <Content Include="Librerias\img\business\pie_estrategica.jpg" />
+    <Content Include="Librerias\img\business\pie_finanzas.jpg" />
+    <Content Include="Librerias\img\business\pie_mision.jpg" />
+    <Content Include="Librerias\img\business\pie_mkt.jpg" />
+    <Content Include="Librerias\img\business\pie_negocios.jpg" />
+    <Content Include="Librerias\img\business\pie_negocios2.jpg" />
+    <Content Include="Librerias\img\business\pie_outmkt.jpg" />
+    <Content Include="Librerias\img\business\pie_outrrhh.jpg" />
+    <Content Include="Librerias\img\business\pie_outTI.jpg" />
+    <Content Include="Librerias\img\business\pie_procesos.jpg" />
+    <Content Include="Librerias\img\business\pie_rrhh.jpg" />
+    <Content Include="Librerias\img\business\pie_tecnologia.jpg" />
+    <Content Include="Librerias\img\business\PIE_Tecnologia2.jpg" />
+    <Content Include="Librerias\img\business\pie_valores.jpg" />
+    <Content Include="Librerias\img\business\pie_vision.jpg" />
+    <Content Include="Librerias\img\close.png" />
+    <Content Include="Librerias\img\dot.png" />
+    <Content Include="Librerias\img\footer\bg-footer.png" />
+    <Content Include="Librerias\img\footer\bg-franja-footer.png" />
+    <Content Include="Librerias\img\footer\cbc_pie.jpg" />
+    <Content Include="Librerias\img\footer\top-menu-selected.png" />
+    <Content Include="Librerias\img\loading.gif" />
+    <Content Include="Librerias\img\loading2.gif" />
+    <Content Include="Librerias\img\logo.jpg" />
+    <Content Include="Librerias\img\logo\amazon.jpg" />
+    <Content Include="Librerias\img\logo\android.jpg" />
+    <Content Include="Librerias\img\logo\bitly.jpg" />
+    <Content Include="Librerias\img\logo\blogger.jpg" />
+    <Content Include="Librerias\img\logo\SIMIH_Icon.png" />
+    <Content Include="Librerias\img\logo\dnn.jpg" />
+    <Content Include="Librerias\img\logo\drupal.jpg" />
+    <Content Include="Librerias\img\logo\ebay.jpg" />
+    <Content Include="Librerias\img\logo\facebook.jpg" />
+    <Content Include="Librerias\img\logo\google.jpg" />
+    <Content Include="Librerias\img\logo\ibm.jpg" />
+    <Content Include="Librerias\img\logo\ios.jpg" />
+    <Content Include="Librerias\img\logo\joomla.jpg" />
+    <Content Include="Librerias\img\logo\jssor.png" />
+    <Content Include="Librerias\img\logo\linkedin.jpg" />
+    <Content Include="Librerias\img\logo\mac.jpg" />
+    <Content Include="Librerias\img\logo\magento.jpg" />
+    <Content Include="Librerias\img\logo\pinterest.jpg" />
+    <Content Include="Librerias\img\logo\samsung.jpg" />
+    <Content Include="Librerias\img\logo\twitter.jpg" />
+    <Content Include="Librerias\img\logo\windows.jpg" />
+    <Content Include="Librerias\img\logo\wordpress.jpg" />
+    <Content Include="Librerias\img\logo\youtube.jpg" />
+    <Content Include="Librerias\img\play.png" />
+    <Content Include="Librerias\img\qr\full-width-slider.png" />
+    <Content Include="Librerias\img\qr\jssor.com.png" />
+    <Content Include="Librerias\img\share\share-icons.png" />
+    <Content Include="Librerias\img\t01.png" />
+    <Content Include="Librerias\js\msal-angular.min.js" />
+    <Content Include="Librerias\js\msal.js" />
+    <Content Include="Librerias\js\msal.min.js" />
+    <Content Include="Librerias\js\tslib.js" />
+    <Content Include="Librerias\libs.min.css" />
+    <Content Include="Librerias\loading-bar.js" />
+    <Content Include="Librerias\ng-grid\jquery-ui.min.js" />
+    <Content Include="Librerias\ng-grid\jquery.min.js" />
+    <Content Include="Librerias\ng-grid\ng-grid.css" />
+    <Content Include="Librerias\sheetjs\xlsx.full.min.js" />
+    <Content Include="Librerias\slider\angular-slider.min.css" />
+    <Content Include="Librerias\slider\angular-slider.min.js" />
+    <Content Include="Librerias\swangular.js" />
+    <Content Include="Librerias\sweet-alert\sweetalert2.min.css" />
+    <Content Include="Librerias\sweet-alert\sweetalert2.min.js" />
+    <Content Include="Librerias\title\docs.css" />
+    <Content Include="Librerias\title\jquery-2.1.3.min.js" />
+    <Content Include="Librerias\title\metro-icons.css" />
+    <Content Include="Librerias\title\metro.css" />
+    <Content Include="Librerias\title\metro.js" />
+    <Content Include="Librerias\title\tile.js" />
+    <Content Include="obj\Debug\ExpedicionInternaWeb2V.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ExpedicionInternaWeb2V.dll" />
+    <Content Include="obj\Debug\ExpedicionInternaWeb2V.pdb" />
+    <Content Include="PAGINAS\ACCIONES\Confirmar.html" />
+    <Content Include="PAGINAS\ACCIONES\plantilla.html" />
+    <Content Include="PAGINAS\ACCIONES\plantilla2.html" />
+    <Content Include="PAGINAS\CONSULTAS\Historico.html" />
+    <Content Include="PAGINAS\CONSULTAS\Tracking.html" />
+    <Content Include="PAGINAS\DOCUMENTOS\Activo.html" />
+    <Content Include="PAGINAS\DOCUMENTOS\Correspondencia.html" />
+    <Content Include="PAGINAS\Inicio.html" />
+    <Content Include="PAGINAS\JOS\Valija.html" />
+    <Content Include="Login.html" />
+    <Content Include="PAGINAS\NOTIFICACIONES\barraAyuda.html" />
+    <Content Include="PAGINAS\REPORTES\BCP\ReporteDocumentosEntreExpediciones.html" />
+    <Content Include="PAGINAS\REPORTES\BCP\ReporteDocumentosHaciaAgencias.html" />
+    <Content Include="PAGINAS\REPORTES\BCP\ReportePorAutogenerado.html" />
+    <Content Include="PAGINAS\REPORTES\BCP\ReportePorEstado.html" />
+    <Content Include="PAGINAS\REPORTES\BCP\ReportePorMatricula.html" />
+    <Content Include="PAGINAS\REPORTES\ReporteCumplimientoCustodia.html" />
+    <Content Include="PAGINAS\REPORTES\ReporteDocumentosEspeciales.html" />
+    <Content Include="PAGINAS\REPORTES\ReporteEstados.html" />
+    <Content Include="PAGINAS\REPORTES\ReporteEstadosCustodia.html" />
+    <Content Include="PAGINAS\REPORTES\ReporteParcialProductividad.html" />
+    <Content Include="PAGINAS\REPORTES\ReportePendientes.html" />
+    <Content Include="PAGINAS\REPORTES\ReportePendientesCustodia.html" />
+    <Content Include="PAGINAS\REPORTES\ReporteProductividad.html" />
+    <Content Include="PAGINAS\REPORTES\ReporteReclamos.html" />
+    <Content Include="PAGINAS\REPORTES\ReporteRetirados.html" />
+    <Content Include="PAGINAS\NOTIFICACIONES\notBarraLateral.html" />
+    <Content Include="PAGINAS\RVA\Auditoria\Auditoria.html" />
+    <Content Include="PAGINAS\RVA\EnvioAgenciaHaciaUtd\EnvioUTD.html" />
+    <Content Include="PAGINAS\RVA\EnvioAgenciaHaciaUtd\ListaEnvioUTD.html" />
+    <Content Include="PAGINAS\RVA\EnvioUtdHaciaAgencia\EnvioValija.html" />
+    <Content Include="PAGINAS\RVA\Mantenimiento\Agencia\ListadoAgencia.html" />
+    <Content Include="PAGINAS\RVA\Mantenimiento\Agencia\MantenimientoAgencia.html" />
+    <Content Include="PAGINAS\RVA\Mantenimiento\Correo\ListadoCorreo.html" />
+    <Content Include="PAGINAS\RVA\Mantenimiento\Correo\MantenimientoCorreo.html" />
+    <Content Include="PAGINAS\RVA\Mantenimiento\Feriado\ListadoFeriado.html" />
+    <Content Include="PAGINAS\RVA\Mantenimiento\Feriado\MantenimientoFeriado.html" />
+    <Content Include="PAGINAS\RVA\Mantenimiento\RangoRecepcionValijas\ListadoRangoRecepcion.html" />
+    <Content Include="PAGINAS\RVA\Mantenimiento\RangoRecepcionValijas\MantenimientoRangoRecepcion.html" />
+    <Content Include="PAGINAS\RVA\Mantenimiento\Usuario\ListadoUsuario.html" />
+    <Content Include="PAGINAS\RVA\Mantenimiento\Usuario\MantenimientoUsuario.html" />
+    <Content Include="PAGINAS\RVA\modal\MarcarHoraProveedor.html" />
+    <Content Include="PAGINAS\RVA\modal\MostrarPDF.html" />
+    <Content Include="PAGINAS\RVA\modal\RegReprogramacion.html" />
+    <Content Include="PAGINAS\RVA\modal\SeleccionarMotivo.html" />
+    <Content Include="PAGINAS\RVA\modal\SeleccionarProveedor.html" />
+    <Content Include="PAGINAS\RVA\modal\tipoTraslado.html" />
+    <Content Include="PAGINAS\RVA\ProveedorEntrega\DetallesEntregaAgencia.html" />
+    <Content Include="PAGINAS\RVA\ProveedorEntrega\DetallesEntregaUTD.html" />
+    <Content Include="PAGINAS\RVA\ProveedorEntrega\EntregaOIncidencia.html" />
+    <Content Include="PAGINAS\RVA\ProveedorEntrega\ListaEntregaAgencia.html" />
+    <Content Include="PAGINAS\RVA\ProveedorEntrega\ListaEntregaUTD.html" />
+    <Content Include="PAGINAS\RVA\ProveedorIncidencia\IncidenciaParaAgencia.html" />
+    <Content Include="PAGINAS\RVA\ProveedorRecojo\DetallesRecojoAgencia.html" />
+    <Content Include="PAGINAS\RVA\ProveedorRecojo\DetallesRecojoUTD.html" />
+    <Content Include="PAGINAS\RVA\ProveedorRecojo\ListaRecojoAgencia.html" />
+    <Content Include="PAGINAS\RVA\ProveedorRecojo\ListaRecojoUTD.html" />
+    <Content Include="PAGINAS\RVA\ProveedorRecojo\RecojoOIncidencia.html" />
+    <Content Include="PAGINAS\RVA\Provincia\RecepcionValijaProvincia.html" />
+    <Content Include="PAGINAS\RVA\Provincia\RegValijaProvincia.html" />
+    <Content Include="PAGINAS\RVA\Provincia\SeguimientoAgenciaProvinciaPendiente.html" />
+    <Content Include="PAGINAS\RVA\RecepcionAgenciaDesdeUtd\RecepcionAgencia.html" />
+    <Content Include="PAGINAS\RVA\RecepcionAgenciaDesdeUtd\RecepcionAgenciaDetalle.html" />
+    <Content Include="PAGINAS\RVA\RecepcionBolsas\RecepcionBolsas.html" />
+    <Content Include="PAGINAS\RVA\RecepcionUtdDesdeAgencia\RecepcionLima.html" />
+    <Content Include="PAGINAS\RVA\RecepcionUtdDesdeAgencia\RecepcionProvincia.html" />
+    <Content Include="PAGINAS\RVA\Reporte\ReporteAgenciaProvincia.html" />
+    <Content Include="PAGINAS\RVA\Reporte\ReporteEntregaAgenciaLima.html" />
+    <Content Include="PAGINAS\RVA\Reporte\ReporteEntregaRecojoLima.html" />
+    <Content Include="PAGINAS\RVA\Reporte\ReporteEnvioAgenciaLima.html" />
+    <Content Include="PAGINAS\RVA\Reporte\ReporteIncidenciaLima.html" />
+    <Content Include="PAGINAS\RVA\Reporte\ReporteRecepcionAgenciaProvincia.html" />
+    <Content Include="PAGINAS\RVA\Reporte\ReporteRecepcionBolsas.html" />
+    <Content Include="PAGINAS\RVA\Reporte\ReporteRecepcionLima.html" />
+    <Content Include="PAGINAS\RVA\Reporte\ReporteRecojoLima.html" />
+    <Content Include="PAGINAS\RVA\Reporte\_ReporteRecepcionBolsas.html" />
+    <Content Include="PAGINAS\RVA\Reporte\______ReporteRecepcionBolsas.html" />
+    <Content Include="PAGINAS\RVA\Template\TmpButtonReprogramacion.html" />
+    <Content Include="PAGINAS\RVA\Template\TmpControlesDinamicos.html" />
+    <Content Include="PAGINAS\RVA\Template\TmpGenerarLoteBolsas.html" />
+    <Content Include="PAGINAS\RVA\Template\TmpModificarEnvioLima.html" />
+    <Content Include="PAGINAS\RVA\Template\TmpModificarLima.html" />
+    <Content Include="PAGINAS\RVA\Template\TmpModificarProvincia.html" />
+    <Content Include="PAGINAS\RVA\Template\TmpRecojoLima.html" />
+    <Content Include="PAGINAS\RVA\Template\TmpRegistrarEnvioAgenciaAUTD.html" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-touch.js" />
+    <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-touch.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\estilo.min\ui-grid-unstable.css" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Librerias\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Librerias\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Librerias\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Browsers\ie.browser" />
+    <Content Include="App_Browsers\firefox.browser" />
+    <Content Include="Librerias\js\bootstrap-filestyle.min.js" />
+    <Content Include="Librerias\Angular\angular-animate\angular-animate.min.js.map" />
+    <Content Include="Librerias\Angular\angular-route\angular-route.min.js.map" />
+    <Content Include="Librerias\Angular\angular-local-storage.min.js" />
+    <Content Include="CSS\styl\dashboard.styl" />
+    <Content Include="CSS\styl\estilo.min.styl" />
+    <Content Include="CSS\styl\inicio.styl" />
+    <Content Include="CSS\styl\normalize.styl" />
+    <Content Include="CSS\styl\PaginaCss.styl" />
+    <Content Include="CSS\styl\valijas.styl" />
+    <Content Include="CSS\styl\error.styl" />
+    <Content Include="Librerias\ng-grid\ng-grid.debug.js" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\ExpedicionInternaWeb2V.csproj.CopyComplete" />
+    <Content Include="obj\Debug\ExpedicionInternaWeb2V.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Release\build.force" />
+    <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="fonts\flexo\" />
+    <Folder Include="Librerias\0-lib\jquery-ui\" />
+    <Folder Include="Librerias\0-lib\jquery\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\TempPE\" />
+    <Folder Include="PAGINAS\REPORTES\ANTIGUOS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JS\Controladores\RVA\ModalController\RegistrarEnvioAgenciaAUTDCtrl.js" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>7000</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44305/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

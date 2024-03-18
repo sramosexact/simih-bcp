@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Error en el servidor</title>
+</head>
+<body>
+<style>
+body {
+	font-family: Arial;
+	color:#464649;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 200px;
+  grid-template-areas:
+    ". a a ."
+    ". a a .";
+}
+.item1 {
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+}
+
+h1 {
+ font-size: 8em;
+ margin:auto;
+ text-align: center;
+}
+
+h3 {
+font-size: 2em;
+margin:auto;
+text-align: center;
+}
+
+p {
+font-size: 1em;
+color:#464649;
+text-align: center;
+}
+
+</style>
+<div class="wrapper">
+	<div class="item1">
+		<h1>404</h1>
+		<h3>No Found</h3>
+		<p>The resource requested could not be found on this server!</p>
+	</div>
+</div>
+</body>
+</html>

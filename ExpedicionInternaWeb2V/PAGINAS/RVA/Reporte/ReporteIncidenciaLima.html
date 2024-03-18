@@ -1,0 +1,370 @@
+<style>
+  .nameProv {
+    color: black;
+    font-size: 25px;
+  }
+
+  tr {
+    cursor: pointer;
+  }
+
+  .Total > td {
+    background-color: #fff7aa;
+  }
+
+  .panel-recogido > .panel-heading {
+    color: #fff;
+    background-color: #247eba;
+    border-color: #247eba;
+  }
+
+  .table > tbody > tr > td,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > td,
+  .table > tfoot > tr > th,
+  .table > thead > tr > td,
+  .table > thead > tr > th {
+    border-top: none;
+  }
+
+  .panel-body {
+    padding: 0px;
+  }
+
+  .fondoCajas {
+    background-color: #fff7aa;
+    border-radius: 10px;
+  }
+
+  .CantidadDetal {
+    font-size: 19px;
+    color: #393939;
+  }
+
+  .TituloTableReporte > th {
+    background-color: #257840;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: 13px;
+  }
+
+  hr {
+    border: 0.5px solid #39719e;
+  }
+
+  .derecha {
+    /*position: absolute;*/
+    /*top: 100%;*/
+    right: 0%;
+   
+  }
+
+  .contenedor-header {
+    position: relative;
+  }
+
+  .tabla2 th {
+    border-color: black;
+    background-color: #ced7d8;
+    color: #080808;
+    font-family: sans-serif;
+    font-size: 13px;
+  }
+
+  tr .filter {
+    background-color: rgb(206, 215, 216);
+  }
+
+  .tabla2 td {
+    font-family: sans-serif;
+    font-size: 13px;
+    border-color: black;
+  }
+
+  .ng-table {
+    border-collapse: initial;
+    border: 1px solid black;
+  }
+
+    .ng-table td {
+      border-collapse: initial;
+      border: 1px solid black;
+    }
+
+  .label-date-style {
+    border: none;
+    background-color: #fff;
+    padding-top: 10px;
+    margin-bottom: 0px;
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+
+  .row-style {
+    font-size: 0.8em;
+  }
+
+  thead {
+    background-color: rgba(92, 122, 126, 0.3);
+  }
+
+  .ui-grid-row .ui-grid-cell {
+    background-color: inherit !important;
+  }
+
+  .header-grid-color {
+    font-size: 0.8em;
+    background: none !important;
+    background-color: #ced7d8 !important;
+    border-color: #aaa2a2;
+  }
+
+  .ui-grid-cell:last-child {
+    border-right: 1px solid #d4d4d4;
+  }
+
+  .row-style {
+    font-size: 0.8em;
+  }
+
+  .grid-border {
+    border-color: #809eff;
+  }
+
+  .indicador-align {
+    font-size: 23px;
+    text-align: center;
+  }
+
+  .grid {
+    width: 100%;
+  }
+
+  .badge.manifestaciones {
+    background-color: #0099ff;
+    border-radius: 10px;
+  }
+
+  .badge.huelgas {
+    background-color: #ff5733;
+    border-radius: 10px;
+  }
+
+  .badge.desastresNaturales {
+    background-color: #33ff57;
+    border-radius: 10px;
+  }
+
+  .badge.diasFestivosProvincia {
+    background-color: #5733ff;
+    border-radius: 10px;
+  }
+
+  .badge.callesBloqueadas {
+    background-color: #ffe033;
+    border-radius: 10px;
+  }
+
+  .badge.otros {
+    background-color: #33ffe0;
+    border-radius: 10px;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+
+    .grid-bolsas {
+        height: 100%;
+    }
+
+    .contenedor-principal {
+        height: calc(100vh - 70px) !important;
+        width: 100%;
+    }
+
+    .container-controls {
+        margin-bottom: 20px !important;
+        margin-top: 20px !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        padding-left: 20px;
+        background-color: #FFF !important;
+    }
+
+    .container-body {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: calc(100% - 135px);
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background-color: #FFF;
+        padding-left: 20px;
+        margin: 0px;
+    }
+
+    .tabla-asignados {
+        margin-top: 20px;
+    }
+
+  @media (max-width: 1200px) {
+    .tablaResponsive {
+      overflow-x: scroll;
+      width: 100%;
+    }
+  }
+
+
+
+</style>
+<p></p>
+
+<div class="section-container " style="font-family:'Flexo-Regular';">
+    <div class="contenedor-principal" id="MainDiv">
+
+        <div class="section-header">
+            <span class="fa fa-pie-chart glyphicon-style-section-header "></span>
+            Reporte de Incidencias - Lima
+        </div>
+
+        <div class="row container-controls">
+            <div class="col-12">
+                <form class="form-inline">
+                    <label class="form-inline label-date-style"
+                           for="fechaDesdeIncidencia">
+                        Desde
+                    </label>
+                    <input type="text"
+                           class="form-control"
+                           id="fechaDesdeIncidencia"
+                           placeholder="Ingrese Fecha"
+                           readonly
+                           style="background-color: #ffffff; margin-top: 4px"
+                           ng-model="FechaDesde" />
+                    <label class="form-inline label-date-style"
+                           for="fechaHastaIncidencia">
+                        Hasta
+                    </label>
+                    <input type="text"
+                           class="form-control"
+                           id="fechaHastaIncidencia"
+                           placeholder="Ingrese Fecha"
+                           readonly
+                           style="background-color: #ffffff; margin-top: 4px"
+                           ng-model="FechaHasta" />
+                    
+                    <button ng-click="IniciarFlujoReporteIncidencias()"
+                            class="btn btn-primary"
+                            style="margin-top: 4px; margin-left:10px;">
+                        Buscar
+                    </button>
+                    <span> </span>
+                    <button type="button"
+                            class="btn btn-sm btn-success"
+                            style="margin-top: 4px; margin-left:10px;"
+                            ng-click="ExportarTodasIncidenciasData()">
+                        <i class="fa fa-file-excel-o"></i> Exportar Todas Incidencias
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="row" ng-if="verExportar">
+            <div class="col-md-12">
+                
+            </div>
+        </div>
+
+        <div class="container-body">
+
+            <div class="row">
+                <!--Autogenerando-->
+                <div class="col-md-12 mt-4" ng-repeat="Prov in Proveedores">
+                    <div class="contenedor-header">
+                        Prov
+                        <h1 class="nameProv">{{Prov.sProveedor}}</h1>
+                    </div>
+                    <hr />
+
+                    <div class="col-md-12" ng-if="Prov.mostrarError">
+                        <span class="text-danger">
+                            No ha ocurrido nig&uacute;n incidente en este d&iacute;a para el
+                            proveedor
+                            <b>{{Prov.sProveedor}}</b>. Seleccione otra fecha.
+                        </span>
+                    </div>
+
+                    <div ng-if="!Prov.mostrarError"
+                         class="row justify-content-around mt-5">
+                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
+                            <div id="canvas-holder">
+                                <canvas id="{{Prov.sProveedor}}"
+                                        width="10"
+                                        height="10"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+                            <table class="table table-hover">
+                                <tr class="Total">
+                                    <td>Total Incidencias</td>
+                                    <td>{{Prov.totalIncidencias}}</td>
+                                </tr>
+                                <tr ng-repeat="Motivo in Prov.ArmadoChart">
+                                    <td>
+                                        <span class="badge"
+                                              ng-class="{ 'manifestaciones': Motivo.id === 5,
+                          'huelgas': Motivo.id === 6,
+                          'desastresNaturales': Motivo.id === 7,
+                          'diasFestivosProvincia': Motivo.id === 8,
+                          'callesBloqueadas': Motivo.id === 9,
+                          'otros': Motivo.id === 10}">
+                                        </span>
+                                        {{Motivo.label}}
+                                    </td>
+                                    <td>{{Motivo.value}}</td>
+                                </tr>
+                            </table>
+
+                            <div style="margin-top: 30px; margin-bottom: 30px">
+                                <input type="button"
+                                       name="name"
+                                       value="{{Prov.textoBotonDetalle}}"
+                                       class="btn btn-primary"
+                                       ng-click="mostrarDetalle(Prov)" />
+                            </div>
+                        </div>
+                    </div>
+                    <!--Termina Autogenerado-->
+                    <div ng-show="Prov.detalleMostrado"
+                         class="col-xs-12 col-sm-12"
+                         style="margin-top: 10px">
+                        <div style="text-align: right; margin-top: 10px; margin-bottom: 10px"
+                             class="col-xs-12 col-sm-12">
+                            <button name="name"
+                                    class="btn btn-success"
+                                    ng-click="ExportarTablaDetalle(Prov)">
+                                <i class="fa fa-file-excel-o"></i> Exportar tabla
+                            </button>
+                        </div>
+                        <hr />
+
+                        <div class="grid"
+                             ui-grid="Prov.GridRegistroIncidencias"
+                             ui-grid-pagination
+                             ui-grid-move-columns
+                             ui-grid-cellnav
+                             ui-grid-auto-resize
+                             ui-grid-resize-columns></div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+        </div>
+    </div>
+</div>
